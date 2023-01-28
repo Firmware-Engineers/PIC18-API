@@ -1,0 +1,36 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F452 ]
+[d frameptr 4065 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"13 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/main.c
+[v _main main `(v  1 e 1 0 ]
+[s S21 . 23 `uc 1 PA 1 0 `uc 1 PB 1 1 `uc 1 PC 1 2 `uc 1 PD 1 3 `uc 1 PE 1 4 `ul 1 . 4 5 `uc 1 LA 1 9 `uc 1 LB 1 10 `uc 1 LC 1 11 `uc 1 LD 1 12 `uc 1 LE 1 13 `ul 1 . 4 14 `uc 1 TA 1 18 `uc 1 TB 1 19 `uc 1 TC 1 20 `uc 1 TD 1 21 `uc 1 TE 1 22 ]
+"120 C:\EmbeddedDevOps\M8M_APIs\PIC18.X/Common/PIC18Types.h
+[u S39 . 23 `S21 1 . 23 0 `[23]uc 1 Bytes 23 0 ]
+[v _IO IO `VES39  1 e 23 @3968 ]
+"13 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"22
+} 0
