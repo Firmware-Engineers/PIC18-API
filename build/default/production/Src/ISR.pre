@@ -1,5 +1,95 @@
 
-# 1 "Src/main.c"
+# 1 "Src/ISR.c"
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -3223,97 +3313,22 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
-typedef signed char int8_t;
+# 332 "Src/../Inc/Interrupts.h"
+extern void EnableInterrupt(const uint16_t cnst);
 
-# 20
-typedef signed int int16_t;
+# 343
+extern void DisableInterrupt(const uint16_t cnst);
 
-# 28
-typedef signed short long int int24_t;
+# 357
+extern uint16_t GetInterruptFlag(const uint16_t cnst);
 
-# 36
-typedef signed long int int32_t;
+# 370
+extern void SetInterruptPriorityHigh(const uint16_t cnst);
 
-# 43
-typedef unsigned char uint8_t;
+# 381
+extern void SetInterruptPriorityLow(const uint16_t cnst);
 
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 75 "Src/../Inc/PIC18Types.h"
+# 75 "Src/../Inc/../Inc/PIC18Types.h"
 typedef union{
 struct{
 
@@ -3345,33 +3360,12 @@ uint8_t Bytes[23];
 
 volatile IORegistersMapType IO @0xF80;
 
-# 332 "Src/../Inc/Interrupts.h"
-extern void EnableInterrupt(const uint16_t cnst);
-
-# 343
-extern void DisableInterrupt(const uint16_t cnst);
-
-# 357
-extern uint16_t GetInterruptFlag(const uint16_t cnst);
-
-# 370
-extern void SetInterruptPriorityHigh(const uint16_t cnst);
-
-# 381
-extern void SetInterruptPriorityLow(const uint16_t cnst);
-
-# 13 "Src/main.c"
-void main(void) {
-
-
-IO.Bytes[(uint8_t)0x00 + 18] &= ~(1 << 0x0);
-
-
-(INTCON2 |= 0x40);
-while(1)
+# 62 "Src/ISR.c"
+void interrupt Isr(void)
 {
-
-
+if(GetInterruptFlag(0x02) == 0x02)
+{
+IO.Bytes[0x00 + 9] |= (1 << 0x0);
 }
 }
 

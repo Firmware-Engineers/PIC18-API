@@ -1,5 +1,95 @@
 
-# 1 "Src/main.c"
+# 1 "Src/Interrupts.c"
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -3223,128 +3313,6 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 75 "Src/../Inc/PIC18Types.h"
-typedef union{
-struct{
-
-uint8_t PA;
-uint8_t PB;
-uint8_t PC;
-uint8_t PD;
-uint8_t PE;
-
-uint32_t;
-
-uint8_t LA;
-uint8_t LB;
-uint8_t LC;
-uint8_t LD;
-uint8_t LE;
-
-uint32_t;
-
-uint8_t TA;
-uint8_t TB;
-uint8_t TC;
-uint8_t TD;
-uint8_t TE;
-};
-uint8_t Bytes[23];
-}IORegistersMapType;
-
-
-volatile IORegistersMapType IO @0xF80;
-
 # 332 "Src/../Inc/Interrupts.h"
 extern void EnableInterrupt(const uint16_t cnst);
 
@@ -3360,18 +3328,124 @@ extern void SetInterruptPriorityHigh(const uint16_t cnst);
 # 381
 extern void SetInterruptPriorityLow(const uint16_t cnst);
 
-# 13 "Src/main.c"
-void main(void) {
-
-
-IO.Bytes[(uint8_t)0x00 + 18] &= ~(1 << 0x0);
-
-
-(INTCON2 |= 0x40);
-while(1)
+# 20 "Src/Interrupts.c"
+void EnableInterrupt(const uint16_t cnst)
 {
+uint8_t var = (uint8_t)(cnst >> 8);
+uint8_t config = (uint8_t)(cnst & 0xFF);
 
+switch(var)
+{
+case 0:
+INTCON |= config;break;
+
+case 1:
+INTCON3 |= config;break;
+
+case 2:
+PIE1 |= config;break;
+
+case 3:
+PIE2 |= config;break;
+default:break;
+}
 
 }
+
+
+void DisableInterrupt(const uint16_t cnst)
+{
+uint8_t var = (uint8_t)(cnst >> 8);
+uint8_t config = (uint8_t)(cnst & 0xFF);
+
+switch(var)
+{
+case 0:
+INTCON &= (uint8_t)(~config);break;
+
+case 1:
+INTCON3 &= (uint8_t)(~config);break;
+
+case 2:
+PIE1 &= (uint8_t)(~config);break;
+
+case 3:
+PIE2 &= (uint8_t)(~config);break;
+default:break;
+}
+
+}
+
+
+uint16_t GetInterruptFlag(const uint16_t cnst)
+{
+uint8_t var = (uint8_t)(cnst >> 8);
+uint8_t state = (uint8_t)(cnst & 0xFF);
+
+switch(var)
+{
+case 0:
+state &= INTCON;break;
+
+case 1:
+state &= INTCON3;break;
+
+case 2:
+state &= PIR1;break;
+
+case 3:
+state &= PIR2;break;
+default:break;
+}
+
+return state;
+}
+
+
+void SetInterruptPriorityHigh(const uint16_t cnst)
+{
+uint8_t var = (uint8_t)(cnst >> 8);
+uint8_t config = (uint8_t)(cnst & 0xFF);
+
+switch(var)
+{
+case 0:
+INTCON2 |= config;break;
+
+case 1:
+INTCON3 |= config;break;
+
+case 2:
+IPR1 |= config;break;
+
+case 3:
+IPR2 |= config;break;
+default:break;
+}
+
+}
+
+
+void SetInterruptPriorityLow(const uint16_t cnst)
+{
+uint8_t var = (uint8_t)(cnst >> 8);
+uint8_t config = (uint8_t)(cnst & 0xFF);
+
+switch(var)
+{
+case 0:
+INTCON2 &= config;break;
+
+case 1:
+INTCON3 &= config;break;
+
+case 2:
+IPR1 &= config;break;
+
+case 3:
+IPR2 &= config;break;
+default:break;
+}
+
 }
 

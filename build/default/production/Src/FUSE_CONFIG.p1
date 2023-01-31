@@ -1,0 +1,57 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"4 Src/FUSE_CONFIG.c
+[p x OSC=HS ]
+"5
+[p x OSCS=OFF ]
+"8
+[p x PWRT=OFF ]
+"9
+[p x BOR=ON ]
+"10
+[p x BORV=20 ]
+"13
+[p x WDT=OFF ]
+"14
+[p x WDTPS=128 ]
+"17
+[p x CCP2MUX=ON ]
+"20
+[p x STVR=OFF ]
+"21
+[p x LVP=OFF ]
+"24
+[p x CP0=OFF ]
+"25
+[p x CP1=OFF ]
+"26
+[p x CP2=OFF ]
+"27
+[p x CP3=OFF ]
+"30
+[p x CPB=OFF ]
+"31
+[p x CPD=OFF ]
+"34
+[p x WRT0=OFF ]
+"35
+[p x WRT1=OFF ]
+"36
+[p x WRT2=OFF ]
+"37
+[p x WRT3=OFF ]
+"40
+[p x WRTC=OFF ]
+"41
+[p x WRTB=OFF ]
+"42
+[p x WRTD=OFF ]
+"45
+[p x EBTR0=OFF ]
+"46
+[p x EBTR1=OFF ]
+"47
+[p x EBTR2=OFF ]
+"48
+[p x EBTR3=OFF ]
+"51
+[p x EBTRB=OFF ]

@@ -5,8 +5,10 @@
         <group>
             <file>file:/C:/EmbeddedDevOps/M8M_APIs/PIC18.X/FUSE_CONFIG.c</file>
             <file>file:/C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/main.c</file>
-            <file>file:/C:/EmbeddedDevOps/M8M_APIs/PIC18.X/CDP/GPIO.h</file>
-            <file>file:/C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Common/PIC18Types.h</file>
+            <file>file:/C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Inc/Interrupts.h</file>
+            <file>file:/C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Inc/PIC18Types.h</file>
+            <file>file:/C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Interrupts.c</file>
+            <file>file:/C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Inc/GPIO.h</file>
         </group>
     </open-files>
 </project-private>

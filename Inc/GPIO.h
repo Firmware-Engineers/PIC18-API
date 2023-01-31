@@ -41,8 +41,10 @@
 extern "C" {
 #endif
 
-#include "../Common/PIC18Types.h"
-
+//-----------------------------------
+#include "../Inc/PIC18Types.h"
+//-----------------------------------
+    
 //-----------------------------------    
 /**
  * @brief   Configures a given I/O pin to output 
@@ -143,6 +145,24 @@ extern "C" {
  */    
 #define ReadPort(PORT)                      (uint8_t)(GPIO.Bytes[PORT + IO_PORT_OFFSET])
 //-----------------------------------        
+    
+//-----------------------------------    
+/**
+ * @brief   Enable PORTB pull-ups
+ * @param   none   
+ * @retval  none
+ */    
+#define RBPUEnable()                        (INTCON2 = INTCON2 & 0x7F)
+//-----------------------------------
+    
+//-----------------------------------    
+/**
+ * @brief   Disable PORTB pull-ups
+ * @param   none   
+ * @retval  none
+ */    
+#define RBPUDisable()                       (INTCON2 = INTCON2 | 0x80)
+//-----------------------------------    
     
 #ifdef	__cplusplus
 }

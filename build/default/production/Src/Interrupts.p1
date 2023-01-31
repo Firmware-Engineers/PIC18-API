@@ -1,13 +1,50 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"76 Src/../Inc/PIC18Types.h
-[s S234 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S234 . PA PB PC PD PE . LA LB LC LD LE . TA TB TC TD TE ]
-"75
-[u S233 `S234 1 `uc -> 23 `i ]
-[n S233 . . Bytes ]
-[p mainexit ]
-"5228 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f452.h
+"5305 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f452.h
+[v _INTCON `Vuc ~T0 @X0 0 e@4082 ]
+"5136
+[v _INTCON3 `Vuc ~T0 @X0 0 e@4080 ]
+"2260
+[v _PIE1 `Vuc ~T0 @X0 0 e@3997 ]
+"2491
+[v _PIE2 `Vuc ~T0 @X0 0 e@4000 ]
+"2337
+[v _PIR1 `Vuc ~T0 @X0 0 e@3998 ]
+"2535
+[v _PIR2 `Vuc ~T0 @X0 0 e@4001 ]
+"5228
 [v _INTCON2 `Vuc ~T0 @X0 0 e@4081 ]
+"2414
+[v _IPR1 `Vuc ~T0 @X0 0 e@3999 ]
+"2579
+[v _IPR2 `Vuc ~T0 @X0 0 e@4002 ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2344,91 +2381,382 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;PIC18Types.h: 75: typedef union{
-[; ;PIC18Types.h: 76: struct{
-[; ;PIC18Types.h: 78: uint8_t PA;
-[; ;PIC18Types.h: 79: uint8_t PB;
-[; ;PIC18Types.h: 80: uint8_t PC;
-[; ;PIC18Types.h: 81: uint8_t PD;
-[; ;PIC18Types.h: 82: uint8_t PE;
-[; ;PIC18Types.h: 84: uint32_t;
-[; ;PIC18Types.h: 86: uint8_t LA;
-[; ;PIC18Types.h: 87: uint8_t LB;
-[; ;PIC18Types.h: 88: uint8_t LC;
-[; ;PIC18Types.h: 89: uint8_t LD;
-[; ;PIC18Types.h: 90: uint8_t LE;
-[; ;PIC18Types.h: 92: uint32_t;
-[; ;PIC18Types.h: 94: uint8_t TA;
-[; ;PIC18Types.h: 95: uint8_t TB;
-[; ;PIC18Types.h: 96: uint8_t TC;
-[; ;PIC18Types.h: 97: uint8_t TD;
-[; ;PIC18Types.h: 98: uint8_t TE;
-[; ;PIC18Types.h: 99: };
-[; ;PIC18Types.h: 100: uint8_t Bytes[23];
-[; ;PIC18Types.h: 101: }IORegistersMapType;
-"104 Src/../Inc/PIC18Types.h
-[v _IO `VS233 ~T0 @X0 1 e@3968 ]
-[; ;PIC18Types.h: 104: volatile IORegistersMapType IO @0xF80;
 [; ;Interrupts.h: 332: extern void EnableInterrupt(const uint16_t cnst);
 [; ;Interrupts.h: 343: extern void DisableInterrupt(const uint16_t cnst);
 [; ;Interrupts.h: 357: extern uint16_t GetInterruptFlag(const uint16_t cnst);
 [; ;Interrupts.h: 370: extern void SetInterruptPriorityHigh(const uint16_t cnst);
 [; ;Interrupts.h: 381: extern void SetInterruptPriorityLow(const uint16_t cnst);
-[v $root$_main `(v ~T0 @X0 0 e ]
-"13 Src/main.c
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 13: void main(void) {
-[e :U _main ]
-[f ]
-[; ;main.c: 16: IO.Bytes[(uint8_t)0x00 + 18] &= ~(1 << 0x0);
-"16
-[e =& *U + &U . _IO 1 * -> -> + -> -> -> 0 `i `uc `i -> 18 `i `ui `ux -> -> # *U &U . _IO 1 `ui `ux -> ~ << -> 1 `i -> 0 `i `uc ]
-[; ;main.c: 19: (INTCON2 |= 0x40);
-"19
-[e =| _INTCON2 -> -> 64 `i `uc ]
-[; ;main.c: 20: while(1)
-"20
-[e :U 237 ]
-[; ;main.c: 21: {
+"20 Src/Interrupts.c
+[v _EnableInterrupt `(v ~T0 @X0 1 ef1`Cui ]
 "21
 {
-"24
-}
-[e :U 236 ]
+[; ;Interrupts.c: 20: void EnableInterrupt(const uint16_t cnst)
+[; ;Interrupts.c: 21: {
+[e :U _EnableInterrupt ]
 "20
-[e $U 237  ]
-[e :U 238 ]
-[; ;main.c: 24: }
-[; ;main.c: 25: }
+[v _cnst `Cui ~T0 @X0 1 r1 ]
+"21
+[f ]
+"22
+[v _var `uc ~T0 @X0 1 a ]
+[; ;Interrupts.c: 22: uint8_t var = (uint8_t)(cnst >> 8);
+[e = _var -> >> _cnst -> 8 `i `uc ]
+"23
+[v _config `uc ~T0 @X0 1 a ]
+[; ;Interrupts.c: 23: uint8_t config = (uint8_t)(cnst & 0xFF);
+[e = _config -> & _cnst -> -> 255 `i `ui `uc ]
+[; ;Interrupts.c: 25: switch(var)
 "25
-[e :UE 235 ]
+[e $U 235  ]
+[; ;Interrupts.c: 26: {
+"26
+{
+[; ;Interrupts.c: 27: case 0:
+"27
+[e :U 236 ]
+[; ;Interrupts.c: 28: INTCON |= config;break;
+"28
+[e =| _INTCON _config ]
+[e $U 234  ]
+[; ;Interrupts.c: 30: case 1:
+"30
+[e :U 237 ]
+[; ;Interrupts.c: 31: INTCON3 |= config;break;
+"31
+[e =| _INTCON3 _config ]
+[e $U 234  ]
+[; ;Interrupts.c: 33: case 2:
+"33
+[e :U 238 ]
+[; ;Interrupts.c: 34: PIE1 |= config;break;
+"34
+[e =| _PIE1 _config ]
+[e $U 234  ]
+[; ;Interrupts.c: 36: case 3:
+"36
+[e :U 239 ]
+[; ;Interrupts.c: 37: PIE2 |= config;break;
+"37
+[e =| _PIE2 _config ]
+[e $U 234  ]
+[; ;Interrupts.c: 38: default:break;
+"38
+[e :U 240 ]
+[e $U 234  ]
+"39
+}
+[; ;Interrupts.c: 39: }
+[e $U 234  ]
+"25
+[e :U 235 ]
+[e [\ _var , $ -> -> 0 `i `uc 236
+ , $ -> -> 1 `i `uc 237
+ , $ -> -> 2 `i `uc 238
+ , $ -> -> 3 `i `uc 239
+ 240 ]
+"39
+[e :U 234 ]
+[; ;Interrupts.c: 41: }
+"41
+[e :UE 233 ]
+}
+"44
+[v _DisableInterrupt `(v ~T0 @X0 1 ef1`Cui ]
+"45
+{
+[; ;Interrupts.c: 44: void DisableInterrupt(const uint16_t cnst)
+[; ;Interrupts.c: 45: {
+[e :U _DisableInterrupt ]
+"44
+[v _cnst `Cui ~T0 @X0 1 r1 ]
+"45
+[f ]
+"46
+[v _var `uc ~T0 @X0 1 a ]
+[; ;Interrupts.c: 46: uint8_t var = (uint8_t)(cnst >> 8);
+[e = _var -> >> _cnst -> 8 `i `uc ]
+"47
+[v _config `uc ~T0 @X0 1 a ]
+[; ;Interrupts.c: 47: uint8_t config = (uint8_t)(cnst & 0xFF);
+[e = _config -> & _cnst -> -> 255 `i `ui `uc ]
+[; ;Interrupts.c: 49: switch(var)
+"49
+[e $U 243  ]
+[; ;Interrupts.c: 50: {
+"50
+{
+[; ;Interrupts.c: 51: case 0:
+"51
+[e :U 244 ]
+[; ;Interrupts.c: 52: INTCON &= (uint8_t)(~config);break;
+"52
+[e =& _INTCON -> ~ -> _config `i `uc ]
+[e $U 242  ]
+[; ;Interrupts.c: 54: case 1:
+"54
+[e :U 245 ]
+[; ;Interrupts.c: 55: INTCON3 &= (uint8_t)(~config);break;
+"55
+[e =& _INTCON3 -> ~ -> _config `i `uc ]
+[e $U 242  ]
+[; ;Interrupts.c: 57: case 2:
+"57
+[e :U 246 ]
+[; ;Interrupts.c: 58: PIE1 &= (uint8_t)(~config);break;
+"58
+[e =& _PIE1 -> ~ -> _config `i `uc ]
+[e $U 242  ]
+[; ;Interrupts.c: 60: case 3:
+"60
+[e :U 247 ]
+[; ;Interrupts.c: 61: PIE2 &= (uint8_t)(~config);break;
+"61
+[e =& _PIE2 -> ~ -> _config `i `uc ]
+[e $U 242  ]
+[; ;Interrupts.c: 62: default:break;
+"62
+[e :U 248 ]
+[e $U 242  ]
+"63
+}
+[; ;Interrupts.c: 63: }
+[e $U 242  ]
+"49
+[e :U 243 ]
+[e [\ _var , $ -> -> 0 `i `uc 244
+ , $ -> -> 1 `i `uc 245
+ , $ -> -> 2 `i `uc 246
+ , $ -> -> 3 `i `uc 247
+ 248 ]
+"63
+[e :U 242 ]
+[; ;Interrupts.c: 65: }
+"65
+[e :UE 241 ]
+}
+"68
+[v _GetInterruptFlag `(ui ~T0 @X0 1 ef1`Cui ]
+"69
+{
+[; ;Interrupts.c: 68: uint16_t GetInterruptFlag(const uint16_t cnst)
+[; ;Interrupts.c: 69: {
+[e :U _GetInterruptFlag ]
+"68
+[v _cnst `Cui ~T0 @X0 1 r1 ]
+"69
+[f ]
+"70
+[v _var `uc ~T0 @X0 1 a ]
+[; ;Interrupts.c: 70: uint8_t var = (uint8_t)(cnst >> 8);
+[e = _var -> >> _cnst -> 8 `i `uc ]
+"71
+[v _state `uc ~T0 @X0 1 a ]
+[; ;Interrupts.c: 71: uint8_t state = (uint8_t)(cnst & 0xFF);
+[e = _state -> & _cnst -> -> 255 `i `ui `uc ]
+[; ;Interrupts.c: 73: switch(var)
+"73
+[e $U 251  ]
+[; ;Interrupts.c: 74: {
+"74
+{
+[; ;Interrupts.c: 75: case 0:
+"75
+[e :U 252 ]
+[; ;Interrupts.c: 76: state &= INTCON;break;
+"76
+[e =& _state _INTCON ]
+[e $U 250  ]
+[; ;Interrupts.c: 78: case 1:
+"78
+[e :U 253 ]
+[; ;Interrupts.c: 79: state &= INTCON3;break;
+"79
+[e =& _state _INTCON3 ]
+[e $U 250  ]
+[; ;Interrupts.c: 81: case 2:
+"81
+[e :U 254 ]
+[; ;Interrupts.c: 82: state &= PIR1;break;
+"82
+[e =& _state _PIR1 ]
+[e $U 250  ]
+[; ;Interrupts.c: 84: case 3:
+"84
+[e :U 255 ]
+[; ;Interrupts.c: 85: state &= PIR2;break;
+"85
+[e =& _state _PIR2 ]
+[e $U 250  ]
+[; ;Interrupts.c: 86: default:break;
+"86
+[e :U 256 ]
+[e $U 250  ]
+"87
+}
+[; ;Interrupts.c: 87: }
+[e $U 250  ]
+"73
+[e :U 251 ]
+[e [\ _var , $ -> -> 0 `i `uc 252
+ , $ -> -> 1 `i `uc 253
+ , $ -> -> 2 `i `uc 254
+ , $ -> -> 3 `i `uc 255
+ 256 ]
+"87
+[e :U 250 ]
+[; ;Interrupts.c: 89: return state;
+"89
+[e ) -> _state `ui ]
+[e $UE 249  ]
+[; ;Interrupts.c: 90: }
+"90
+[e :UE 249 ]
+}
+"93
+[v _SetInterruptPriorityHigh `(v ~T0 @X0 1 ef1`Cui ]
+"94
+{
+[; ;Interrupts.c: 93: void SetInterruptPriorityHigh(const uint16_t cnst)
+[; ;Interrupts.c: 94: {
+[e :U _SetInterruptPriorityHigh ]
+"93
+[v _cnst `Cui ~T0 @X0 1 r1 ]
+"94
+[f ]
+"95
+[v _var `uc ~T0 @X0 1 a ]
+[; ;Interrupts.c: 95: uint8_t var = (uint8_t)(cnst >> 8);
+[e = _var -> >> _cnst -> 8 `i `uc ]
+"96
+[v _config `uc ~T0 @X0 1 a ]
+[; ;Interrupts.c: 96: uint8_t config = (uint8_t)(cnst & 0xFF);
+[e = _config -> & _cnst -> -> 255 `i `ui `uc ]
+[; ;Interrupts.c: 98: switch(var)
+"98
+[e $U 259  ]
+[; ;Interrupts.c: 99: {
+"99
+{
+[; ;Interrupts.c: 100: case 0:
+"100
+[e :U 260 ]
+[; ;Interrupts.c: 101: INTCON2 |= config;break;
+"101
+[e =| _INTCON2 _config ]
+[e $U 258  ]
+[; ;Interrupts.c: 103: case 1:
+"103
+[e :U 261 ]
+[; ;Interrupts.c: 104: INTCON3 |= config;break;
+"104
+[e =| _INTCON3 _config ]
+[e $U 258  ]
+[; ;Interrupts.c: 106: case 2:
+"106
+[e :U 262 ]
+[; ;Interrupts.c: 107: IPR1 |= config;break;
+"107
+[e =| _IPR1 _config ]
+[e $U 258  ]
+[; ;Interrupts.c: 109: case 3:
+"109
+[e :U 263 ]
+[; ;Interrupts.c: 110: IPR2 |= config;break;
+"110
+[e =| _IPR2 _config ]
+[e $U 258  ]
+[; ;Interrupts.c: 111: default:break;
+"111
+[e :U 264 ]
+[e $U 258  ]
+"112
+}
+[; ;Interrupts.c: 112: }
+[e $U 258  ]
+"98
+[e :U 259 ]
+[e [\ _var , $ -> -> 0 `i `uc 260
+ , $ -> -> 1 `i `uc 261
+ , $ -> -> 2 `i `uc 262
+ , $ -> -> 3 `i `uc 263
+ 264 ]
+"112
+[e :U 258 ]
+[; ;Interrupts.c: 114: }
+"114
+[e :UE 257 ]
+}
+"117
+[v _SetInterruptPriorityLow `(v ~T0 @X0 1 ef1`Cui ]
+"118
+{
+[; ;Interrupts.c: 117: void SetInterruptPriorityLow(const uint16_t cnst)
+[; ;Interrupts.c: 118: {
+[e :U _SetInterruptPriorityLow ]
+"117
+[v _cnst `Cui ~T0 @X0 1 r1 ]
+"118
+[f ]
+"119
+[v _var `uc ~T0 @X0 1 a ]
+[; ;Interrupts.c: 119: uint8_t var = (uint8_t)(cnst >> 8);
+[e = _var -> >> _cnst -> 8 `i `uc ]
+"120
+[v _config `uc ~T0 @X0 1 a ]
+[; ;Interrupts.c: 120: uint8_t config = (uint8_t)(cnst & 0xFF);
+[e = _config -> & _cnst -> -> 255 `i `ui `uc ]
+[; ;Interrupts.c: 122: switch(var)
+"122
+[e $U 267  ]
+[; ;Interrupts.c: 123: {
+"123
+{
+[; ;Interrupts.c: 124: case 0:
+"124
+[e :U 268 ]
+[; ;Interrupts.c: 125: INTCON2 &= config;break;
+"125
+[e =& _INTCON2 _config ]
+[e $U 266  ]
+[; ;Interrupts.c: 127: case 1:
+"127
+[e :U 269 ]
+[; ;Interrupts.c: 128: INTCON3 &= config;break;
+"128
+[e =& _INTCON3 _config ]
+[e $U 266  ]
+[; ;Interrupts.c: 130: case 2:
+"130
+[e :U 270 ]
+[; ;Interrupts.c: 131: IPR1 &= config;break;
+"131
+[e =& _IPR1 _config ]
+[e $U 266  ]
+[; ;Interrupts.c: 133: case 3:
+"133
+[e :U 271 ]
+[; ;Interrupts.c: 134: IPR2 &= config;break;
+"134
+[e =& _IPR2 _config ]
+[e $U 266  ]
+[; ;Interrupts.c: 135: default:break;
+"135
+[e :U 272 ]
+[e $U 266  ]
+"136
+}
+[; ;Interrupts.c: 136: }
+[e $U 266  ]
+"122
+[e :U 267 ]
+[e [\ _var , $ -> -> 0 `i `uc 268
+ , $ -> -> 1 `i `uc 269
+ , $ -> -> 2 `i `uc 270
+ , $ -> -> 3 `i `uc 271
+ 272 ]
+"136
+[e :U 266 ]
+[; ;Interrupts.c: 138: }
+"138
+[e :UE 265 ]
 }

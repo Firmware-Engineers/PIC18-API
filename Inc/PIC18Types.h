@@ -33,8 +33,9 @@
 extern "C" {
 #endif
 
+//-----------------------------------    
 #include <stdint.h>
-
+//-----------------------------------
 
 /** @defgroup GPIO_TYPES 
  * General Purpose Input/Output Definitions
