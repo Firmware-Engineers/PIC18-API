@@ -72,8 +72,10 @@ extern "C" {
 /**
   * @brief  I/O registers memory map type
   */    
-typedef union{
-    struct{
+typedef union
+{
+    struct
+    {
         //---------        
         uint8_t PA;                                 //!< I/O PORTA register: address [@ref GPIO_BASE + @ref IO_PORT_OFFSET]
         uint8_t PB;                                 //!< I/O PORTB register: address [@ref GPIO_BASE + @ref IO_PORT_OFFSET + 1]
@@ -106,13 +108,27 @@ volatile IORegistersMapType IO              @GPIO_BASE;
 /** @} */
 
 
-/** @defgroup GENERIC_CONSTS 
+/** @defgroup GENERIC_TYPES 
   * @{
-  */    
+  */ 
+//---------
 #define TRUE                                1       //!<
-#define FALSE                               0       //< 
+#define FALSE                               0       //!< 
 #define INPUT                               1       //!< 
-#define OUTPUT                              0       //!<  
+#define OUTPUT                              0       //!<
+//---------
+
+/**
+ * @brief  API configuration type
+ * @brief This type is used for APIs configuration/initialization functions 
+ */
+typedef struct
+{
+    uint8_t grp1;                                   //!< Group 1 configuration constants
+    uint8_t grp2;                                   //!< Group 2 configuration constants
+    uint8_t grp3;                                   //!< Group 3 configuration constants
+    uint8_t grp4;                                   //!< Group 4 configuration constants
+}ConfigType;
 /**
   * @}
   */ 

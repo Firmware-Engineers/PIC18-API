@@ -16,56 +16,29 @@
 //-----------------------------------
 #include "../Inc/Interrupts.h"
 //-----------------------------------
-
-void EnableInterrupt(const uint16_t cnst)
+void InterruptEnable(ConfigType cfg)
 {
-    uint8_t var = (uint8_t)(cnst >> 8);             //!< Get the register code [0, 1, 2, 3]
-    uint8_t config = (uint8_t)(cnst & 0xFF);        //!< Get the setting value
     //---------
-    switch(var)
-    {
-        case 0:
-            INTCON |= config;break; 
-            
-        case 1:
-            INTCON3 |= config;break;
-        
-        case 2:
-            PIE1 |= config;break;
-            
-        case 3:
-            PIE2 |= config;break;
-        default:break;
-    }
+    INTCON |= cfg.grp1;
+    INTCON3 |= cfg.grp2;
+    PIE1 |= cfg.grp3;
+    PIE2 |= cfg.grp4;
     //---------
 }
 //-----------------------------------------
 
-void DisableInterrupt(const uint16_t cnst)
+void InterruptDisable(ConfigType cfg)
 {
-    uint8_t var = (uint8_t)(cnst >> 8);             //!< Get the register code [0, 1, 2, 3]
-    uint8_t config = (uint8_t)(cnst & 0xFF);        //!< Get the setting value
     //---------
-    switch(var)
-    {
-        case 0:
-            INTCON &= (uint8_t)(~config);break;
-            
-        case 1:
-            INTCON3 &= (uint8_t)(~config);break;
-        
-        case 2:
-            PIE1 &= (uint8_t)(~config);break;
-            
-        case 3:
-            PIE2 &= (uint8_t)(~config);break;
-        default:break;
-    }
-    //---------    
+    INTCON &= (uint8_t)(~cfg.grp1);
+    INTCON3 &= (uint8_t)(~cfg.grp2);
+    PIE1 &= (uint8_t)(~cfg.grp3);
+    PIE2 &= (uint8_t)(~cfg.grp4);
+    //---------   
 }
 //-----------------------------------------
 
-uint16_t GetInterruptFlag(const uint16_t cnst)
+uint16_t InterruptGetFlag(uint16_t cnst)
 {
     uint8_t var = (uint8_t)(cnst >> 8);             //!< Get the register code [0, 1, 2, 3]
     uint8_t state = (uint8_t)(cnst & 0xFF);         //!< Get the setting value
@@ -90,50 +63,24 @@ return state;
 }
 //-----------------------------------------
 
-void SetInterruptPriorityHigh(const uint16_t cnst)
+void InterruptSetPriorityHigh(ConfigType cfg)
 {
-    uint8_t var = (uint8_t)(cnst >> 8);             //!< Get the register code [0, 1, 2, 3]
-    uint8_t config = (uint8_t)(cnst & 0xFF);        //!< Get the setting value
     //---------
-    switch(var)
-    {
-        case 0:
-            INTCON2 |= config;break; 
-            
-        case 1:
-            INTCON3 |= config;break;
-        
-        case 2:
-            IPR1 |= config;break;
-            
-        case 3:
-            IPR2 |= config;break;
-        default:break;
-    }
-    //---------    
+    INTCON2 |= cfg.grp1;
+    INTCON3 |= cfg.grp2;
+    IPR1 |= cfg.grp3;
+    IPR2 |= cfg.grp4;
+    //---------   
 }
 //-----------------------------------------
 
-void SetInterruptPriorityLow(const uint16_t cnst)
+void InterruptSetPriorityLow(ConfigType cfg)
 {
-    uint8_t var = (uint8_t)(cnst >> 8);             //!< Get the register code [0, 1, 2, 3]
-    uint8_t config = (uint8_t)(cnst & 0xFF);        //!< Get the setting value
     //---------
-    switch(var)
-    {
-        case 0:
-            INTCON2 &= config;break; 
-            
-        case 1:
-            INTCON3 &= config;break;
-        
-        case 2:
-            IPR1 &= config;break;
-            
-        case 3:
-            IPR2 &= config;break;
-        default:break;
-    }
+    INTCON2 &= (uint8_t)(~cfg.grp1);
+    INTCON3 &= (uint8_t)(~cfg.grp2);
+    IPR1 &= (uint8_t)(~cfg.grp3);
+    IPR2 &= (uint8_t)(~cfg.grp4);
     //---------     
 }
 //-----------------------------------------

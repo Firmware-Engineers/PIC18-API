@@ -20,6 +20,7 @@
 //-----------------------------------
 #include "../Inc/Interrupts.h"
 #include "../Inc/GPIO.h"
+#include "../Inc/SystemTime.h"
 //-----------------------------------
 
 #if defined(USE_HIGH_LOW_ISR)
@@ -61,10 +62,7 @@ void low_priority interrupt LowIsr(void)
  */
 void interrupt Isr(void)
 {
-    if(GetInterruptFlag(INT0_INT_FLAG) == INT0_INT_FLAG)
-    {
-        SetPin(GPIOA, _PORTA_RA0_POSN);
-    }
+    SysTimeCallBack();
 }
 //-----------------------------------
 

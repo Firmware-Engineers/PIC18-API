@@ -32,9 +32,9 @@
 extern "C" {
 #endif
 
-//-----------------------------------
-#include <stdint.h>    
-#include <xc.h>    
+//-----------------------------------  
+#include <xc.h> 
+#include "PIC18Types.h"
 //-----------------------------------
 
 /** @defgroup INTERRUPT_PRIORITY_CONFIG Enable high/low priority ISRs
@@ -71,8 +71,8 @@ extern "C" {
  * @{
  * 
  */          
-#define INT1_INT_ENABLE                             0x0180              //!< Enable/disable external interrupt 1   
-#define INT2_INT_ENABLE                             0x0101              //!< Enable/disable external interrupt 2
+#define INT1_INT_ENABLE                             0x80                //!< Enable/disable external interrupt 1   
+#define INT2_INT_ENABLE                             0x01                //!< Enable/disable external interrupt 2
 /**
   * @}
   */ 
@@ -81,14 +81,14 @@ extern "C" {
  * @{
  * 
  */          
-#define PSP_RW_INT_ENABLE                           0x0280              //!< Enable/disable Paralel Slave Port Read/Write interrupt   
-#define ADC_INT_ENABLE                              0x0240              //!< Enable/disable Analog/Digital converter interrupts
-#define USART_RX_INT_ENABLE                         0x0220              //!< Enable/disable USART receive interrupt
-#define UART_TX_INT_ENABLE                          0x0210              //!< Enable/disable USART transmit interrupt 
-#define MSSP_INT_ENABLE                             0x0208              //!< Enable/disable Master Synchronous Serial Port (MSSP) interrupt
-#define CCP1_INT_ENABLE                             0x0204              //!< Enable/disable Capture/Compare/PWM 1 (CCP1) interrupt
-#define TMR2_PR2_INT_ENABLE                         0x0202              //!< Enable/disable Timer 2 tà PR2 match interrupt
-#define TMR1_OVF_INT_ENABLE                         0x0201              //!< Enable/disable Timer 1 overflow interrupt
+#define PSP_RW_INT_ENABLE                           0x80                //!< Enable/disable Paralel Slave Port Read/Write interrupt   
+#define ADC_INT_ENABLE                              0x40                //!< Enable/disable Analog/Digital converter interrupts
+#define USART_RX_INT_ENABLE                         0x20                //!< Enable/disable USART receive interrupt
+#define UART_TX_INT_ENABLE                          0x10                //!< Enable/disable USART transmit interrupt 
+#define MSSP_INT_ENABLE                             0x08                //!< Enable/disable Master Synchronous Serial Port (MSSP) interrupt
+#define CCP1_INT_ENABLE                             0x04                //!< Enable/disable Capture/Compare/PWM 1 (CCP1) interrupt
+#define TMR2_PR2_INT_ENABLE                         0x02                //!< Enable/disable Timer 2 tà PR2 match interrupt
+#define TMR1_OVF_INT_ENABLE                         0x01                //!< Enable/disable Timer 1 overflow interrupt
 /**
   * @}
   */
@@ -97,11 +97,11 @@ extern "C" {
  * @{
  * 
  */          
-#define EE_FLASH_WRITE_INT_ENABLE                   0x0301              //!< Enable/disable Data EEPROM/FLASH Write Operation Interrupt  
-#define BCL_INT_ENABLE                              0x0308              //!< Enable/disable Bus Collision Interrupt
-#define LVD_INT_ENABLE                              0x0304              //!< Enable/disable Low Voltage Detect Interrupt
-#define TMR3_INT_ENABLE                             0x0302              //!< Enable/disable Timer 3 overflow interrupt 
-#define CCP2_INT_ENABLE                             0x0301              //!< Enable/disable Capture Compare PWM 2 (CCP2) interrupt
+#define EE_FLASH_WRITE_INT_ENABLE                   0x01                //!< Enable/disable Data EEPROM/FLASH Write Operation Interrupt  
+#define BCL_INT_ENABLE                              0x08                //!< Enable/disable Bus Collision Interrupt
+#define LVD_INT_ENABLE                              0x04                //!< Enable/disable Low Voltage Detect Interrupt
+#define TMR3_INT_ENABLE                             0x02                //!< Enable/disable Timer 3 overflow interrupt 
+#define CCP2_INT_ENABLE                             0x01                //!< Enable/disable Capture Compare PWM 2 (CCP2) interrupt
 /**
   * @}
   */    
@@ -131,8 +131,8 @@ extern "C" {
  * @{
  * @brief These constants could be used as arguments for the GetInterruptFlag() function
  */     
-#define INT1_INT_FLAG                               0x0102              //!< External interrupt 1 flag
-#define INT2_INT_FLAG                               0x0101              //!< External interrupt 2 flag     
+#define INT1_INT_FLAG                               0x0102          //!< External interrupt 1 flag
+#define INT2_INT_FLAG                               0x0101          //!< External interrupt 2 flag     
 /**
   * @}
   */     
@@ -141,14 +141,14 @@ extern "C" {
  * @{
  * @brief These constants could be used as arguments for the GetInterruptFlag() function
  */     
-#define PSP_RW_INT_FLAG                             0x0280              //!< Paralel Slave Port FLAG   
-#define ADC_INT_FLAG                                0x0240              //!< Analog/Digital Converter FLAG
-#define USART_RX_INT_FLAG                           0x0220              //!< USART receive interrupt flag
-#define UART_TX_INT_FLAG                            0x0201              //!< USART transmit interrupt flag
-#define MSSP_INT_FLAG                               0x0208              //!< Master Synchronous Serial Port interrupt flag
-#define CCP1_INT_FLAG                               0x0204              //!< Capture/Compare/PWM 1 interrupt flag
-#define TMR2_PR2_INT_FLAG                           0x0202              //!< Timer 2 to PR2 match interrupt flag
-#define TMR1_OVF_INT_FLAG                           0x0201              //!< Timr 1 overflow interrupt flag    
+#define PSP_RW_INT_FLAG                             0x0280          //!< Paralel Slave Port FLAG   
+#define ADC_INT_FLAG                                0x0240          //!< Analog/Digital Converter FLAG
+#define USART_RX_INT_FLAG                           0x0220          //!< USART receive interrupt flag
+#define UART_TX_INT_FLAG                            0x0201          //!< USART transmit interrupt flag
+#define MSSP_INT_FLAG                               0x0208          //!< Master Synchronous Serial Port interrupt flag
+#define CCP1_INT_FLAG                               0x0204          //!< Capture/Compare/PWM 1 interrupt flag
+#define TMR2_PR2_INT_FLAG                           0x0202          //!< Timer 2 to PR2 match interrupt flag
+#define TMR1_OVF_INT_FLAG                           0x0201          //!< Timr 1 overflow interrupt flag    
 /**
   * @}
   */ 
@@ -157,11 +157,11 @@ extern "C" {
  * @{
  * @brief These constants could be used as arguments for the GetInterruptFlag() function
  */     
-#define EE_FLASH_WRITE_INT_FLAG                     0x0310              //!< EEPROM/FLASH Write interrupt flag  
-#define BCL_INT_FLAG                                0x0308              //!< Bus Collision Interrupt flag
-#define LVD_INT_FLAG                                0x0304              //!< Low Voltage Detect Interrupt flag
-#define TMR3_INT_FLAG                               0x0302              //!< Timer 3 overflow interrupt  flag
-#define CCP2_INT_FLAG                               0x0301              //!< Capture Compare PWM 2 interrupt flag  
+#define EE_FLASH_WRITE_INT_FLAG                     0x0310          //!< EEPROM/FLASH Write interrupt flag  
+#define BCL_INT_FLAG                                0x0308          //!< Bus Collision Interrupt flag
+#define LVD_INT_FLAG                                0x0304          //!< Low Voltage Detect Interrupt flag
+#define TMR3_INT_FLAG                               0x0302          //!< Timer 3 overflow interrupt  flag
+#define CCP2_INT_FLAG                               0x0301          //!< Capture Compare PWM 2 interrupt flag  
 /**
   * @}
   */     
@@ -201,8 +201,8 @@ extern "C" {
  * @{
  * 
  */     
-#define INT1_INT_PRIORITY                           0x0140              //!< INT1 interrupt priority 
-#define INT2_INT_PRIORITY                           0x0180              //!< INT1 interrupt priority
+#define INT1_INT_PRIORITY                           0x40                //!< INT1 interrupt priority 
+#define INT2_INT_PRIORITY                           0x80                //!< INT1 interrupt priority
 /**
   * @}
   */
@@ -211,14 +211,14 @@ extern "C" {
  * @{
  * 
  */     
-#define PSP_INT_PRIORITY                            0x0280              //!< Paralel Slave Port interrupt priority 
-#define ADC_INT_PRIORITY                            0x0240              //!< Analog/Digital Converter interrupt priority
-#define USART_RX_INT_PRIORITY                       0x0220              //!< USART Receive interrupt priority
-#define USART_TX_INT_PRIORITY                       0x0210              //!< USART Transmit interrupt priority
-#define MSSP_INT_PRIORITY                           0x0208              //!< Master Synchronous Serial Port interrupt priority
-#define CCP1_INT_PRIORITY                           0x0204              //!< Capture/Compare/PWM 1 (CCP1) interrupt priority
-#define TMR2_INT_PRIORITY                           0x0202              //!< Timer 2 to PR2 match interrupt priority
-#define TMR1_INT_PRIORITY                           0x0201              //!< Timer 1 overflow interrupt priority    
+#define PSP_INT_PRIORITY                            0x80                //!< Paralel Slave Port interrupt priority 
+#define ADC_INT_PRIORITY                            0x40                //!< Analog/Digital Converter interrupt priority
+#define USART_RX_INT_PRIORITY                       0x20                //!< USART Receive interrupt priority
+#define USART_TX_INT_PRIORITY                       0x10                //!< USART Transmit interrupt priority
+#define MSSP_INT_PRIORITY                           0x08                //!< Master Synchronous Serial Port interrupt priority
+#define CCP1_INT_PRIORITY                           0x04                //!< Capture/Compare/PWM 1 (CCP1) interrupt priority
+#define TMR2_INT_PRIORITY                           0x02                //!< Timer 2 to PR2 match interrupt priority
+#define TMR1_INT_PRIORITY                           0x01                //!< Timer 1 overflow interrupt priority    
 /**
   * @}
   */ 
@@ -227,11 +227,11 @@ extern "C" {
  * @{
  * 
  */     
-#define EE_FLASH_INT_PRIORITY                       0x0310              //!< EEPROM/FLASH write interrupt priority 
-#define BCL_INT_PRIORITY                            0x0308              //!< Bus Collision interrupt priority
-#define LVD_INT_PRIORITY                            0x0304              //!< Low Voltage Detect interrupt priority
-#define TMR3_INT_PRIORITY                           0x0302              //!< Timer 3 overflow interrupt priority
-#define CCP2_INT_PRIORITY                           0x0201              //!< Capture/Compare/PWM 2 (CCP2) interrupt priority   
+#define EE_FLASH_INT_PRIORITY                       0x10                //!< EEPROM/FLASH write interrupt priority 
+#define BCL_INT_PRIORITY                            0x08                //!< Bus Collision interrupt priority
+#define LVD_INT_PRIORITY                            0x04                //!< Low Voltage Detect interrupt priority
+#define TMR3_INT_PRIORITY                           0x02                //!< Timer 3 overflow interrupt priority
+#define CCP2_INT_PRIORITY                           0x01                //!< Capture/Compare/PWM 2 (CCP2) interrupt priority   
 /**
   * @}
   */     
@@ -306,7 +306,7 @@ extern "C" {
  *          - Example1: SetINTxEdgeRising(INT0_INT_EDGE | INT1_INT_EDGE); // Will set external interrupt edge for inputs 0 and 1 to rising. 
  *          - Example2: SetINTxEdgeRising(INT0_INT_EDGE); // Will set external interrupt edge for input 0 to rising.
  */    
-#define SetINTxEdgeRising(cnst)                     (INTCON2 |= cnst)
+#define INTxSetEdgeRising(cnst)                     (INTCON2 |= cnst)
 //-----------------------------------
 
 //-----------------------------------    
@@ -318,29 +318,61 @@ extern "C" {
  *          - Example1: SetINTxEdgeFalling(INT0_INT_EDGE | INT1_INT_EDGE); // Will set external interrupt edge for inputs 0 and 1 to falling. 
  *          - Example2: SetINTxEdgeFalling(INT0_INT_EDGE); // Will set external interrupt edge for input 0 to falling.
  */    
-#define SetINTxEdgeFalling(cnst)                    INTCON2 &= (uint8_t)(~cnst)
+#define INTxSetEdgeFalling(cnst)                    INTCON2 &= (uint8_t)(~cnst)
 //-----------------------------------
     
 //-----------------------------------    
 /**
  * @brief   Enable specified interrupts
- * @param   One or more of @ref INTERRUPT_EN_DIS_CONSTANTS   
+ * @param   cfg ConfigType variable that contains the group configuration settings, where each group field can only hold group constants of the same number. See usage below.   
  * @retval  none
- * @note    Only constants of the same group can be ORed together. See example below.
- * @note    Example: EnableInterrupt(MCU_INT_ENABLE | PERIPHERAL_INT_ENABLE); // Will enable two interrupt settings from group 1 (@ref INTERRUPT_EN_DIS_CONSTANTS_GROUP1).  
+ * @note    Usage:
+ @verbatim void main(void)
+            {
+            ...
+            ConfigType cfg;
+            cfg.grp1 = MCU_INT_ENABLE | INT0_INT_ENABLE;                    // Enables interrupts using setting from INTERRUPT_EN_DIS_CONSTANTS_GROUP1
+            cfg.grp2 = INT1_INT_ENABLE | INT2_INT_ENABLE;                   // Enables interrupts using setting from INTERRUPT_EN_DIS_CONSTANTS_GROUP2
+            cfg.grp3 = 0;                                                   // No changes
+            cfg.grp4 = EE_FLASH_WRITE_INT_ENABLE | BCL_INT_ENABLE;          // Enables interrupts using setting from INTERRUPT_EN_DIS_CONSTANTS_GROUP4
+            InterruptEnable(cfg);
+            ...
+            while(1)
+            {
+            ...
+            }
+            }
+ @endverbatim
+ * @note See @ref INTERRUPT_EN_DIS_CONSTANTS. 
  */    
-extern void EnableInterrupt(const uint16_t cnst);
+extern void InterruptEnable(ConfigType cfg);
 //----------------------------------- 
 
 //-----------------------------------    
 /**
  * @brief   Disable specified interrupts
- * @param   One or more of @ref INTERRUPT_EN_DIS_CONSTANTS   
+ * @param   cfg ConfigType variable that contains the group configuration settings, where each group field can only hold group constants of the same number. See usage below.   
  * @retval  none
- * @note    Only constants of the same group number can be ORed together. See example below.
- * @note    Example: DisableInterrupt(MCU_INT_ENABLE | PERIPHERAL_INT_ENABLE); // Will disable two interrupt settings from group 1 (@ref INTERRUPT_EN_DIS_CONSTANTS_GROUP1). 
+ * @note    Usage:
+ @verbatim void main(void)
+            {
+            ...
+            ConfigType cfg;
+            cfg.grp1 = MCU_INT_ENABLE | INT0_INT_ENABLE;                    // Disables interrupts using setting from INTERRUPT_EN_DIS_CONSTANTS_GROUP1
+            cfg.grp2 = INT1_INT_ENABLE | INT2_INT_ENABLE;                   // Disables interrupts using setting from INTERRUPT_EN_DIS_CONSTANTS_GROUP2
+            cfg.grp3 = 0;                                                   // No changes
+            cfg.grp4 = EE_FLASH_WRITE_INT_ENABLE | BCL_INT_ENABLE;          // Disables interrupts using setting from INTERRUPT_EN_DIS_CONSTANTS_GROUP4
+            InterruptDisable(cfg);
+            ...
+            while(1)
+            {
+            ...
+            }
+            }
+ @endverbatim
+ * @note See @ref INTERRUPT_EN_DIS_CONSTANTS. 
  */    
-extern void DisableInterrupt(const uint16_t cnst);
+extern void InterruptDisable(ConfigType cfg);
 //----------------------------------- 
 
 //-----------------------------------    
@@ -349,12 +381,28 @@ extern void DisableInterrupt(const uint16_t cnst);
  * @param   One or more of @ref INTERRUPT_FLAG_CONSTANTS   
  * @retval  State, can be one or more of @ref INTERRUPT_FLAG_CONSTANTS
  * @note    Only constants of the same group number can be ORed together. See example below.
- * @note    
- *          - Example1: if(GetInterruptFlag(TMR0_OVF_INT_FLAG | INT0_INT_FLAG) == TMR0_OVF_INT_FLAG | INT0_INT_FLAG) // Do something;
- *          - Example2: if(GetInterruptFlag(TMR0_OVF_INT_FLAG) == TMR0_OVF_INT_FLAG) // Do something;
- *          - Example3: if((GetInterruptFlag(TMR0_OVF_INT_FLAG) == TMR0_OVF_INT_FLAG) != 0) // Do something;
+ * @note    Usage:
+   @verbatim    if(InterruptGetFlag(TMR0_OVF_INT_FLAG | INT0_INT_FLAG) == TMR0_OVF_INT_FLAG | INT0_INT_FLAG)
+                {
+                    // Do something;
+                } 
+                        ...
+ 
+                if(InterruptGetFlag(TMR0_OVF_INT_FLAG) == TMR0_OVF_INT_FLAG)
+                {
+                    // Do something;
+                } 
+
+                        ...
+ 
+                if((InterruptGetFlag(TMR0_OVF_INT_FLAG) == TMR0_OVF_INT_FLAG) != 0)
+                {
+                    // Do something; 
+                }
+   @endverbatim
+ *  
  */    
-extern uint16_t GetInterruptFlag(const uint16_t cnst);
+extern uint16_t InterruptGetFlag(uint16_t cnst);
 //----------------------------------- 
 
 //-----------------------------------    
@@ -362,23 +410,55 @@ extern uint16_t GetInterruptFlag(const uint16_t cnst);
 //-----------------------------------    
 /**
  * @brief   Set specified interrupt priorities to high
- * @param   One or more of @ref INTERRUPT_PRIORITY_CONSTANTS   
+ * @param   cfg ConfigType variable that contains the group configuration settings, where each group field can only hold group constants of the same number. See usage below.   
  * @retval  none
- * @note    Only constants of the same group can be ORed together. See example below.
- * @note    Example: SetInterruptPriorityHigh(TMRO_INT_PRIORITY | PORTB_CHANGEZ_INT_PRIORITY); // Will set set two priority settings from group 1 to high (@ref INTERRUPT_EN_DIS_CONSTANTS_GROUP1).  
+ * @note    Usage:
+ @verbatim void main(void)
+            {
+            ...
+            ConfigType cfg;
+            cfg.grp1 = TMRO_INT_PRIORITY | PORTB_CHANGEZ_INT_PRIORITY;      // Set interrupts priority using setting from INTERRUPT_PRIORITY_CONSTANTS_GROUP1
+            cfg.grp2 = INT1_INT_PRIORITY | INT2_INT_PRIORITY;               // Set interrupts priority using setting from INTERRUPT_PRIORITY_CONSTANTS_GROUP2
+            cfg.grp3 = 0;                                                   // No changes 
+            cfg.grp4 = EE_FLASH_INT_PRIORITY | BCL_INT_PRIORITY;            // Set interrupts priority using setting from INTERRUPT_PRIORITY_CONSTANTS_GROUP4
+            InterruptSetPriorityHigh(cfg);
+            ...
+            while(1)
+            {
+            ...
+            }
+            }
+ @endverbatim
+ * @note See @ref INTERRUPT_PRIORITY_CONSTANTS. 
  */    
-extern void SetInterruptPriorityHigh(const uint16_t cnst);
+extern void InterruptSetPriorityHigh(ConfigType cfg);
 //----------------------------------- 
 
 //-----------------------------------    
 /**
  * @brief   Set specified interrupt priorities to low
- * @param   One or more of @ref INTERRUPT_PRIORITY_CONSTANTS   
+ * @param   cfg ConfigType variable that contains the group configuration settings, where each group field can only hold group constants of the same number. See usage below.   
  * @retval  none
- * @note    Only constants of the same group number can be ORed together. See example below.
- * @note    Example: SetInterruptPriorityHigh(MCU_INT_ENABLE | PERIPHERAL_INT_ENABLE); // Will set two priority settings from group 1 to high (@ref INTERRUPT_EN_DIS_CONSTANTS_GROUP1). 
+ * @note    Usage:
+ @verbatim void main(void)
+            {
+            ...
+            ConfigType cfg;
+            cfg.grp1 = TMRO_INT_PRIORITY | PORTB_CHANGEZ_INT_PRIORITY;      // Set interrupts priority using setting from INTERRUPT_PRIORITY_CONSTANTS_GROUP1
+            cfg.grp2 = INT1_INT_PRIORITY | INT2_INT_PRIORITY;               // Set interrupts priority using setting from INTERRUPT_PRIORITY_CONSTANTS_GROUP2
+            cfg.grp3 = 0;                                                   // No changes 
+            cfg.grp4 = EE_FLASH_INT_PRIORITY | BCL_INT_PRIORITY;            // Set interrupts priority using setting from INTERRUPT_PRIORITY_CONSTANTS_GROUP4
+            InterruptSetPriorityLow(cfg);
+            ...
+            while(1)
+            {
+            ...
+            }
+            }
+ @endverbatim
+ * @note See @ref INTERRUPT_PRIORITY_CONSTANTS. 
  */    
-extern void SetInterruptPriorityLow(const uint16_t cnst);
+extern void InterruptSetPriorityLow(ConfigType cfg);
 //----------------------------------- 
 
 #ifdef	__cplusplus

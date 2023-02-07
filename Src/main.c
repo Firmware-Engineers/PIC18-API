@@ -9,17 +9,26 @@
 #include "../Inc/PIC18Types.h"
 #include "../Inc/GPIO.h"
 #include "../Inc/Interrupts.h"
+#include "../Inc/SystemTime.h"
+#include "../Inc/USART.h"
 
 void main(void) {
+    SystimeInit();
+    GPIOSetOutput(GPIOA, _PORTA_RA0_POSN);
+    GPIOClearPin (GPIOA, _PORTA_RA0_POSN);
+    ConfigType cfg;
+    cfg.grp1 = USART_TX_ENABLE | USART_MODE_ASYNC | USART_BR_SPEED_HIGH;
+    cfg.grp2 = USART_ENABLE | USART_RX_ENABLE;
+    //USARTAsyncInit(25);
+    USARTInit(cfg);
+    //USARTSetBGR(25);
+    USARTSetBaudRate(9600);
+    USARTPrint("Initialization...");
     
-    //SetPin(GPIOA, _PORTA_RA1_POSN);
-    SetOutput(GPIOA, _PORTA_RA0_POSN);
-    //SetPort (GPIOA, OUTPUT); 
-    //EnableInterrupt(MCU_INT_ENABLE | INT0_INT_ENABLE);
-    SetINTxEdgeRising(INT0_INT_EDGE);
     while(1)
     {
-        
+        GPIOTogglePin(GPIOA, _PORTA_RA0_POSN);
+        Wait_ms(500);
         
     }
 }

@@ -12,13 +12,13 @@ Note:
 ```
 This API is being developed using:
 - MPLAB X IDE V5.30
-- XC8 V1.45
+- XC8 V1.45, V2.36
 ```
 
 # Usage
 This software can be included in any project that uses the PIC18 controller. 
 Just include in the source file the header (.h) file corresponding to the peripheral or library to use, as well
-as all the associated dependencies. 
+as all the associated dependencies (Including library files). 
 All the codes are self documenting and all information required to used the software is specified within.
 To use the external interrupt input 0 (INT0) for example to generate an interrupt at every RISING edge, here's the source code:
 
@@ -57,7 +57,7 @@ void interrupt Isr(void)
 
 # Team
 
-This file is currently being developed by #Maxime-Florant at #Firmware-Engineers. Contributions,
-recommendations and feedbacks are more than welcome.
+This file is currently being developed by the #Firmware-Engineers team. Contributions,
+recommendations and any sort of feedback are more than welcome.
 
 # License

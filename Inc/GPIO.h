@@ -51,10 +51,10 @@ extern "C" {
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
  * @param   PIN: The pin to configure on the given I/O port (see pic18fxxx.h file)
  * @retval  None
- * @note    Example: SetOutput(GPIOA, _PORTA_RA0_POSN);     // Will set PORTA, bit 0 as output.
+ * @note    Example: GPIOSetOutput(GPIOA, _PORTA_RA0_POSN);     // Will set PORTA, bit 0 as output.
  *          
  */     
-#define SetOutput(PORT, PIN)                GPIO.Bytes[(uint8_t)PORT + IO_TRIS_OFFSET] &= ~(1 << PIN)
+#define GPIOSetOutput(PORT, PIN)                GPIO.Bytes[(uint8_t)PORT + IO_TRIS_OFFSET] &= ~(1 << PIN)
 //-----------------------------------
 
 //-----------------------------------
@@ -63,9 +63,9 @@ extern "C" {
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
  * @param   PIN: The pin to configure on the given I/O port (see pic18fxxx.h file)
  * @retval  None
- * @note    Example: SetInput(GPIOA, _PORTA_RA0_POSN);      // Will set PORTA, bit 0 as input.
+ * @note    Example: GPIOSetInput(GPIOA, _PORTA_RA0_POSN);      // Will set PORTA, bit 0 as input.
  */     
-#define SetInput(PORT, PIN)                 (GPIO.Bytes[PORT + IO_TRIS_OFFSET] |= (1 << PIN))
+#define GPIOSetInput(PORT, PIN)                 (GPIO.Bytes[PORT + IO_TRIS_OFFSET] |= (1 << PIN))
 //-----------------------------------
 
 //-----------------------------------    
@@ -76,9 +76,9 @@ extern "C" {
  * @retval  None
  * @note    The DIR parameter is a 8 bit value, with '1' and '0' configuring the specified PORT
  *          as respectively "INPUT" and "OUTPUT"
- * @note    Example: SetPort(GPIOA, 0x03);                  // Will set bits 0 and 1 as input, bits 2 to 7 as output on PORTA. 
+ * @note    Example: GPIOSetPort(GPIOA, 0x03);                  // Will set bits 0 and 1 as input, bits 2 to 7 as output on PORTA. 
  */    
-#define SetPort(PORT, DIR)                   GPIO.Bytes[PORT + IO_TRIS_OFFSET] = DIR
+#define GPIOSetPort(PORT, DIR)                   GPIO.Bytes[PORT + IO_TRIS_OFFSET] = DIR
 //-----------------------------------
     
 //-----------------------------------    
@@ -87,9 +87,9 @@ extern "C" {
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
  * @param   PIN: The pin to set on the given I/O port (see pic18fxxx.h file)
  * @retval  None
- * @note    Example: SetPin(GPIOA, _PORTA_RA0_POSN);        // Will set PORTA, bit 0 to '1'.
+ * @note    Example: GPIOSetPin(GPIOA, _PORTA_RA0_POSN);        // Will set PORTA, bit 0 to '1'.
  */     
-#define SetPin(PORT, PIN)                   GPIO.Bytes[PORT + IO_LATCH_OFFSET] |= (1 << PIN)
+#define GPIOSetPin(PORT, PIN)                   GPIO.Bytes[PORT + IO_LATCH_OFFSET] |= (1 << PIN)
 //-----------------------------------   
 
 //-----------------------------------    
@@ -98,9 +98,9 @@ extern "C" {
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
  * @param   PIN: The pin to clear on the given I/O port (see pic18fxxx.h file)
  * @retval  None
- * @note    Example: ClearPin(GPIOA, _PORTA_RA0_POSN);      // Will set PORTA, bit 0 to '0'.
+ * @note    Example: GPIOClearPin(GPIOA, _PORTA_RA0_POSN);      // Will set PORTA, bit 0 to '0'.
  */    
-#define ClearPin(PORT, PIN)                 GPIO.Bytes[PORT + IO_LATCH_OFFSET] &= (~(1 << PIN))
+#define GPIOClearPin(PORT, PIN)                 GPIO.Bytes[PORT + IO_LATCH_OFFSET] &= (~(1 << PIN))
 //-----------------------------------
 
 //----------------------------------- 
@@ -109,9 +109,9 @@ extern "C" {
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
  * @param   PIN: The pin to toggle on the given I/O port (see pic18fxxx.h file)
  * @retval  None
- * @note    Example: TogglePin(GPIOA, _PORTA_RA0_POSN);     // Will toggle PORTA, bit 0 state.
+ * @note    Example: GPIOTogglePin(GPIOA, _PORTA_RA0_POSN);     // Will toggle PORTA, bit 0 state.
  */     
-#define TogglePin(PORT,PIN)                 GPIO.Bytes[PORT + IO_LATCH_OFFSET] ^= (1 << PIN)   
+#define GPIOTogglePin(PORT,PIN)                 GPIO.Bytes[PORT + IO_LATCH_OFFSET] ^= (1 << PIN)   
 //-----------------------------------
 
 //-----------------------------------
@@ -122,7 +122,7 @@ extern "C" {
  * @retval  0 or 1 
  * @note    Example: uint8_t state = GetPin(GPIOA, _PORTA_RA0_POSN);
  */    
-#define GetPin(PORT,PIN)                    (uint8_t)((GPIO.Bytes[PORT + IO_PORT_OFFSET] >> PIN) & 0x01)
+#define GPIOGetPin(PORT,PIN)                    (uint8_t)((GPIO.Bytes[PORT + IO_PORT_OFFSET] >> PIN) & 0x01)
 //-----------------------------------
     
 //-----------------------------------    
@@ -133,7 +133,7 @@ extern "C" {
  * @retval  None
  * @note    Example: WritePort(GPIOA, 0);                   // Will write the value 0 to PORTA 
  */    
-#define WritePort(PORT, VALUE)              GPIO.Bytes[PORT + IO_LATCH_OFFSET] = VALUE
+#define GPIOWritePort(PORT, VALUE)              GPIO.Bytes[PORT + IO_LATCH_OFFSET] = VALUE
 //-----------------------------------
     
 //-----------------------------------    
@@ -141,9 +141,9 @@ extern "C" {
  * @brief   Gets the I/O port state
  * @param   PORT   : The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
  * @retval  VALUE  : Value read from the port
- * @note    Example: uint8_t value = ReadPort(GPIOA, 0);    // Will read the PORTA pins states
+ * @note    Example: uint8_t value = GPIOReadPort(GPIOA, 0);    // Will read the PORTA pins states
  */    
-#define ReadPort(PORT)                      (uint8_t)(GPIO.Bytes[PORT + IO_PORT_OFFSET])
+#define GPIOReadPort(PORT)                      (uint8_t)(GPIO.Bytes[PORT + IO_PORT_OFFSET])
 //-----------------------------------        
     
 //-----------------------------------    
@@ -152,7 +152,7 @@ extern "C" {
  * @param   none   
  * @retval  none
  */    
-#define RBPUEnable()                        (INTCON2 = INTCON2 & 0x7F)
+#define GPIORBPUEnable()                        (INTCON2 = INTCON2 & 0x7F)
 //-----------------------------------
     
 //-----------------------------------    
@@ -161,7 +161,7 @@ extern "C" {
  * @param   none   
  * @retval  none
  */    
-#define RBPUDisable()                       (INTCON2 = INTCON2 | 0x80)
+#define GPIORBPUDisable()                       (INTCON2 = INTCON2 | 0x80)
 //-----------------------------------    
     
 #ifdef	__cplusplus

@@ -15,6 +15,7 @@
             <sourceRootList>
                 <sourceRootElem>Inc</sourceRootElem>
                 <sourceRootElem>Src</sourceRootElem>
+                <sourceRootElem>C:/EmbeddedDevOps/Libraries/SystemTime.X/Inc</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
