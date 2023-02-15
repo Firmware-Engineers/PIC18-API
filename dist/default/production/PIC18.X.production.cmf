@@ -12,23 +12,22 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\PIC18.X.production.o
-cinit CODE 0 7A2 7A2 2E 1 2
+cinit CODE 0 7A2 7A2 1A 1 2
 idloc IDLOC 5 200000 200000 8 1 1
 text0 CODE 0 720 720 4A 1 2
 text1 CODE 0 76A 76A 38 1 2
 text2 CODE 0 6CA 6CA 56 1 2
-text3 CODE 0 7D0 7D0 18 1 2
-cstackCOMRAM COMRAM 1 E E 5 1 1
-temp COMRAM 1 13 13 1 1 1
-bssBANK1 BANK1 1 100 100 FF 1 1
+text3 CODE 0 7BC 7BC 18 1 2
+cstackCOMRAM COMRAM 1 72 72 5 1 1
+temp COMRAM 1 77 77 1 1 1
 intcode CODE 0 8 8 A 1 2
 smallconst SMALLCONST 0 600 600 CA 1 2
-bssCOMRAM COMRAM 1 1 1 D 1 1
+bssCOMRAM COMRAM 1 1 1 71 1 1
 config CONFIG 4 300000 300000 E 1 1
-$C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
+$C:\Users\Admin\AppData\Local\Temp\xcAs464.o
 idloc IDLOC 5 200000 200000 8 1 1
 init CODE 0 12 12 4 1 2
-text CODE 0 7E8 7E8 2 1 2
+text CODE 0 7D4 7D4 2 1 2
 reset_vec CODE 0 0 0 6 1 2
 config CONFIG 4 300000 300000 E 1 1
 # %UNUSED Section
@@ -37,28 +36,26 @@ config CONFIG 4 300000 300000 E 1 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 80-FF 1
-RAM 1FF-5FF 1
+RAM 80-5FF 1
 SFR F80-FFF 1
 BANK0 80-FF 1
-BANK1 1FF-1FF 1
+BANK1 100-1FF 1
 BANK2 200-2FF 1
 BANK3 300-3FF 1
 BANK4 400-4FF 1
 BANK5 500-5FF 1
 CONST 6-7 1
 CONST 16-5FF 1
-CONST 7EA-7FFF 1
-SMALLCONST 7EA-7FFF 1
+CONST 7D6-7FFF 1
+SMALLCONST 7D6-7FFF 1
 CODE 6-7 1
 CODE 16-5FF 1
-CODE 7EA-7FFF 1
-BIGRAM 14-FF 1
-BIGRAM 1FF-5FF 1
+CODE 7D6-7FFF 1
+BIGRAM 78-5FF 1
 BIGSFR F80-FFF 1
-COMRAM 14-7F 1
+COMRAM 78-7F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 7EA-7FFF 1
+MEDIUMCONST 7D6-7FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -73,18 +70,18 @@ MEDIUMCONST 7EA-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PIC18.X.production.o
-8 intcode CODE >2745:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
+8 intcode CODE >2731:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
 8 intcode CODE >64:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/ISR.c
 C intcode CODE >69:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/ISR.c
-7D0 text3 CODE >275:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
-7D2 text3 CODE >277:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
-7D4 text3 CODE >278:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
-7D6 text3 CODE >281:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
-7D8 text3 CODE >282:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
-7DC text3 CODE >283:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
-7E0 text3 CODE >284:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
-7E2 text3 CODE >285:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
-7E4 text3 CODE >299:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
+7BC text3 CODE >275:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
+7BE text3 CODE >277:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
+7C0 text3 CODE >278:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
+7C2 text3 CODE >281:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
+7C4 text3 CODE >282:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
+7C8 text3 CODE >283:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
+7CC text3 CODE >284:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
+7CE text3 CODE >285:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
+7D0 text3 CODE >299:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
 6CA text2 CODE >302:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
 6CE text2 CODE >306:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
 6D2 text2 CODE >307:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/SoftwareUART.c
@@ -120,31 +117,22 @@ C intcode CODE >69:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/ISR.c
 74E text0 CODE >26:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/main.c
 75A text0 CODE >27:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/main.c
 766 text0 CODE >29:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/main.c
-7A2 cinit CODE >1959:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7A2 cinit CODE >1961:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7A2 cinit CODE >1964:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7A2 cinit CODE >1990:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7A6 cinit CODE >1991:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7AA cinit CODE >1992:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7AA cinit CODE >1993:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7AC cinit CODE >1994:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7AE cinit CODE >1995:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7B0 cinit CODE >1996:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7B2 cinit CODE >1997:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7B4 cinit CODE >1998:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7B6 cinit CODE >2001:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7BA cinit CODE >2002:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7BC cinit CODE >2003:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7BC cinit CODE >2004:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7BE cinit CODE >2005:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7C0 cinit CODE >2006:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7C2 cinit CODE >2012:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7C2 cinit CODE >2014:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7C4 cinit CODE >2015:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7C6 cinit CODE >2017:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7C8 cinit CODE >2018:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7CA cinit CODE >2019:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
-7CC cinit CODE >2020:C:\Users\Admin\AppData\Local\Temp\xcAs4u0.s
+7A2 cinit CODE >1959:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7A2 cinit CODE >1961:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7A2 cinit CODE >1964:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7A2 cinit CODE >1987:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7A6 cinit CODE >1988:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7A8 cinit CODE >1989:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7A8 cinit CODE >1990:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7AA cinit CODE >1991:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7AC cinit CODE >1992:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7AE cinit CODE >1998:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7AE cinit CODE >2000:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7B0 cinit CODE >2001:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7B2 cinit CODE >2003:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7B4 cinit CODE >2004:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7B6 cinit CODE >2005:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
+7B8 cinit CODE >2006:C:\Users\Admin\AppData\Local\Temp\xcAs464.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -158,14 +146,14 @@ C intcode CODE >69:C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/ISR.c
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\PIC18.X.production.o
-__Hspace_0 7EA 0 ABS 0 - dist/default/production\PIC18.X.production.o
-__Hspace_1 1FF 0 ABS 0 - dist/default/production\PIC18.X.production.o
+__Hspace_0 7D6 0 ABS 0 - dist/default/production\PIC18.X.production.o
+__Hspace_1 78 0 ABS 0 - dist/default/production\PIC18.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\PIC18.X.production.o
 __Hspace_4 60000E 0 ABS 0 - dist/default/production\PIC18.X.production.o
-_Rxstatus B 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
-SoftUARTTransmitByte@data E 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18.X.production.o
+_Rxstatus 6F 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
+SoftUARTTransmitByte@data 72 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\PIC18.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Admin\AppData\Local\Temp\xcAs464.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\PIC18.X.production.o
 _IO F80 0 ABS 0 - dist/default/production\PIC18.X.production.o
 __Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\PIC18.X.production.o
@@ -183,48 +171,48 @@ _RCIF 7CF5 0 ABS 0 - dist/default/production\PIC18.X.production.o
 _SYNC 7D64 0 ABS 0 - dist/default/production\PIC18.X.production.o
 _TMR0 FD6 0 ABS 0 - dist/default/production\PIC18.X.production.o
 _TRMT 7D61 0 ABS 0 - dist/default/production\PIC18.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
+___sp 0 0 STACK 2 stack C:\Users\Admin\AppData\Local\Temp\xcAs464.o
 _main 720 0 CODE 0 text0 dist/default/production\PIC18.X.production.o
-btemp 13 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
-start 12 0 CODE 0 init C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
+btemp 77 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
+start 12 0 CODE 0 init C:\Users\Admin\AppData\Local\Temp\xcAs464.o
 _SoftUARTPrint 76A 0 CODE 0 text1 dist/default/production\PIC18.X.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\PIC18.X.production.o
 __Hpowerup 12 0 CODE 0 powerup dist/default/production\PIC18.X.production.o
-ttemp5 14 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
-ttemp6 17 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
-ttemp7 1B 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
-__accesstop 80 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
-intlevel0 7E8 0 CODE 0 text C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
-intlevel1 7E8 0 CODE 0 text C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
-intlevel2 7E8 0 CODE 0 text C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
-intlevel3 7E8 0 CODE 0 text C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
+ttemp5 78 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
+ttemp6 7B 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
+ttemp7 7F 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
+__accesstop 80 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs464.o
+intlevel0 7D4 0 CODE 0 text C:\Users\Admin\AppData\Local\Temp\xcAs464.o
+intlevel1 7D4 0 CODE 0 text C:\Users\Admin\AppData\Local\Temp\xcAs464.o
+intlevel2 7D4 0 CODE 0 text C:\Users\Admin\AppData\Local\Temp\xcAs464.o
+intlevel3 7D4 0 CODE 0 text C:\Users\Admin\AppData\Local\Temp\xcAs464.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\PIC18.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\PIC18.X.production.o
-wtemp8 14 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
+wtemp8 78 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\PIC18.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\PIC18.X.production.o
 _SoftUARTTransmitByte 6CA 0 CODE 0 text2 dist/default/production\PIC18.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\Admin\AppData\Local\Temp\xcAs464.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\Admin\AppData\Local\Temp\xcAs464.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\PIC18.X.production.o
-_DecVar 5 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
+_DecVar 69 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\PIC18.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\PIC18.X.production.o
 __Hintcodelo 12 0 CODE 0 intcodelo dist/default/production\PIC18.X.production.o
 _INT0IE 7F94 0 ABS 0 - dist/default/production\PIC18.X.production.o
 _INT0IF 7F91 0 ABS 0 - dist/default/production\PIC18.X.production.o
 _INTCON FF2 0 ABS 0 - dist/default/production\PIC18.X.production.o
-_IncVar 1 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
+_IncVar 65 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
 __Lintcodelo 12 0 CODE 0 intcodelo dist/default/production\PIC18.X.production.o
 start_initialization 7A2 0 CODE 0 cinit dist/default/production\PIC18.X.production.o
-SoftUARTPrint@str 11 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18.X.production.o
+SoftUARTPrint@str 75 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18.X.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\PIC18.X.production.o
 __cntErrataNOP_dist/default/production\PIC18.X.production.o 13 0 ABS 0 - dist/default/production\PIC18.X.production.o
 ___rparam_used 1 0 ABS 0 - dist/default/production\PIC18.X.production.o
 __end_of_SoftUARTPrint 7A2 0 CODE 0 text1 dist/default/production\PIC18.X.production.o
-_RxFIFO 100 0 BANK1 1 bssBANK1 dist/default/production\PIC18.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
-SoftUARTTransmitByte@k 10 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18.X.production.o
+_RxFIFO 1 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
+isa$xinst 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs464.o
+SoftUARTTransmitByte@k 74 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18.X.production.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\PIC18.X.production.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\PIC18.X.production.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\PIC18.X.production.o
@@ -246,8 +234,8 @@ __Htext3 0 0 ABS 0 text3 dist/default/production\PIC18.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\PIC18.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\PIC18.X.production.o
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\PIC18.X.production.o
-__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
-_Rxfifoptr D 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
+__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\Admin\AppData\Local\Temp\xcAs464.o
+_Rxfifoptr 71 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\PIC18.X.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production\PIC18.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\PIC18.X.production.o
@@ -277,7 +265,7 @@ __Hheap 0 0 HEAP 7 heap dist/default/production\PIC18.X.production.o
 __Hinit 16 0 CODE 0 init dist/default/production\PIC18.X.production.o
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\PIC18.X.production.o
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production\PIC18.X.production.o
-__Htemp 14 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
+__Htemp 78 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
 __Htext 0 0 ABS 0 text dist/default/production\PIC18.X.production.o
 __Labs1 0 0 ABS 0 abs1 dist/default/production\PIC18.X.production.o
 __Ldata 0 0 ABS 0 data dist/default/production\PIC18.X.production.o
@@ -285,28 +273,27 @@ __Lheap 0 0 HEAP 7 heap dist/default/production\PIC18.X.production.o
 __Linit 12 0 CODE 0 init dist/default/production\PIC18.X.production.o
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\PIC18.X.production.o
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\PIC18.X.production.o
-__Ltemp 13 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
+__Ltemp 77 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
 __Ltext 0 0 ABS 0 text dist/default/production\PIC18.X.production.o
-int$flags 13 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
+int$flags 77 0 COMRAM 1 temp dist/default/production\PIC18.X.production.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\PIC18.X.production.o
 __Hintret 0 0 ABS 0 intret dist/default/production\PIC18.X.production.o
 __Hirdata 0 0 CODE 0 irdata dist/default/production\PIC18.X.production.o
 _Isr 8 0 CODE 0 intcode dist/default/production\PIC18.X.production.o
-__S0 7EA 0 ABS 0 - dist/default/production\PIC18.X.production.o
-__S1 1FF 0 ABS 0 - dist/default/production\PIC18.X.production.o
+__S0 7D6 0 ABS 0 - dist/default/production\PIC18.X.production.o
+__S1 78 0 ABS 0 - dist/default/production\PIC18.X.production.o
 __S4 0 0 ABS 0 - dist/default/production\PIC18.X.production.o
 __S5 0 0 ABS 0 - dist/default/production\PIC18.X.production.o
-_val 9 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
+_val 6D 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\PIC18.X.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\PIC18.X.production.o
 __end_of_Isr 12 0 CODE 0 intcode dist/default/production\PIC18.X.production.o
 __Lintentry 0 0 ABS 0 intentry dist/default/production\PIC18.X.production.o
 __Hramtop 600 0 RAM 0 ramtop dist/default/production\PIC18.X.production.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\PIC18.X.production.o
-__cntErrataNOP_C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o 1 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
+__cntErrataNOP_C:\Users\Admin\AppData\Local\Temp\xcAs464.o 1 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs464.o
 __activetblptr 2 0 ABS 0 - dist/default/production\PIC18.X.production.o
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\PIC18.X.production.o
-__LbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\PIC18.X.production.o
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\PIC18.X.production.o
 __Lbigram 0 0 ABS 0 bigram dist/default/production\PIC18.X.production.o
 __Lbigsfr 0 0 ABS 0 bigsfr dist/default/production\PIC18.X.production.o
@@ -314,10 +301,10 @@ __Lcomram 0 0 ABS 0 comram dist/default/production\PIC18.X.production.o
 __Lconfig 0 0 CONFIG 4 config dist/default/production\PIC18.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\PIC18.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\PIC18.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
-SoftUARTTransmitByte@tmp F 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18.X.production.o
-stackhi 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
-stacklo 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
+isa$std 1 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs464.o
+SoftUARTTransmitByte@tmp 73 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18.X.production.o
+stackhi 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs464.o
+stacklo 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs464.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\PIC18.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\PIC18.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\PIC18.X.production.o
@@ -328,12 +315,11 @@ __Lspace_4 0 0 ABS 0 - dist/default/production\PIC18.X.production.o
 __end_of_OSC_FREQ 602 0 SMALLCONST 0 smallconst dist/default/production\PIC18.X.production.o
 __pbssCOMRAM 1 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\PIC18.X.production.o
-end_of_initialization 7C2 0 CODE 0 cinit dist/default/production\PIC18.X.production.o
-_SoftUARTInit 7D0 0 CODE 0 text3 dist/default/production\PIC18.X.production.o
+end_of_initialization 7AE 0 CODE 0 cinit dist/default/production\PIC18.X.production.o
+_SoftUARTInit 7BC 0 CODE 0 text3 dist/default/production\PIC18.X.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\PIC18.X.production.o
 __Hintentry 0 0 ABS 0 intentry dist/default/production\PIC18.X.production.o
 __Hreset_vec 6 0 CODE 0 reset_vec dist/default/production\PIC18.X.production.o
-__HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\PIC18.X.production.o
 __end_of_SoftUARTTransmitByte 720 0 CODE 0 text2 dist/default/production\PIC18.X.production.o
 __Lramtop 600 0 RAM 0 ramtop dist/default/production\PIC18.X.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\PIC18.X.production.o
@@ -341,27 +327,27 @@ __pcinit 7A2 0 CODE 0 cinit dist/default/production\PIC18.X.production.o
 __ptext0 720 0 CODE 0 text0 dist/default/production\PIC18.X.production.o
 __ptext1 76A 0 CODE 0 text1 dist/default/production\PIC18.X.production.o
 __ptext2 6CA 0 CODE 0 text2 dist/default/production\PIC18.X.production.o
-__ptext3 7D0 0 CODE 0 text3 dist/default/production\PIC18.X.production.o
+__ptext3 7BC 0 CODE 0 text3 dist/default/production\PIC18.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\PIC18.X.production.o
-__ramtop 600 0 RAM 0 ramtop C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\Admin\AppData\Local\Temp\xcAs464.o
 __Lpowerup 12 0 CODE 0 powerup dist/default/production\PIC18.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\PIC18.X.production.o
 __psmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\PIC18.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\PIC18.X.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
-___heap_lo 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs4u0.o
+___heap_hi 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs464.o
+___heap_lo 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs464.o
 ___param_bank 0 0 ABS 0 - dist/default/production\PIC18.X.production.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\PIC18.X.production.o
-__end_of__initialization 7C2 0 CODE 0 cinit dist/default/production\PIC18.X.production.o
+__end_of__initialization 7AE 0 CODE 0 cinit dist/default/production\PIC18.X.production.o
 _INTCON2 FF1 0 ABS 0 - dist/default/production\PIC18.X.production.o
 _INTCON3 FF0 0 ABS 0 - dist/default/production\PIC18.X.production.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\PIC18.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\PIC18.X.production.o
-__pcstackCOMRAM E 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18.X.production.o
-__end_of_SoftUARTInit 7E8 0 CODE 0 text3 dist/default/production\PIC18.X.production.o
+__pcstackCOMRAM 72 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18.X.production.o
+__end_of_SoftUARTInit 7D4 0 CODE 0 text3 dist/default/production\PIC18.X.production.o
 __end_of_main 76A 0 CODE 0 text0 dist/default/production\PIC18.X.production.o
 __pintcode 8 0 CODE 0 intcode dist/default/production\PIC18.X.production.o
-_Rxfifocurrent C 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
+_Rxfifocurrent 70 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18.X.production.o
 _RCREG FAE 0 ABS 0 - dist/default/production\PIC18.X.production.o
 _RCSTA FAB 0 ABS 0 - dist/default/production\PIC18.X.production.o
 _SPBRG FAF 0 ABS 0 - dist/default/production\PIC18.X.production.o
@@ -377,7 +363,6 @@ __Lbss 0 0 RAM 1 bss dist/default/production\PIC18.X.production.o
 __Lram 0 0 ABS 0 ram dist/default/production\PIC18.X.production.o
 __Lsfr 0 0 ABS 0 sfr dist/default/production\PIC18.X.production.o
 __initialization 7A2 0 CODE 0 cinit dist/default/production\PIC18.X.production.o
-__pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/production\PIC18.X.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\PIC18.X.production.o
 __Hsmallconst 6CA 0 SMALLCONST 0 smallconst dist/default/production\PIC18.X.production.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\PIC18.X.production.o
@@ -407,12 +392,11 @@ __Hintcode 12 0 CODE 0 intcode dist/default/production\PIC18.X.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text2 0 6CA 6CA 120 1
+text2 0 6CA 6CA 10C 1
 reset_vec 0 0 0 6 1
-bssBANK1 1 100 100 FF 1
 intcode 0 8 8 E 1
 smallconst 0 600 600 CA 1
-bssCOMRAM 1 1 1 13 1
+bssCOMRAM 1 1 1 77 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

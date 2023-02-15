@@ -3918,7 +3918,7 @@ extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 # 369
 extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
 
-# 102 "Src/../Inc/SoftwareUART.h"
+# 107 "Src/../Inc/SoftwareUART.h"
 typedef union{
 uint8_t Byte;
 struct{
@@ -3928,34 +3928,34 @@ unsigned:6;
 };
 }SoftUARTStatusType;
 
-# 118
+# 123
 extern void SoftUARTInit(void);
 
-# 129
+# 134
 extern uint8_t SoftUARTRxAvailable(void);
 
-# 139
+# 144
 extern void SoftUARTTransmitByte(uint8_t data);
 
-# 150
+# 155
 extern int SoftUARTReceiveByte(void);
 
-# 161
+# 166
 extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
 
-# 173
+# 178
 extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 
-# 183
+# 188
 extern void SoftUARTPrint(const char *str);
 
-# 193
+# 198
 extern void SoftUARTSuspend(void);
 
-# 203
+# 208
 extern void SoftUARTResume(void);
 
-# 213
+# 218
 extern void SoftUARTFlushRx(void);
 
 

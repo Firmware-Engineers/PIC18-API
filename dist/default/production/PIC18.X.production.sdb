@@ -127,7 +127,7 @@
 [u S42 . 23 `S24 1 . 23 0 `[23]uc 1 Bytes 23 0 ]
 [v _IO IO `VES42  1 e 23 @3968 ]
 "184 Src/SoftwareUART.c
-[v _RxFIFO RxFIFO `VE[255]uc  1 s 255 RxFIFO ]
+[v _RxFIFO RxFIFO `VE[100]uc  1 s 100 RxFIFO ]
 "185
 [v _Rxfifoptr Rxfifoptr `VEuc  1 s 1 Rxfifoptr ]
 "186

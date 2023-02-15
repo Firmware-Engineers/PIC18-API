@@ -2421,25 +2421,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SystemTime.h: 117: extern void SysTimeCallBack(void);
 [; ;SystemTime.h: 128: extern void SysTimeSuspend(void);
 [; ;SystemTime.h: 140: extern void SysTimeResume(void);
-[; ;SoftwareUART.h: 116: typedef union{
-[; ;SoftwareUART.h: 117: uint8_t Byte;
-[; ;SoftwareUART.h: 118: struct{
-[; ;SoftwareUART.h: 119: unsigned Buf:1;
-[; ;SoftwareUART.h: 120: unsigned Ferr:1;
-[; ;SoftwareUART.h: 121: unsigned:6;
-[; ;SoftwareUART.h: 122: };
-[; ;SoftwareUART.h: 123: }SoftUARTStatusType;
-[; ;SoftwareUART.h: 132: extern void SoftUARTInit(void);
-[; ;SoftwareUART.h: 143: extern uint8_t SoftUARTRxAvailable(void);
-[; ;SoftwareUART.h: 153: extern void SoftUARTTransmitByte(uint8_t data);
-[; ;SoftwareUART.h: 164: extern int SoftUARTReceiveByte(void);
-[; ;SoftwareUART.h: 175: extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
-[; ;SoftwareUART.h: 187: extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-[; ;SoftwareUART.h: 197: extern void SoftUARTPrint(const char *str);
-[; ;SoftwareUART.h: 207: extern void SoftUARTSuspend(void);
-[; ;SoftwareUART.h: 217: extern void SoftUARTResume(void);
-[; ;SoftwareUART.h: 227: extern void SoftUARTFlushRx(void);
-[; ;SoftwareUART.h: 231: extern void suart_isr(void);
+[; ;SoftwareUART.h: 120: typedef union{
+[; ;SoftwareUART.h: 121: uint8_t Byte;
+[; ;SoftwareUART.h: 122: struct{
+[; ;SoftwareUART.h: 123: unsigned Buf:1;
+[; ;SoftwareUART.h: 124: unsigned Ferr:1;
+[; ;SoftwareUART.h: 125: unsigned:6;
+[; ;SoftwareUART.h: 126: };
+[; ;SoftwareUART.h: 127: }SoftUARTStatusType;
+[; ;SoftwareUART.h: 136: extern void SoftUARTInit(void);
+[; ;SoftwareUART.h: 147: extern uint8_t SoftUARTRxAvailable(void);
+[; ;SoftwareUART.h: 157: extern void SoftUARTTransmitByte(uint8_t data);
+[; ;SoftwareUART.h: 168: extern int SoftUARTReceiveByte(void);
+[; ;SoftwareUART.h: 179: extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
+[; ;SoftwareUART.h: 191: extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+[; ;SoftwareUART.h: 201: extern void SoftUARTPrint(const char *str);
+[; ;SoftwareUART.h: 211: extern void SoftUARTSuspend(void);
+[; ;SoftwareUART.h: 221: extern void SoftUARTResume(void);
+[; ;SoftwareUART.h: 231: extern void SoftUARTFlushRx(void);
+[; ;SoftwareUART.h: 235: extern void suart_isr(void);
 [v $root$_Isr `(v ~T0 @X0 0 e ]
 [v F2094 `(v ~T0 @X0 1 tf ]
 "64 Src/ISR.c

@@ -6,9 +6,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S233 `S234 1 `uc -> 23 `i ]
 [n S233 . . Bytes ]
 [p mainexit ]
-"118 Src/../Inc/SoftwareUART.h
+"123 Src/../Inc/SoftwareUART.h
 [v _SoftUARTInit `(v ~T0 @X0 0 ef ]
-"183
+"188
 [v _SoftUARTPrint `(v ~T0 @X0 0 ef1`*Cuc ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
@@ -2438,25 +2438,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;USART.h: 345: extern uint16_t USARTReceiveByte9(void);
 [; ;USART.h: 357: extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 [; ;USART.h: 369: extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
-[; ;SoftwareUART.h: 102: typedef union{
-[; ;SoftwareUART.h: 103: uint8_t Byte;
-[; ;SoftwareUART.h: 104: struct{
-[; ;SoftwareUART.h: 105: unsigned Buf:1;
-[; ;SoftwareUART.h: 106: unsigned Ferr:1;
-[; ;SoftwareUART.h: 107: unsigned:6;
-[; ;SoftwareUART.h: 108: };
-[; ;SoftwareUART.h: 109: }SoftUARTStatusType;
-[; ;SoftwareUART.h: 118: extern void SoftUARTInit(void);
-[; ;SoftwareUART.h: 129: extern uint8_t SoftUARTRxAvailable(void);
-[; ;SoftwareUART.h: 139: extern void SoftUARTTransmitByte(uint8_t data);
-[; ;SoftwareUART.h: 150: extern int SoftUARTReceiveByte(void);
-[; ;SoftwareUART.h: 161: extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
-[; ;SoftwareUART.h: 173: extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-[; ;SoftwareUART.h: 183: extern void SoftUARTPrint(const char *str);
-[; ;SoftwareUART.h: 193: extern void SoftUARTSuspend(void);
-[; ;SoftwareUART.h: 203: extern void SoftUARTResume(void);
-[; ;SoftwareUART.h: 213: extern void SoftUARTFlushRx(void);
-[; ;SoftwareUART.h: 217: extern void suart_isr(void);
+[; ;SoftwareUART.h: 107: typedef union{
+[; ;SoftwareUART.h: 108: uint8_t Byte;
+[; ;SoftwareUART.h: 109: struct{
+[; ;SoftwareUART.h: 110: unsigned Buf:1;
+[; ;SoftwareUART.h: 111: unsigned Ferr:1;
+[; ;SoftwareUART.h: 112: unsigned:6;
+[; ;SoftwareUART.h: 113: };
+[; ;SoftwareUART.h: 114: }SoftUARTStatusType;
+[; ;SoftwareUART.h: 123: extern void SoftUARTInit(void);
+[; ;SoftwareUART.h: 134: extern uint8_t SoftUARTRxAvailable(void);
+[; ;SoftwareUART.h: 144: extern void SoftUARTTransmitByte(uint8_t data);
+[; ;SoftwareUART.h: 155: extern int SoftUARTReceiveByte(void);
+[; ;SoftwareUART.h: 166: extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
+[; ;SoftwareUART.h: 178: extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+[; ;SoftwareUART.h: 188: extern void SoftUARTPrint(const char *str);
+[; ;SoftwareUART.h: 198: extern void SoftUARTSuspend(void);
+[; ;SoftwareUART.h: 208: extern void SoftUARTResume(void);
+[; ;SoftwareUART.h: 218: extern void SoftUARTFlushRx(void);
+[; ;SoftwareUART.h: 222: extern void suart_isr(void);
 [v $root$_main `(v ~T0 @X0 0 e ]
 "16 Src/main.c
 [v _main `(v ~T0 @X0 1 ef ]

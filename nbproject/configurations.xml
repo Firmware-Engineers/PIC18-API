@@ -68,7 +68,7 @@
         <linkerTool>
           <linkerLibItems>
             <linkerLibFileItem>Lib/SystemTime.X.a</linkerLibFileItem>
-            <linkerLibFileItem>Lib/SUART-16-9600-B0-B3.a</linkerLibFileItem>
+            <linkerLibFileItem>Lib/SUART-16-57600-B0-B3.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>

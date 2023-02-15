@@ -3882,7 +3882,7 @@ extern void SysTimeSuspend(void);
 # 140
 extern void SysTimeResume(void);
 
-# 116 "Src/../../../Libraries/SoftwareUART.X/Inc/SoftwareUART.h"
+# 120 "Src/../../../Libraries/SoftwareUART.X/Inc/SoftwareUART.h"
 typedef union{
 uint8_t Byte;
 struct{
@@ -3892,34 +3892,34 @@ unsigned:6;
 };
 }SoftUARTStatusType;
 
-# 132
+# 136
 extern void SoftUARTInit(void);
 
-# 143
+# 147
 extern uint8_t SoftUARTRxAvailable(void);
 
-# 153
+# 157
 extern void SoftUARTTransmitByte(uint8_t data);
 
-# 164
+# 168
 extern int SoftUARTReceiveByte(void);
 
-# 175
+# 179
 extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
 
-# 187
+# 191
 extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 
-# 197
+# 201
 extern void SoftUARTPrint(const char *str);
 
-# 207
+# 211
 extern void SoftUARTSuspend(void);
 
-# 217
+# 221
 extern void SoftUARTResume(void);
 
-# 227
+# 231
 extern void SoftUARTFlushRx(void);
 
 

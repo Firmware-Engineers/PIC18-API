@@ -40,6 +40,8 @@
  *                      - 1 start, 1 stop bit
  *                      - No parity
  * 
+ * @note            At least 100 bytes of RAM used for operation.
+ * 
  * @note            Global, peripheral and external interrupts (INTx) are all
  *                  enable to for data reception.
  * 
@@ -47,6 +49,9 @@
  *                  @ref suart_isr() function in the interrupts file (ISR.c).
  * 
  * @attention       Global interrupts are disabled during transmission/reception
+ * 
+ * @attention       Maximum receive buffer size is 100 bytes, so avoid receiving more 
+ *                  than 100 bytes before reading data out to prevent loss.
  * 
  * @brief           Supported devices are listed below.
  * @brief           See dependencies in the include section below.

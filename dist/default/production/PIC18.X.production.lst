@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.36 build 20220127204148 
-                                                                                               Wed Feb 15 19:26:01 2023
+                                                                                               Wed Feb 15 21:56:15 2023
 
 Microchip MPLAB XC8 C Compiler v2.36 (Free license) build 20220127204148 Og1 
      1                           	processor	18F452
@@ -11,1030 +11,1014 @@ Microchip MPLAB XC8 C Compiler v2.36 (Free license) build 20220127204148 Og1
      5                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1,noexec
      6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
      7                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
-     8                           	psect	bssBANK1,global,class=BANK1,space=1,delta=1,lowdata,noexec
-     9                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
-    10                           	psect	text0,global,reloc=2,class=CODE,delta=1
-    11                           	psect	text1,global,reloc=2,class=CODE,delta=1,group=2
-    12                           	psect	text2,global,reloc=2,class=CODE,delta=1,group=2
-    13                           	psect	text3,global,reloc=2,class=CODE,delta=1,group=2
-    14                           	psect	intcode,global,reloc=2,class=CODE,delta=1
-    15                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
-    16                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
-    17                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
-    18                           	psect	idloc,global,abs,ovrld,class=IDLOC,space=5,delta=1,noexec
-    19                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=1,noexec
-    20  0000                     
-    21                           ; Version 2.36
-    22                           ; Generated 28/01/2022 GMT
-    23                           ; 
-    24                           ; Copyright © 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
-    25                           ; All rights reserved.
-    26                           ; 
-    27                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text1,global,reloc=2,class=CODE,delta=1,group=2
+    11                           	psect	text2,global,reloc=2,class=CODE,delta=1,group=2
+    12                           	psect	text3,global,reloc=2,class=CODE,delta=1,group=2
+    13                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+    14                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    15                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    16                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
+    17                           	psect	idloc,global,abs,ovrld,class=IDLOC,space=5,delta=1,noexec
+    18                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=1,noexec
+    19  0000                     
+    20                           ; Version 2.36
+    21                           ; Generated 28/01/2022 GMT
+    22                           ; 
+    23                           ; Copyright © 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    24                           ; All rights reserved.
+    25                           ; 
+    26                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
       +                          ip").
-    28                           ; 
-    29                           ; Redistribution and use in source and binary forms, with or without modification, are
-    30                           ; permitted provided that the following conditions are met:
-    31                           ; 
-    32                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+    27                           ; 
+    28                           ; Redistribution and use in source and binary forms, with or without modification, are
+    29                           ; permitted provided that the following conditions are met:
+    30                           ; 
+    31                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
       +                          t of
-    33                           ;        conditions and the following disclaimer.
-    34                           ; 
-    35                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+    32                           ;        conditions and the following disclaimer.
+    33                           ; 
+    34                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
       +                          list
-    36                           ;        of conditions and the following disclaimer in the documentation and/or other
-    37                           ;        materials provided with the distribution. Publication is not required when
-    38                           ;        this file is used in an embedded application.
-    39                           ; 
-    40                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+    35                           ;        of conditions and the following disclaimer in the documentation and/or other
+    36                           ;        materials provided with the distribution. Publication is not required when
+    37                           ;        this file is used in an embedded application.
+    38                           ; 
+    39                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
       +                          is
-    41                           ;        software without specific prior written permission.
-    42                           ; 
-    43                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    44                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+    40                           ;        software without specific prior written permission.
+    41                           ; 
+    42                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    43                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
       +                          OR
-    45                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+    44                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
       +                          T,
-    46                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-    47                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
-    48                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+    45                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    46                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    47                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
       +                          RICT
-    49                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+    48                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
       +                          SE OF
-    50                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    49                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    50                           ; 
     51                           ; 
-    52                           ; 
-    53                           ; Code-generator required, PIC18F452 Definitions
-    54                           ; 
-    55                           ; SFR Addresses
-    56  0000                     
-    57                           	psect	smallconst
-    58  000600                     __psmallconst:
-    59                           	callstack 0
-    60  000600  00                 	db	0
-    61  000601  04                 	db	4
-    62  000602                     __end_of_OSC_FREQ:
-    63                           	callstack 0
-    64  0000                     _RCREG	set	4014
-    65  0000                     _TXREG	set	4013
-    66  0000                     _IPR1	set	3999
-    67  0000                     _INTCON2	set	4081
-    68  0000                     _PIR1	set	3998
-    69  0000                     _PIE2	set	4000
-    70  0000                     _INTCONbits	set	4082
-    71  0000                     _PEIE	set	32662
-    72  0000                     _INT0IF	set	32657
-    73  0000                     _INT0IE	set	32660
-    74  0000                     _RCIF	set	31989
-    75  0000                     _CREN	set	32092
-    76  0000                     _OERR	set	32089
-    77  0000                     _TRMT	set	32097
-    78  0000                     _BRGH	set	32098
-    79  0000                     _SYNC	set	32100
-    80  0000                     _PIE1	set	3997
-    81  0000                     _INTCON3	set	4080
-    82  0000                     _INTCON	set	4082
-    83  0000                     _RCSTA	set	4011
-    84  0000                     _TXSTA	set	4012
-    85  0000                     _SPBRG	set	4015
-    86  0000                     _IPR2	set	4002
-    87  0000                     _PIR2	set	4001
-    88  0000                     _T0CON	set	4053
-    89  0000                     _TMR0	set	4054
-    90  000602                     STR_5:
-    91  000602  46                 	db	70	;'F'
-    92  000603  72                 	db	114	;'r'
-    93  000604  65                 	db	101	;'e'
-    94  000605  65                 	db	101	;'e'
-    95  000606  6C                 	db	108	;'l'
-    96  000607  79                 	db	121	;'y'
-    97  000608  20                 	db	32
-    98  000609  61                 	db	97	;'a'
-    99  00060A  76                 	db	118	;'v'
-   100  00060B  61                 	db	97	;'a'
-   101  00060C  69                 	db	105	;'i'
-   102  00060D  6C                 	db	108	;'l'
-   103  00060E  61                 	db	97	;'a'
-   104  00060F  62                 	db	98	;'b'
-   105  000610  6C                 	db	108	;'l'
-   106  000611  65                 	db	101	;'e'
-   107  000612  20                 	db	32
-   108  000613  73                 	db	115	;'s'
-   109  000614  6F                 	db	111	;'o'
-   110  000615  75                 	db	117	;'u'
-   111  000616  72                 	db	114	;'r'
-   112  000617  63                 	db	99	;'c'
-   113  000618  65                 	db	101	;'e'
-   114  000619  20                 	db	32
-   115  00061A  63                 	db	99	;'c'
-   116  00061B  6F                 	db	111	;'o'
-   117  00061C  64                 	db	100	;'d'
-   118  00061D  65                 	db	101	;'e'
-   119  00061E  20                 	db	32
-   120  00061F  6F                 	db	111	;'o'
-   121  000620  6E                 	db	110	;'n'
-   122  000621  20                 	db	32
-   123  000622  47                 	db	71	;'G'
-   124  000623  69                 	db	105	;'i'
-   125  000624  74                 	db	116	;'t'
-   126  000625  48                 	db	72	;'H'
-   127  000626  75                 	db	117	;'u'
-   128  000627  62                 	db	98	;'b'
-   129  000628  20                 	db	32
-   130  000629  28                 	db	40
-   131  00062A  68                 	db	104	;'h'
-   132  00062B  74                 	db	116	;'t'
-   133  00062C  74                 	db	116	;'t'
-   134  00062D  70                 	db	112	;'p'
-   135  00062E  73                 	db	115	;'s'
-   136  00062F  3A                 	db	58	;':'
-   137  000630  2F                 	db	47
-   138  000631  2F                 	db	47
-   139  000632  67                 	db	103	;'g'
-   140  000633  69                 	db	105	;'i'
-   141  000634  74                 	db	116	;'t'
-   142  000635  68                 	db	104	;'h'
-   143  000636  75                 	db	117	;'u'
-   144  000637  62                 	db	98	;'b'
-   145  000638  2E                 	db	46
-   146  000639  63                 	db	99	;'c'
-   147  00063A  6F                 	db	111	;'o'
-   148  00063B  6D                 	db	109	;'m'
-   149  00063C  2F                 	db	47
-   150  00063D  46                 	db	70	;'F'
-   151  00063E  69                 	db	105	;'i'
-   152  00063F  72                 	db	114	;'r'
-   153  000640  6D                 	db	109	;'m'
-   154  000641  77                 	db	119	;'w'
-   155  000642  61                 	db	97	;'a'
-   156  000643  72                 	db	114	;'r'
-   157  000644  65                 	db	101	;'e'
-   158  000645  2D                 	db	45
-   159  000646  45                 	db	69	;'E'
-   160  000647  6E                 	db	110	;'n'
-   161  000648  67                 	db	103	;'g'
-   162  000649  69                 	db	105	;'i'
-   163  00064A  6E                 	db	110	;'n'
-   164  00064B  65                 	db	101	;'e'
-   165  00064C  65                 	db	101	;'e'
-   166  00064D  72                 	db	114	;'r'
-   167  00064E  73                 	db	115	;'s'
-   168  00064F  2F                 	db	47
-   169  000650  50                 	db	80	;'P'
-   170  000651  49                 	db	73	;'I'
-   171  000652  43                 	db	67	;'C'
-   172  000653  31                 	db	49	;'1'
-   173  000654  38                 	db	56	;'8'
-   174  000655  2D                 	db	45
-   175  000656  41                 	db	65	;'A'
-   176  000657  50                 	db	80	;'P'
-   177  000658  49                 	db	73	;'I'
-   178  000659  29                 	db	41
-   179  00065A  0D                 	db	13
-   180  00065B  00                 	db	0
-   181  00065C                     STR_3:
-   182  00065C  44                 	db	68	;'D'
-   183  00065D  65                 	db	101	;'e'
-   184  00065E  73                 	db	115	;'s'
-   185  00065F  69                 	db	105	;'i'
-   186  000660  67                 	db	103	;'g'
-   187  000661  6E                 	db	110	;'n'
-   188  000662  65                 	db	101	;'e'
-   189  000663  64                 	db	100	;'d'
-   190  000664  20                 	db	32
-   191  000665  62                 	db	98	;'b'
-   192  000666  79                 	db	121	;'y'
-   193  000667  20                 	db	32
-   194  000668  46                 	db	70	;'F'
-   195  000669  69                 	db	105	;'i'
-   196  00066A  72                 	db	114	;'r'
-   197  00066B  6D                 	db	109	;'m'
-   198  00066C  77                 	db	119	;'w'
-   199  00066D  61                 	db	97	;'a'
-   200  00066E  72                 	db	114	;'r'
-   201  00066F  65                 	db	101	;'e'
-   202  000670  20                 	db	32
-   203  000671  45                 	db	69	;'E'
-   204  000672  6E                 	db	110	;'n'
-   205  000673  67                 	db	103	;'g'
-   206  000674  69                 	db	105	;'i'
-   207  000675  6E                 	db	110	;'n'
-   208  000676  65                 	db	101	;'e'
-   209  000677  65                 	db	101	;'e'
-   210  000678  72                 	db	114	;'r'
-   211  000679  20                 	db	32
-   212  00067A  54                 	db	84	;'T'
-   213  00067B  65                 	db	101	;'e'
-   214  00067C  61                 	db	97	;'a'
-   215  00067D  6D                 	db	109	;'m'
-   216  00067E  2E                 	db	46
-   217  00067F  20                 	db	32
-   218  000680  43                 	db	67	;'C'
-   219  000681  6F                 	db	111	;'o'
-   220  000682  70                 	db	112	;'p'
-   221  000683  79                 	db	121	;'y'
-   222  000684  72                 	db	114	;'r'
-   223  000685  69                 	db	105	;'i'
-   224  000686  67                 	db	103	;'g'
-   225  000687  68                 	db	104	;'h'
-   226  000688  74                 	db	116	;'t'
-   227  000689  20                 	db	32
-   228  00068A  32                 	db	50	;'2'
-   229  00068B  30                 	db	48	;'0'
-   230  00068C  32                 	db	50	;'2'
-   231  00068D  33                 	db	51	;'3'
-   232  00068E  2E                 	db	46
-   233  00068F  0D                 	db	13
-   234  000690  00                 	db	0
-   235  000691                     STR_2:
-   236  000691  54                 	db	84	;'T'
-   237  000692  68                 	db	104	;'h'
-   238  000693  69                 	db	105	;'i'
-   239  000694  73                 	db	115	;'s'
-   240  000695  20                 	db	32
-   241  000696  69                 	db	105	;'i'
-   242  000697  73                 	db	115	;'s'
-   243  000698  20                 	db	32
-   244  000699  61                 	db	97	;'a'
-   245  00069A  20                 	db	32
-   246  00069B  73                 	db	115	;'s'
-   247  00069C  6F                 	db	111	;'o'
-   248  00069D  66                 	db	102	;'f'
-   249  00069E  74                 	db	116	;'t'
-   250  00069F  77                 	db	119	;'w'
-   251  0006A0  61                 	db	97	;'a'
-   252  0006A1  72                 	db	114	;'r'
-   253  0006A2  65                 	db	101	;'e'
-   254  0006A3  20                 	db	32
-   255  0006A4  55                 	db	85	;'U'
-   256  0006A5  41                 	db	65	;'A'
-   257  0006A6  52                 	db	82	;'R'
-   258  0006A7  54                 	db	84	;'T'
-   259  0006A8  20                 	db	32
-   260  0006A9  6C                 	db	108	;'l'
-   261  0006AA  69                 	db	105	;'i'
-   262  0006AB  62                 	db	98	;'b'
-   263  0006AC  72                 	db	114	;'r'
-   264  0006AD  61                 	db	97	;'a'
-   265  0006AE  72                 	db	114	;'r'
-   266  0006AF  79                 	db	121	;'y'
-   267  0006B0  20                 	db	32
-   268  0006B1  74                 	db	116	;'t'
-   269  0006B2  65                 	db	101	;'e'
-   270  0006B3  73                 	db	115	;'s'
-   271  0006B4  74                 	db	116	;'t'
-   272  0006B5  21                 	db	33
-   273  0006B6  0D                 	db	13
-   274  0006B7  00                 	db	0
-   275  0006B8                     STR_1:
-   276  0006B8  48                 	db	72	;'H'
-   277  0006B9  65                 	db	101	;'e'
-   278  0006BA  6C                 	db	108	;'l'
-   279  0006BB  6C                 	db	108	;'l'
-   280  0006BC  6F                 	db	111	;'o'
-   281  0006BD  20                 	db	32
-   282  0006BE  57                 	db	87	;'W'
-   283  0006BF  6F                 	db	111	;'o'
-   284  0006C0  72                 	db	114	;'r'
-   285  0006C1  6C                 	db	108	;'l'
-   286  0006C2  64                 	db	100	;'d'
-   287  0006C3  21                 	db	33
-   288  0006C4  0D                 	db	13
-   289  0006C5  00                 	db	0
-   290  0006C6                     STR_4:
-   291  0006C6  0D                 	db	13
-   292  0006C7  0D                 	db	13
-   293  0006C8  00                 	db	0
-   294  0006C9  00                 	db	0	; dummy byte at the end
-   295  0000                     
-   296                           ; #config settings
-   297                           
-   298                           	psect	cinit
-   299  0007A2                     __pcinit:
-   300                           	callstack 0
-   301  0007A2                     start_initialization:
-   302                           	callstack 0
-   303  0007A2                     __initialization:
-   304                           	callstack 0
-   305                           
-   306                           ; Clear objects allocated to BANK1 (255 bytes)
-   307  0007A2  EE01  F000         	lfsr	0,__pbssBANK1
-   308  0007A6  EE10 F0FF          	lfsr	1,255
-   309  0007AA                     clear_0:
-   310  0007AA  6AEE               	clrf	postinc0,c
-   311  0007AC  50E5               	movf	postdec1,w,c
-   312  0007AE  50E1               	movf	fsr1l,w,c
-   313  0007B0  E1FC               	bnz	clear_0
-   314  0007B2  50E2               	movf	fsr1h,w,c
-   315  0007B4  E1FA               	bnz	clear_0
-   316                           
-   317                           ; Clear objects allocated to COMRAM (13 bytes)
-   318  0007B6  EE00  F001         	lfsr	0,__pbssCOMRAM
-   319  0007BA  0E0D               	movlw	13
-   320  0007BC                     clear_1:
-   321  0007BC  6AEE               	clrf	postinc0,c
-   322  0007BE  06E8               	decf	wreg,f,c
-   323  0007C0  E1FD               	bnz	clear_1
-   324  0007C2                     end_of_initialization:
+    52                           ; Code-generator required, PIC18F452 Definitions
+    53                           ; 
+    54                           ; SFR Addresses
+    55  0000                     
+    56                           	psect	smallconst
+    57  000600                     __psmallconst:
+    58                           	callstack 0
+    59  000600  00                 	db	0
+    60  000601  04                 	db	4
+    61  000602                     __end_of_OSC_FREQ:
+    62                           	callstack 0
+    63  0000                     _RCREG	set	4014
+    64  0000                     _TXREG	set	4013
+    65  0000                     _IPR1	set	3999
+    66  0000                     _INTCON2	set	4081
+    67  0000                     _PIR1	set	3998
+    68  0000                     _PIE2	set	4000
+    69  0000                     _INTCONbits	set	4082
+    70  0000                     _PEIE	set	32662
+    71  0000                     _INT0IF	set	32657
+    72  0000                     _INT0IE	set	32660
+    73  0000                     _RCIF	set	31989
+    74  0000                     _CREN	set	32092
+    75  0000                     _OERR	set	32089
+    76  0000                     _TRMT	set	32097
+    77  0000                     _BRGH	set	32098
+    78  0000                     _SYNC	set	32100
+    79  0000                     _PIE1	set	3997
+    80  0000                     _INTCON3	set	4080
+    81  0000                     _INTCON	set	4082
+    82  0000                     _RCSTA	set	4011
+    83  0000                     _TXSTA	set	4012
+    84  0000                     _SPBRG	set	4015
+    85  0000                     _IPR2	set	4002
+    86  0000                     _PIR2	set	4001
+    87  0000                     _T0CON	set	4053
+    88  0000                     _TMR0	set	4054
+    89  000602                     STR_5:
+    90  000602  46                 	db	70	;'F'
+    91  000603  72                 	db	114	;'r'
+    92  000604  65                 	db	101	;'e'
+    93  000605  65                 	db	101	;'e'
+    94  000606  6C                 	db	108	;'l'
+    95  000607  79                 	db	121	;'y'
+    96  000608  20                 	db	32
+    97  000609  61                 	db	97	;'a'
+    98  00060A  76                 	db	118	;'v'
+    99  00060B  61                 	db	97	;'a'
+   100  00060C  69                 	db	105	;'i'
+   101  00060D  6C                 	db	108	;'l'
+   102  00060E  61                 	db	97	;'a'
+   103  00060F  62                 	db	98	;'b'
+   104  000610  6C                 	db	108	;'l'
+   105  000611  65                 	db	101	;'e'
+   106  000612  20                 	db	32
+   107  000613  73                 	db	115	;'s'
+   108  000614  6F                 	db	111	;'o'
+   109  000615  75                 	db	117	;'u'
+   110  000616  72                 	db	114	;'r'
+   111  000617  63                 	db	99	;'c'
+   112  000618  65                 	db	101	;'e'
+   113  000619  20                 	db	32
+   114  00061A  63                 	db	99	;'c'
+   115  00061B  6F                 	db	111	;'o'
+   116  00061C  64                 	db	100	;'d'
+   117  00061D  65                 	db	101	;'e'
+   118  00061E  20                 	db	32
+   119  00061F  6F                 	db	111	;'o'
+   120  000620  6E                 	db	110	;'n'
+   121  000621  20                 	db	32
+   122  000622  47                 	db	71	;'G'
+   123  000623  69                 	db	105	;'i'
+   124  000624  74                 	db	116	;'t'
+   125  000625  48                 	db	72	;'H'
+   126  000626  75                 	db	117	;'u'
+   127  000627  62                 	db	98	;'b'
+   128  000628  20                 	db	32
+   129  000629  28                 	db	40
+   130  00062A  68                 	db	104	;'h'
+   131  00062B  74                 	db	116	;'t'
+   132  00062C  74                 	db	116	;'t'
+   133  00062D  70                 	db	112	;'p'
+   134  00062E  73                 	db	115	;'s'
+   135  00062F  3A                 	db	58	;':'
+   136  000630  2F                 	db	47
+   137  000631  2F                 	db	47
+   138  000632  67                 	db	103	;'g'
+   139  000633  69                 	db	105	;'i'
+   140  000634  74                 	db	116	;'t'
+   141  000635  68                 	db	104	;'h'
+   142  000636  75                 	db	117	;'u'
+   143  000637  62                 	db	98	;'b'
+   144  000638  2E                 	db	46
+   145  000639  63                 	db	99	;'c'
+   146  00063A  6F                 	db	111	;'o'
+   147  00063B  6D                 	db	109	;'m'
+   148  00063C  2F                 	db	47
+   149  00063D  46                 	db	70	;'F'
+   150  00063E  69                 	db	105	;'i'
+   151  00063F  72                 	db	114	;'r'
+   152  000640  6D                 	db	109	;'m'
+   153  000641  77                 	db	119	;'w'
+   154  000642  61                 	db	97	;'a'
+   155  000643  72                 	db	114	;'r'
+   156  000644  65                 	db	101	;'e'
+   157  000645  2D                 	db	45
+   158  000646  45                 	db	69	;'E'
+   159  000647  6E                 	db	110	;'n'
+   160  000648  67                 	db	103	;'g'
+   161  000649  69                 	db	105	;'i'
+   162  00064A  6E                 	db	110	;'n'
+   163  00064B  65                 	db	101	;'e'
+   164  00064C  65                 	db	101	;'e'
+   165  00064D  72                 	db	114	;'r'
+   166  00064E  73                 	db	115	;'s'
+   167  00064F  2F                 	db	47
+   168  000650  50                 	db	80	;'P'
+   169  000651  49                 	db	73	;'I'
+   170  000652  43                 	db	67	;'C'
+   171  000653  31                 	db	49	;'1'
+   172  000654  38                 	db	56	;'8'
+   173  000655  2D                 	db	45
+   174  000656  41                 	db	65	;'A'
+   175  000657  50                 	db	80	;'P'
+   176  000658  49                 	db	73	;'I'
+   177  000659  29                 	db	41
+   178  00065A  0D                 	db	13
+   179  00065B  00                 	db	0
+   180  00065C                     STR_3:
+   181  00065C  44                 	db	68	;'D'
+   182  00065D  65                 	db	101	;'e'
+   183  00065E  73                 	db	115	;'s'
+   184  00065F  69                 	db	105	;'i'
+   185  000660  67                 	db	103	;'g'
+   186  000661  6E                 	db	110	;'n'
+   187  000662  65                 	db	101	;'e'
+   188  000663  64                 	db	100	;'d'
+   189  000664  20                 	db	32
+   190  000665  62                 	db	98	;'b'
+   191  000666  79                 	db	121	;'y'
+   192  000667  20                 	db	32
+   193  000668  46                 	db	70	;'F'
+   194  000669  69                 	db	105	;'i'
+   195  00066A  72                 	db	114	;'r'
+   196  00066B  6D                 	db	109	;'m'
+   197  00066C  77                 	db	119	;'w'
+   198  00066D  61                 	db	97	;'a'
+   199  00066E  72                 	db	114	;'r'
+   200  00066F  65                 	db	101	;'e'
+   201  000670  20                 	db	32
+   202  000671  45                 	db	69	;'E'
+   203  000672  6E                 	db	110	;'n'
+   204  000673  67                 	db	103	;'g'
+   205  000674  69                 	db	105	;'i'
+   206  000675  6E                 	db	110	;'n'
+   207  000676  65                 	db	101	;'e'
+   208  000677  65                 	db	101	;'e'
+   209  000678  72                 	db	114	;'r'
+   210  000679  20                 	db	32
+   211  00067A  54                 	db	84	;'T'
+   212  00067B  65                 	db	101	;'e'
+   213  00067C  61                 	db	97	;'a'
+   214  00067D  6D                 	db	109	;'m'
+   215  00067E  2E                 	db	46
+   216  00067F  20                 	db	32
+   217  000680  43                 	db	67	;'C'
+   218  000681  6F                 	db	111	;'o'
+   219  000682  70                 	db	112	;'p'
+   220  000683  79                 	db	121	;'y'
+   221  000684  72                 	db	114	;'r'
+   222  000685  69                 	db	105	;'i'
+   223  000686  67                 	db	103	;'g'
+   224  000687  68                 	db	104	;'h'
+   225  000688  74                 	db	116	;'t'
+   226  000689  20                 	db	32
+   227  00068A  32                 	db	50	;'2'
+   228  00068B  30                 	db	48	;'0'
+   229  00068C  32                 	db	50	;'2'
+   230  00068D  33                 	db	51	;'3'
+   231  00068E  2E                 	db	46
+   232  00068F  0D                 	db	13
+   233  000690  00                 	db	0
+   234  000691                     STR_2:
+   235  000691  54                 	db	84	;'T'
+   236  000692  68                 	db	104	;'h'
+   237  000693  69                 	db	105	;'i'
+   238  000694  73                 	db	115	;'s'
+   239  000695  20                 	db	32
+   240  000696  69                 	db	105	;'i'
+   241  000697  73                 	db	115	;'s'
+   242  000698  20                 	db	32
+   243  000699  61                 	db	97	;'a'
+   244  00069A  20                 	db	32
+   245  00069B  73                 	db	115	;'s'
+   246  00069C  6F                 	db	111	;'o'
+   247  00069D  66                 	db	102	;'f'
+   248  00069E  74                 	db	116	;'t'
+   249  00069F  77                 	db	119	;'w'
+   250  0006A0  61                 	db	97	;'a'
+   251  0006A1  72                 	db	114	;'r'
+   252  0006A2  65                 	db	101	;'e'
+   253  0006A3  20                 	db	32
+   254  0006A4  55                 	db	85	;'U'
+   255  0006A5  41                 	db	65	;'A'
+   256  0006A6  52                 	db	82	;'R'
+   257  0006A7  54                 	db	84	;'T'
+   258  0006A8  20                 	db	32
+   259  0006A9  6C                 	db	108	;'l'
+   260  0006AA  69                 	db	105	;'i'
+   261  0006AB  62                 	db	98	;'b'
+   262  0006AC  72                 	db	114	;'r'
+   263  0006AD  61                 	db	97	;'a'
+   264  0006AE  72                 	db	114	;'r'
+   265  0006AF  79                 	db	121	;'y'
+   266  0006B0  20                 	db	32
+   267  0006B1  74                 	db	116	;'t'
+   268  0006B2  65                 	db	101	;'e'
+   269  0006B3  73                 	db	115	;'s'
+   270  0006B4  74                 	db	116	;'t'
+   271  0006B5  21                 	db	33
+   272  0006B6  0D                 	db	13
+   273  0006B7  00                 	db	0
+   274  0006B8                     STR_1:
+   275  0006B8  48                 	db	72	;'H'
+   276  0006B9  65                 	db	101	;'e'
+   277  0006BA  6C                 	db	108	;'l'
+   278  0006BB  6C                 	db	108	;'l'
+   279  0006BC  6F                 	db	111	;'o'
+   280  0006BD  20                 	db	32
+   281  0006BE  57                 	db	87	;'W'
+   282  0006BF  6F                 	db	111	;'o'
+   283  0006C0  72                 	db	114	;'r'
+   284  0006C1  6C                 	db	108	;'l'
+   285  0006C2  64                 	db	100	;'d'
+   286  0006C3  21                 	db	33
+   287  0006C4  0D                 	db	13
+   288  0006C5  00                 	db	0
+   289  0006C6                     STR_4:
+   290  0006C6  0D                 	db	13
+   291  0006C7  0D                 	db	13
+   292  0006C8  00                 	db	0
+   293  0006C9  00                 	db	0	; dummy byte at the end
+   294  0000                     
+   295                           ; #config settings
+   296                           
+   297                           	psect	cinit
+   298  0007A2                     __pcinit:
+   299                           	callstack 0
+   300  0007A2                     start_initialization:
+   301                           	callstack 0
+   302  0007A2                     __initialization:
+   303                           	callstack 0
+   304                           
+   305                           ; Clear objects allocated to COMRAM (113 bytes)
+   306  0007A2  EE00  F001         	lfsr	0,__pbssCOMRAM
+   307  0007A6  0E71               	movlw	113
+   308  0007A8                     clear_0:
+   309  0007A8  6AEE               	clrf	postinc0,c
+   310  0007AA  06E8               	decf	wreg,f,c
+   311  0007AC  E1FD               	bnz	clear_0
+   312  0007AE                     end_of_initialization:
+   313                           	callstack 0
+   314  0007AE                     __end_of__initialization:
+   315                           	callstack 0
+   316  0007AE  9077               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+   317  0007B0  9277               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+   318  0007B2  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   319  0007B4  6EF8               	movwf	tblptru,c
+   320  0007B6  0100               	movlb	0
+   321  0007B8  EF90  F003         	goto	_main	;jump to C main() function
+   322                           
+   323                           	psect	bssCOMRAM
+   324  000001                     __pbssCOMRAM:
    325                           	callstack 0
-   326  0007C2                     __end_of__initialization:
+   326  000001                     _RxFIFO:
    327                           	callstack 0
-   328  0007C2  9013               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
-   329  0007C4  9213               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
-   330  0007C6  0E00               	movlw	low (__Lmediumconst shr (0+16))
-   331  0007C8  6EF8               	movwf	tblptru,c
-   332  0007CA  0100               	movlb	0
-   333  0007CC  EF90  F003         	goto	_main	;jump to C main() function
-   334                           
-   335                           	psect	bssCOMRAM
-   336  000001                     __pbssCOMRAM:
-   337                           	callstack 0
-   338  000001                     _IncVar:
+   328  000001                     	ds	100
+   329  000065                     _IncVar:
+   330                           	callstack 0
+   331  000065                     	ds	4
+   332  000069                     _DecVar:
+   333                           	callstack 0
+   334  000069                     	ds	4
+   335  00006D                     _val:
+   336                           	callstack 0
+   337  00006D                     	ds	2
+   338  00006F                     _Rxstatus:
    339                           	callstack 0
-   340  000001                     	ds	4
-   341  000005                     _DecVar:
+   340  00006F                     	ds	1
+   341  000070                     _Rxfifocurrent:
    342                           	callstack 0
-   343  000005                     	ds	4
-   344  000009                     _val:
+   343  000070                     	ds	1
+   344  000071                     _Rxfifoptr:
    345                           	callstack 0
-   346  000009                     	ds	2
-   347  00000B                     _Rxstatus:
-   348                           	callstack 0
-   349  00000B                     	ds	1
-   350  00000C                     _Rxfifocurrent:
-   351                           	callstack 0
-   352  00000C                     	ds	1
-   353  00000D                     _Rxfifoptr:
-   354                           	callstack 0
-   355  00000D                     	ds	1
-   356                           
-   357                           	psect	bssBANK1
-   358  000100                     __pbssBANK1:
-   359                           	callstack 0
-   360  000100                     _RxFIFO:
-   361                           	callstack 0
-   362  000100                     	ds	255
+   346  000071                     	ds	1
+   347                           
+   348                           	psect	cstackCOMRAM
+   349  000072                     __pcstackCOMRAM:
+   350                           	callstack 0
+   351  000072                     SoftUARTTransmitByte@data:
+   352                           	callstack 0
+   353                           
+   354                           ; 1 bytes @ 0x0
+   355  000072                     	ds	1
+   356  000073                     SoftUARTTransmitByte@tmp:
+   357                           	callstack 0
+   358                           
+   359                           ; 1 bytes @ 0x1
+   360  000073                     	ds	1
+   361  000074                     SoftUARTTransmitByte@k:
+   362                           	callstack 0
    363                           
-   364                           	psect	cstackCOMRAM
-   365  00000E                     __pcstackCOMRAM:
-   366                           	callstack 0
-   367  00000E                     SoftUARTTransmitByte@data:
-   368                           	callstack 0
-   369                           
-   370                           ; 1 bytes @ 0x0
-   371  00000E                     	ds	1
-   372  00000F                     SoftUARTTransmitByte@tmp:
-   373                           	callstack 0
-   374                           
-   375                           ; 1 bytes @ 0x1
-   376  00000F                     	ds	1
-   377  000010                     SoftUARTTransmitByte@k:
-   378                           	callstack 0
-   379                           
-   380                           ; 1 bytes @ 0x2
-   381  000010                     	ds	1
-   382  000011                     SoftUARTPrint@str:
-   383                           	callstack 0
-   384                           
-   385                           ; 2 bytes @ 0x3
-   386  000011                     	ds	2
-   387  000013                     
-   388                           ; 1 bytes @ 0x5
-   389 ;;
-   390 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   391 ;;
-   392 ;; *************** function _main *****************
-   393 ;; Defined at:
-   394 ;;		line 16 in file "Src/main.c"
-   395 ;; Parameters:    Size  Location     Type
-   396 ;;		None
-   397 ;; Auto vars:     Size  Location     Type
-   398 ;;		None
-   399 ;; Return value:  Size  Location     Type
-   400 ;;                  1    wreg      void 
-   401 ;; Registers used:
-   402 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
-   403 ;; Tracked objects:
-   404 ;;		On entry : 0/0
-   405 ;;		On exit  : 0/0
-   406 ;;		Unchanged: 0/0
-   407 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   408 ;;      Params:         0       0       0       0       0       0       0
-   409 ;;      Locals:         0       0       0       0       0       0       0
-   410 ;;      Temps:          0       0       0       0       0       0       0
-   411 ;;      Totals:         0       0       0       0       0       0       0
-   412 ;;Total ram usage:        0 bytes
-   413 ;; Hardware stack levels required when called: 3
-   414 ;; This function calls:
-   415 ;;		_SoftUARTInit
-   416 ;;		_SoftUARTPrint
-   417 ;; This function is called by:
-   418 ;;		Startup code after reset
-   419 ;; This function uses a non-reentrant model
-   420 ;;
-   421                           
-   422                           	psect	text0
-   423  000720                     __ptext0:
-   424                           	callstack 0
-   425  000720                     _main:
-   426                           	callstack 0
-   427  000720  FFFF               	dw	65535	; assembler added errata NOP
-   428                           
-   429                           ;main.c: 19: IO.Bytes[0x00 + 9] &= (~(1 << 0x0));
+   364                           ; 1 bytes @ 0x2
+   365  000074                     	ds	1
+   366  000075                     SoftUARTPrint@str:
+   367                           	callstack 0
+   368                           
+   369                           ; 2 bytes @ 0x3
+   370  000075                     	ds	2
+   371  000077                     
+   372                           ; 1 bytes @ 0x5
+   373 ;;
+   374 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   375 ;;
+   376 ;; *************** function _main *****************
+   377 ;; Defined at:
+   378 ;;		line 16 in file "Src/main.c"
+   379 ;; Parameters:    Size  Location     Type
+   380 ;;		None
+   381 ;; Auto vars:     Size  Location     Type
+   382 ;;		None
+   383 ;; Return value:  Size  Location     Type
+   384 ;;                  1    wreg      void 
+   385 ;; Registers used:
+   386 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   387 ;; Tracked objects:
+   388 ;;		On entry : 0/0
+   389 ;;		On exit  : 0/0
+   390 ;;		Unchanged: 0/0
+   391 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   392 ;;      Params:         0       0       0       0       0       0       0
+   393 ;;      Locals:         0       0       0       0       0       0       0
+   394 ;;      Temps:          0       0       0       0       0       0       0
+   395 ;;      Totals:         0       0       0       0       0       0       0
+   396 ;;Total ram usage:        0 bytes
+   397 ;; Hardware stack levels required when called: 3
+   398 ;; This function calls:
+   399 ;;		_SoftUARTInit
+   400 ;;		_SoftUARTPrint
+   401 ;; This function is called by:
+   402 ;;		Startup code after reset
+   403 ;; This function uses a non-reentrant model
+   404 ;;
+   405                           
+   406                           	psect	text0
+   407  000720                     __ptext0:
+   408                           	callstack 0
+   409  000720                     _main:
+   410                           	callstack 0
+   411  000720  FFFF               	dw	65535	; assembler added errata NOP
+   412                           
+   413                           ;main.c: 19: IO.Bytes[0x00 + 9] &= (~(1 << 0x0));
+   414                           
+   415                           ;incstack = 0
+   416  000722  9089               	bcf	137,0,c	;volatile
+   417                           
+   418                           ;main.c: 20: IO.Bytes[(uint8_t)0x00 + 18] &= ~(1 << 0x0);
+   419  000724  9092               	bcf	146,0,c	;volatile
+   420                           
+   421                           ;main.c: 22: SoftUARTInit();
+   422  000726  ECDE  F003         	call	_SoftUARTInit	;wreg free
+   423                           
+   424                           ;main.c: 23: SoftUARTPrint("Hello World!\r");
+   425  00072A  0EB8               	movlw	low STR_1
+   426  00072C  6E75               	movwf	SoftUARTPrint@str^0,c
+   427  00072E  0E06               	movlw	high STR_1
+   428  000730  6E76               	movwf	(SoftUARTPrint@str+1)^0,c
+   429  000732  ECB5  F003         	call	_SoftUARTPrint	;wreg free
    430                           
-   431                           ;incstack = 0
-   432  000722  9089               	bcf	137,0,c	;volatile
-   433                           
-   434                           ;main.c: 20: IO.Bytes[(uint8_t)0x00 + 18] &= ~(1 << 0x0);
-   435  000724  9092               	bcf	146,0,c	;volatile
-   436                           
-   437                           ;main.c: 22: SoftUARTInit();
-   438  000726  ECE8  F003         	call	_SoftUARTInit	;wreg free
-   439                           
-   440                           ;main.c: 23: SoftUARTPrint("Hello World!\r");
-   441  00072A  0EB8               	movlw	low STR_1
-   442  00072C  6E11               	movwf	SoftUARTPrint@str^0,c
-   443  00072E  0E06               	movlw	high STR_1
-   444  000730  6E12               	movwf	(SoftUARTPrint@str+1)^0,c
-   445  000732  ECB5  F003         	call	_SoftUARTPrint	;wreg free
-   446                           
-   447                           ;main.c: 24: SoftUARTPrint("This is a software UART library test!\r");
-   448  000736  0E91               	movlw	low STR_2
-   449  000738  6E11               	movwf	SoftUARTPrint@str^0,c
-   450  00073A  0E06               	movlw	high STR_2
-   451  00073C  6E12               	movwf	(SoftUARTPrint@str+1)^0,c
-   452  00073E  ECB5  F003         	call	_SoftUARTPrint	;wreg free
-   453                           
-   454                           ;main.c: 25: SoftUARTPrint("Designed by Firmware Engineer Team. Copyright 2023.\r");
-   455  000742  0E5C               	movlw	low STR_3
-   456  000744  6E11               	movwf	SoftUARTPrint@str^0,c
-   457  000746  0E06               	movlw	high STR_3
-   458  000748  6E12               	movwf	(SoftUARTPrint@str+1)^0,c
-   459  00074A  ECB5  F003         	call	_SoftUARTPrint	;wreg free
-   460                           
-   461                           ;main.c: 26: SoftUARTPrint("\r\r");
-   462  00074E  0EC6               	movlw	low STR_4
-   463  000750  6E11               	movwf	SoftUARTPrint@str^0,c
-   464  000752  0E06               	movlw	high STR_4
-   465  000754  6E12               	movwf	(SoftUARTPrint@str+1)^0,c
-   466  000756  ECB5  F003         	call	_SoftUARTPrint	;wreg free
-   467                           
-   468                           ;main.c: 27: SoftUARTPrint("Freely available source code on GitHub (https://github.com/F
+   431                           ;main.c: 24: SoftUARTPrint("This is a software UART library test!\r");
+   432  000736  0E91               	movlw	low STR_2
+   433  000738  6E75               	movwf	SoftUARTPrint@str^0,c
+   434  00073A  0E06               	movlw	high STR_2
+   435  00073C  6E76               	movwf	(SoftUARTPrint@str+1)^0,c
+   436  00073E  ECB5  F003         	call	_SoftUARTPrint	;wreg free
+   437                           
+   438                           ;main.c: 25: SoftUARTPrint("Designed by Firmware Engineer Team. Copyright 2023.\r");
+   439  000742  0E5C               	movlw	low STR_3
+   440  000744  6E75               	movwf	SoftUARTPrint@str^0,c
+   441  000746  0E06               	movlw	high STR_3
+   442  000748  6E76               	movwf	(SoftUARTPrint@str+1)^0,c
+   443  00074A  ECB5  F003         	call	_SoftUARTPrint	;wreg free
+   444                           
+   445                           ;main.c: 26: SoftUARTPrint("\r\r");
+   446  00074E  0EC6               	movlw	low STR_4
+   447  000750  6E75               	movwf	SoftUARTPrint@str^0,c
+   448  000752  0E06               	movlw	high STR_4
+   449  000754  6E76               	movwf	(SoftUARTPrint@str+1)^0,c
+   450  000756  ECB5  F003         	call	_SoftUARTPrint	;wreg free
+   451                           
+   452                           ;main.c: 27: SoftUARTPrint("Freely available source code on GitHub (https://github.com/F
       +                          irmware-Engineers/PIC18-API)\r");
-   469  00075A  0E02               	movlw	low STR_5
-   470  00075C  6E11               	movwf	SoftUARTPrint@str^0,c
-   471  00075E  0E06               	movlw	high STR_5
-   472  000760  6E12               	movwf	(SoftUARTPrint@str+1)^0,c
-   473  000762  ECB5  F003         	call	_SoftUARTPrint	;wreg free
-   474  000766                     l13:
-   475  000766  FFFF               	dw	65535	; assembler added errata NOP
-   476                           
-   477                           ;main.c: 30: {
-   478  000768  D7FE               	goto	l13
-   479  00076A                     __end_of_main:
-   480                           	callstack 0
-   481                           
-   482 ;; *************** function _SoftUARTPrint *****************
-   483 ;; Defined at:
-   484 ;;		line 338 in file "Src/SoftwareUART.c"
-   485 ;; Parameters:    Size  Location     Type
-   486 ;;  str             2    3[COMRAM] PTR const unsigned char 
-   487 ;;		 -> STR_5(90), STR_4(3), STR_3(53), STR_2(39), 
-   488 ;;		 -> STR_1(14), 
-   489 ;; Auto vars:     Size  Location     Type
-   490 ;;		None
-   491 ;; Return value:  Size  Location     Type
-   492 ;;                  1    wreg      void 
-   493 ;; Registers used:
-   494 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
-   495 ;; Tracked objects:
-   496 ;;		On entry : 0/0
-   497 ;;		On exit  : 0/0
-   498 ;;		Unchanged: 0/0
-   499 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   500 ;;      Params:         2       0       0       0       0       0       0
-   501 ;;      Locals:         0       0       0       0       0       0       0
-   502 ;;      Temps:          0       0       0       0       0       0       0
-   503 ;;      Totals:         2       0       0       0       0       0       0
-   504 ;;Total ram usage:        2 bytes
-   505 ;; Hardware stack levels used: 1
-   506 ;; Hardware stack levels required when called: 2
-   507 ;; This function calls:
-   508 ;;		_SoftUARTTransmitByte
-   509 ;; This function is called by:
-   510 ;;		_main
-   511 ;; This function uses a non-reentrant model
-   512 ;;
-   513                           
-   514                           	psect	text1
-   515  00076A                     __ptext1:
-   516                           	callstack 0
-   517  00076A                     _SoftUARTPrint:
-   518                           	callstack 0
-   519  00076A  FFFF               	dw	65535	; assembler added errata NOP
-   520                           
-   521                           ;SoftwareUART.c: 340: while(*str!='\0'){
-   522                           
-   523                           ;incstack = 0
-   524  00076C  D00C               	goto	l1283
-   525  00076E                     l1279:
-   526  00076E  FFFF               	dw	65535	; assembler added errata NOP
-   527                           
-   528                           ;SoftwareUART.c: 341: SoftUARTTransmitByte(*(str++));
-   529  000770  C011  FFF6         	movff	SoftUARTPrint@str,tblptrl
-   530  000774  C012  FFF7         	movff	SoftUARTPrint@str+1,tblptrh
-   531  000778                     	if	0	;tblptru may be non-zero
-   532  000778                     	endif
-   533  000778                     	if	0	;tblptru may be non-zero
-   534  000778                     	endif
-   535  000778  0008               	tblrd		*
-   536  00077A  FFFF               	dw	65535	; errata NOP
-   537  00077C  50F5               	movf	tablat,w,c
-   538  00077E  EC65  F003         	call	_SoftUARTTransmitByte
-   539  000782  4A11               	infsnz	SoftUARTPrint@str^0,f,c
-   540  000784  2A12               	incf	(SoftUARTPrint@str+1)^0,f,c
-   541  000786                     l1283:
-   542  000786  FFFF               	dw	65535	; assembler added errata NOP
-   543  000788  C011  FFF6         	movff	SoftUARTPrint@str,tblptrl
-   544  00078C  C012  FFF7         	movff	SoftUARTPrint@str+1,tblptrh
-   545  000790                     	if	0	;tblptru may be non-zero
-   546  000790                     	endif
-   547  000790                     	if	0	;tblptru may be non-zero
-   548  000790                     	endif
-   549  000790  0008               	tblrd		*
-   550  000792  FFFF               	dw	65535	; errata NOP
-   551  000794  50F5               	movf	tablat,w,c
-   552  000796  0900               	iorlw	0
-   553  000798  B4D8               	btfsc	status,2,c
-   554  00079A  0012               	return		;funcret
-   555  00079C  FFFF               	dw	65535	; assembler added errata NOP
-   556  00079E  D7E7               	goto	l1279
-   557  0007A0  FFFF               	dw	65535	; errata NOP
-   558  0007A2                     __end_of_SoftUARTPrint:
-   559                           	callstack 0
-   560                           
-   561 ;; *************** function _SoftUARTTransmitByte *****************
-   562 ;; Defined at:
-   563 ;;		line 302 in file "Src/SoftwareUART.c"
-   564 ;; Parameters:    Size  Location     Type
-   565 ;;  data            1    wreg     unsigned char 
-   566 ;; Auto vars:     Size  Location     Type
-   567 ;;  data            1    0[COMRAM] unsigned char 
-   568 ;;  k               1    2[COMRAM] unsigned char 
-   569 ;;  tmp             1    1[COMRAM] unsigned char 
-   570 ;; Return value:  Size  Location     Type
-   571 ;;                  1    wreg      void 
-   572 ;; Registers used:
-   573 ;;		wreg, status,2, status,0
-   574 ;; Tracked objects:
-   575 ;;		On entry : 0/0
-   576 ;;		On exit  : 0/0
-   577 ;;		Unchanged: 0/0
-   578 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   579 ;;      Params:         0       0       0       0       0       0       0
-   580 ;;      Locals:         3       0       0       0       0       0       0
-   581 ;;      Temps:          0       0       0       0       0       0       0
-   582 ;;      Totals:         3       0       0       0       0       0       0
-   583 ;;Total ram usage:        3 bytes
-   584 ;; Hardware stack levels used: 1
-   585 ;; Hardware stack levels required when called: 1
-   586 ;; This function calls:
-   587 ;;		Nothing
-   588 ;; This function is called by:
-   589 ;;		_SoftUARTPrint
-   590 ;; This function uses a non-reentrant model
-   591 ;;
-   592                           
-   593                           	psect	text2
-   594  0006CA                     __ptext2:
-   595                           	callstack 0
-   596  0006CA                     _SoftUARTTransmitByte:
-   597                           	callstack 0
-   598  0006CA  FFFF               	dw	65535	; assembler added errata NOP
-   599                           
-   600                           ;incstack = 0
-   601                           ;SoftUARTTransmitByte@data stored from wreg
-   602  0006CC  6E0E               	movwf	SoftUARTTransmitByte@data^0,c
+   453  00075A  0E02               	movlw	low STR_5
+   454  00075C  6E75               	movwf	SoftUARTPrint@str^0,c
+   455  00075E  0E06               	movlw	high STR_5
+   456  000760  6E76               	movwf	(SoftUARTPrint@str+1)^0,c
+   457  000762  ECB5  F003         	call	_SoftUARTPrint	;wreg free
+   458  000766                     l13:
+   459  000766  FFFF               	dw	65535	; assembler added errata NOP
+   460                           
+   461                           ;main.c: 30: {
+   462  000768  D7FE               	goto	l13
+   463  00076A                     __end_of_main:
+   464                           	callstack 0
+   465                           
+   466 ;; *************** function _SoftUARTPrint *****************
+   467 ;; Defined at:
+   468 ;;		line 338 in file "Src/SoftwareUART.c"
+   469 ;; Parameters:    Size  Location     Type
+   470 ;;  str             2    3[COMRAM] PTR const unsigned char 
+   471 ;;		 -> STR_5(90), STR_4(3), STR_3(53), STR_2(39), 
+   472 ;;		 -> STR_1(14), 
+   473 ;; Auto vars:     Size  Location     Type
+   474 ;;		None
+   475 ;; Return value:  Size  Location     Type
+   476 ;;                  1    wreg      void 
+   477 ;; Registers used:
+   478 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   479 ;; Tracked objects:
+   480 ;;		On entry : 0/0
+   481 ;;		On exit  : 0/0
+   482 ;;		Unchanged: 0/0
+   483 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   484 ;;      Params:         2       0       0       0       0       0       0
+   485 ;;      Locals:         0       0       0       0       0       0       0
+   486 ;;      Temps:          0       0       0       0       0       0       0
+   487 ;;      Totals:         2       0       0       0       0       0       0
+   488 ;;Total ram usage:        2 bytes
+   489 ;; Hardware stack levels used: 1
+   490 ;; Hardware stack levels required when called: 2
+   491 ;; This function calls:
+   492 ;;		_SoftUARTTransmitByte
+   493 ;; This function is called by:
+   494 ;;		_main
+   495 ;; This function uses a non-reentrant model
+   496 ;;
+   497                           
+   498                           	psect	text1
+   499  00076A                     __ptext1:
+   500                           	callstack 0
+   501  00076A                     _SoftUARTPrint:
+   502                           	callstack 0
+   503  00076A  FFFF               	dw	65535	; assembler added errata NOP
+   504                           
+   505                           ;SoftwareUART.c: 340: while(*str!='\0'){
+   506                           
+   507                           ;incstack = 0
+   508  00076C  D00C               	goto	l1283
+   509  00076E                     l1279:
+   510  00076E  FFFF               	dw	65535	; assembler added errata NOP
+   511                           
+   512                           ;SoftwareUART.c: 341: SoftUARTTransmitByte(*(str++));
+   513  000770  C075  FFF6         	movff	SoftUARTPrint@str,tblptrl
+   514  000774  C076  FFF7         	movff	SoftUARTPrint@str+1,tblptrh
+   515  000778                     	if	0	;tblptru may be non-zero
+   516  000778                     	endif
+   517  000778                     	if	0	;tblptru may be non-zero
+   518  000778                     	endif
+   519  000778  0008               	tblrd		*
+   520  00077A  FFFF               	dw	65535	; errata NOP
+   521  00077C  50F5               	movf	tablat,w,c
+   522  00077E  EC65  F003         	call	_SoftUARTTransmitByte
+   523  000782  4A75               	infsnz	SoftUARTPrint@str^0,f,c
+   524  000784  2A76               	incf	(SoftUARTPrint@str+1)^0,f,c
+   525  000786                     l1283:
+   526  000786  FFFF               	dw	65535	; assembler added errata NOP
+   527  000788  C075  FFF6         	movff	SoftUARTPrint@str,tblptrl
+   528  00078C  C076  FFF7         	movff	SoftUARTPrint@str+1,tblptrh
+   529  000790                     	if	0	;tblptru may be non-zero
+   530  000790                     	endif
+   531  000790                     	if	0	;tblptru may be non-zero
+   532  000790                     	endif
+   533  000790  0008               	tblrd		*
+   534  000792  FFFF               	dw	65535	; errata NOP
+   535  000794  50F5               	movf	tablat,w,c
+   536  000796  0900               	iorlw	0
+   537  000798  B4D8               	btfsc	status,2,c
+   538  00079A  0012               	return		;funcret
+   539  00079C  FFFF               	dw	65535	; assembler added errata NOP
+   540  00079E  D7E7               	goto	l1279
+   541  0007A0  FFFF               	dw	65535	; errata NOP
+   542  0007A2                     __end_of_SoftUARTPrint:
+   543                           	callstack 0
+   544                           
+   545 ;; *************** function _SoftUARTTransmitByte *****************
+   546 ;; Defined at:
+   547 ;;		line 302 in file "Src/SoftwareUART.c"
+   548 ;; Parameters:    Size  Location     Type
+   549 ;;  data            1    wreg     unsigned char 
+   550 ;; Auto vars:     Size  Location     Type
+   551 ;;  data            1    0[COMRAM] unsigned char 
+   552 ;;  k               1    2[COMRAM] unsigned char 
+   553 ;;  tmp             1    1[COMRAM] unsigned char 
+   554 ;; Return value:  Size  Location     Type
+   555 ;;                  1    wreg      void 
+   556 ;; Registers used:
+   557 ;;		wreg, status,2, status,0
+   558 ;; Tracked objects:
+   559 ;;		On entry : 0/0
+   560 ;;		On exit  : 0/0
+   561 ;;		Unchanged: 0/0
+   562 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   563 ;;      Params:         0       0       0       0       0       0       0
+   564 ;;      Locals:         3       0       0       0       0       0       0
+   565 ;;      Temps:          0       0       0       0       0       0       0
+   566 ;;      Totals:         3       0       0       0       0       0       0
+   567 ;;Total ram usage:        3 bytes
+   568 ;; Hardware stack levels used: 1
+   569 ;; Hardware stack levels required when called: 1
+   570 ;; This function calls:
+   571 ;;		Nothing
+   572 ;; This function is called by:
+   573 ;;		_SoftUARTPrint
+   574 ;; This function uses a non-reentrant model
+   575 ;;
+   576                           
+   577                           	psect	text2
+   578  0006CA                     __ptext2:
+   579                           	callstack 0
+   580  0006CA                     _SoftUARTTransmitByte:
+   581                           	callstack 0
+   582  0006CA  FFFF               	dw	65535	; assembler added errata NOP
+   583                           
+   584                           ;incstack = 0
+   585                           ;SoftUARTTransmitByte@data stored from wreg
+   586  0006CC  6E72               	movwf	SoftUARTTransmitByte@data^0,c
+   587                           
+   588                           ;SoftwareUART.c: 305: uint8_t tmp;;SoftwareUART.c: 306: if(INTCONbits.GIE)
+   589  0006CE  AEF2               	btfss	242,7,c	;volatile
+   590  0006D0  D002               	goto	l1043
+   591                           
+   592                           ;SoftwareUART.c: 307: tmp = 1;
+   593  0006D2  0E01               	movlw	1
+   594  0006D4  6E73               	movwf	SoftUARTTransmitByte@tmp^0,c
+   595  0006D6                     l1043:
+   596  0006D6  FFFF               	dw	65535	; assembler added errata NOP
+   597                           
+   598                           ;SoftwareUART.c: 308: (INTCONbits.GIE = 0);
+   599  0006D8  9EF2               	bcf	242,7,c	;volatile
+   600                           
+   601                           ;SoftwareUART.c: 310: IO.Bytes[0x01 + 9] &= (~(1 << 0x3));
+   602  0006DA  968A               	bcf	138,3,c	;volatile
    603                           
-   604                           ;SoftwareUART.c: 305: uint8_t tmp;;SoftwareUART.c: 306: if(INTCONbits.GIE)
-   605  0006CE  AEF2               	btfss	242,7,c	;volatile
-   606  0006D0  D002               	goto	l1043
-   607                           
-   608                           ;SoftwareUART.c: 307: tmp = 1;
-   609  0006D2  0E01               	movlw	1
-   610  0006D4  6E0F               	movwf	SoftUARTTransmitByte@tmp^0,c
-   611  0006D6                     l1043:
-   612  0006D6  FFFF               	dw	65535	; assembler added errata NOP
-   613                           
-   614                           ;SoftwareUART.c: 308: (INTCONbits.GIE = 0);
-   615  0006D8  9EF2               	bcf	242,7,c	;volatile
+   604                           ;SoftwareUART.c: 311: _delay((unsigned long)(((1000000/57600) - 3)*((16 * 1000000)/40000
+      +                          00.0)));
+   605  0006DC  0E0E               	movlw	14
+   606  0006DE                     u247:
+   607  0006DE  FFFF               	dw	65535	; errata NOP
+   608  0006E0  2EE8               	decfsz	wreg,f,c
+   609  0006E2  D7FD               	bra	u247
+   610                           
+   611                           ;SoftwareUART.c: 313: for(uint8_t k = 0;k < 8;k++){
+   612  0006E4  0E00               	movlw	0
+   613  0006E6  6E74               	movwf	SoftUARTTransmitByte@k^0,c
+   614  0006E8                     l270:
+   615  0006E8  FFFF               	dw	65535	; assembler added errata NOP
    616                           
-   617                           ;SoftwareUART.c: 310: IO.Bytes[0x01 + 9] &= (~(1 << 0x3));
-   618  0006DA  968A               	bcf	138,3,c	;volatile
-   619                           
-   620                           ;SoftwareUART.c: 311: _delay((unsigned long)(((1000000/9600))*((16 * 1000000)/4000000.0)
-      +                          ));
-   621  0006DC  0E68               	movlw	104
-   622  0006DE                     u247:
-   623  0006DE  FFFF               	dw	65535	; errata NOP
-   624  0006E0  2EE8               	decfsz	wreg,f,c
-   625  0006E2  D7FD               	bra	u247
+   617                           ;SoftwareUART.c: 315: if(data & 0x01)
+   618  0006EA  A072               	btfss	SoftUARTTransmitByte@data^0,0,c
+   619  0006EC  D002               	goto	l1057
+   620                           
+   621                           ;SoftwareUART.c: 316: IO.Bytes[0x01 + 9] |= (1 << 0x3);
+   622  0006EE  868A               	bsf	138,3,c	;volatile
+   623  0006F0  D002               	goto	l1059
+   624  0006F2                     l1057:
+   625  0006F2  FFFF               	dw	65535	; assembler added errata NOP
    626                           
-   627                           ;SoftwareUART.c: 313: for(uint8_t k = 0;k < 8;k++){
-   628  0006E4  0E00               	movlw	0
-   629  0006E6  6E10               	movwf	SoftUARTTransmitByte@k^0,c
-   630  0006E8                     l270:
-   631  0006E8  FFFF               	dw	65535	; assembler added errata NOP
-   632                           
-   633                           ;SoftwareUART.c: 315: if(data & 0x01)
-   634  0006EA  A00E               	btfss	SoftUARTTransmitByte@data^0,0,c
-   635  0006EC  D002               	goto	l1057
-   636                           
-   637                           ;SoftwareUART.c: 316: IO.Bytes[0x01 + 9] |= (1 << 0x3);
-   638  0006EE  868A               	bsf	138,3,c	;volatile
-   639  0006F0  D002               	goto	l1059
-   640  0006F2                     l1057:
-   641  0006F2  FFFF               	dw	65535	; assembler added errata NOP
-   642                           
-   643                           ;SoftwareUART.c: 317: else;SoftwareUART.c: 318: IO.Bytes[0x01 + 9] &= (~(1 << 0x3));
-   644  0006F4  968A               	bcf	138,3,c	;volatile
-   645  0006F6                     l1059:
-   646  0006F6  FFFF               	dw	65535	; assembler added errata NOP
-   647                           
-   648                           ;SoftwareUART.c: 319: data >>= 1;
-   649  0006F8  90D8               	bcf	status,0,c
-   650  0006FA  320E               	rrcf	SoftUARTTransmitByte@data^0,f,c
-   651                           
-   652                           ;SoftwareUART.c: 320: _delay((unsigned long)(((1000000/9600))*((16 * 1000000)/4000000.0)
-      +                          ));
-   653  0006FC  0E68               	movlw	104
-   654  0006FE                     u257:
-   655  0006FE  FFFF               	dw	65535	; errata NOP
-   656  000700  2EE8               	decfsz	wreg,f,c
-   657  000702  D7FD               	bra	u257
-   658  000704  2A10               	incf	SoftUARTTransmitByte@k^0,f,c
-   659  000706  0E07               	movlw	7
-   660  000708  6410               	cpfsgt	SoftUARTTransmitByte@k^0,c
-   661  00070A  D7EE               	goto	l270
-   662                           
-   663                           ;SoftwareUART.c: 322: };SoftwareUART.c: 324: IO.Bytes[0x01 + 9] |= (1 << 0x3);
-   664  00070C  868A               	bsf	138,3,c	;volatile
-   665                           
-   666                           ;SoftwareUART.c: 325: _delay((unsigned long)(((1000000/9600))*((16 * 1000000)/4000000.0)
-      +                          ));
-   667  00070E  0E68               	movlw	104
-   668  000710                     u267:
-   669  000710  FFFF               	dw	65535	; errata NOP
-   670  000712  2EE8               	decfsz	wreg,f,c
-   671  000714  D7FD               	bra	u267
-   672                           
-   673                           ;SoftwareUART.c: 326: if(tmp)
-   674  000716  500F               	movf	SoftUARTTransmitByte@tmp^0,w,c
-   675  000718  A4D8               	btfss	status,2,c
-   676                           
-   677                           ;SoftwareUART.c: 327: (INTCONbits.GIE = 1);
-   678  00071A  8EF2               	bsf	242,7,c	;volatile
-   679  00071C  0012               	return		;funcret
-   680  00071E  FFFF               	dw	65535	; errata NOP
-   681  000720                     __end_of_SoftUARTTransmitByte:
-   682                           	callstack 0
-   683                           
-   684 ;; *************** function _SoftUARTInit *****************
-   685 ;; Defined at:
-   686 ;;		line 275 in file "Src/SoftwareUART.c"
-   687 ;; Parameters:    Size  Location     Type
-   688 ;;		None
-   689 ;; Auto vars:     Size  Location     Type
-   690 ;;		None
-   691 ;; Return value:  Size  Location     Type
-   692 ;;                  1    wreg      void 
-   693 ;; Registers used:
-   694 ;;		wreg, status,2, status,0
-   695 ;; Tracked objects:
-   696 ;;		On entry : 0/0
-   697 ;;		On exit  : 0/0
-   698 ;;		Unchanged: 0/0
-   699 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   700 ;;      Params:         0       0       0       0       0       0       0
-   701 ;;      Locals:         0       0       0       0       0       0       0
-   702 ;;      Temps:          0       0       0       0       0       0       0
-   703 ;;      Totals:         0       0       0       0       0       0       0
-   704 ;;Total ram usage:        0 bytes
-   705 ;; Hardware stack levels used: 1
-   706 ;; Hardware stack levels required when called: 1
-   707 ;; This function calls:
-   708 ;;		Nothing
-   709 ;; This function is called by:
-   710 ;;		_main
-   711 ;; This function uses a non-reentrant model
-   712 ;;
-   713                           
-   714                           	psect	text3
-   715  0007D0                     __ptext3:
-   716                           	callstack 0
-   717  0007D0                     _SoftUARTInit:
-   718                           	callstack 0
-   719  0007D0  FFFF               	dw	65535	; assembler added errata NOP
-   720                           
-   721                           ;SoftwareUART.c: 277: IO.Bytes[0x01 + 9] |= (1 << 0x3);
-   722                           
-   723                           ;incstack = 0
-   724  0007D2  868A               	bsf	138,3,c	;volatile
-   725                           
-   726                           ;SoftwareUART.c: 278: IO.Bytes[(uint8_t)0x01 + 18] &= ~(1 << 0x3);
-   727  0007D4  9693               	bcf	147,3,c	;volatile
-   728                           
-   729                           ;SoftwareUART.c: 281: INTCON2 &= 0xBF;
-   730  0007D6  9CF1               	bcf	241,6,c	;volatile
-   731                           
-   732                           ;SoftwareUART.c: 282: INTCON,INT0IE = 1;
-   733  0007D8  50F2               	movf	242,w,c	;volatile
-   734  0007DA  88F2               	bsf	4082,4,c	;volatile
-   735                           
-   736                           ;SoftwareUART.c: 283: INTCON,PEIE = 1;
-   737  0007DC  50F2               	movf	242,w,c	;volatile
-   738  0007DE  8CF2               	bsf	4082,6,c	;volatile
-   739                           
-   740                           ;SoftwareUART.c: 284: (INTCONbits.GIE = 1);
-   741  0007E0  8EF2               	bsf	242,7,c	;volatile
-   742                           
-   743                           ;SoftwareUART.c: 285: INT0IF = 0;
-   744  0007E2  92F2               	bcf	4082,1,c	;volatile
-   745  0007E4  0012               	return		;funcret
-   746  0007E6  FFFF               	dw	65535	; errata NOP
-   747  0007E8                     __end_of_SoftUARTInit:
-   748                           	callstack 0
-   749                           
-   750 ;; *************** function _Isr *****************
-   751 ;; Defined at:
-   752 ;;		line 64 in file "Src/ISR.c"
-   753 ;; Parameters:    Size  Location     Type
-   754 ;;		None
-   755 ;; Auto vars:     Size  Location     Type
-   756 ;;		None
-   757 ;; Return value:  Size  Location     Type
-   758 ;;                  1    wreg      void 
-   759 ;; Registers used:
-   760 ;;		None
-   761 ;; Tracked objects:
-   762 ;;		On entry : 0/0
-   763 ;;		On exit  : 0/0
-   764 ;;		Unchanged: 0/0
-   765 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   766 ;;      Params:         0       0       0       0       0       0       0
-   767 ;;      Locals:         0       0       0       0       0       0       0
-   768 ;;      Temps:          0       0       0       0       0       0       0
-   769 ;;      Totals:         0       0       0       0       0       0       0
-   770 ;;Total ram usage:        0 bytes
-   771 ;; Hardware stack levels used: 1
-   772 ;; This function calls:
-   773 ;;		Nothing
-   774 ;; This function is called by:
-   775 ;;		Interrupt level 2
-   776 ;; This function uses a non-reentrant model
-   777 ;;
-   778                           
-   779                           	psect	intcode
-   780  000008                     __pintcode:
-   781                           	callstack 0
-   782  000008                     _Isr:
-   783                           	callstack 0
-   784  000008  FFFF               	dw	65535	; assembler added errata NOP
-   785                           
-   786                           ;incstack = 0
-   787  00000A  8213               	bsf	btemp,1,c	;set compiler interrupt flag (level 2)
-   788  00000C  9213               	bcf	btemp,1,c	;clear compiler interrupt flag (level 2)
-   789  00000E  0011               	retfie		f
-   790  000010  FFFF               	dw	65535	; errata NOP
-   791  000012                     __end_of_Isr:
-   792                           	callstack 0
-   793                           
-   794                           	psect	rparam
-   795  0000                     
-   796                           	psect	temp
-   797  000013                     btemp:
-   798                           	callstack 0
-   799  000013                     	ds	1
-   800  0000                     int$flags	set	btemp
-   801  0000                     wtemp8	set	btemp+1
-   802  0000                     ttemp5	set	btemp+1
-   803  0000                     ttemp6	set	btemp+4
-   804  0000                     ttemp7	set	btemp+8
-   805                           
-   806                           	psect	idloc
-   807                           
-   808                           ;Config register IDLOC0 @ 0x200000
-   809                           ;	unspecified, using default values
-   810  200000                     	org	2097152
-   811  200000  FF                 	db	255
-   812                           
-   813                           ;Config register IDLOC1 @ 0x200001
-   814                           ;	unspecified, using default values
-   815  200001                     	org	2097153
-   816  200001  FF                 	db	255
-   817                           
-   818                           ;Config register IDLOC2 @ 0x200002
-   819                           ;	unspecified, using default values
-   820  200002                     	org	2097154
-   821  200002  FF                 	db	255
-   822                           
-   823                           ;Config register IDLOC3 @ 0x200003
-   824                           ;	unspecified, using default values
-   825  200003                     	org	2097155
-   826  200003  FF                 	db	255
-   827                           
-   828                           ;Config register IDLOC4 @ 0x200004
-   829                           ;	unspecified, using default values
-   830  200004                     	org	2097156
-   831  200004  FF                 	db	255
-   832                           
-   833                           ;Config register IDLOC5 @ 0x200005
-   834                           ;	unspecified, using default values
-   835  200005                     	org	2097157
-   836  200005  FF                 	db	255
+   627                           ;SoftwareUART.c: 317: else;SoftwareUART.c: 318: IO.Bytes[0x01 + 9] &= (~(1 << 0x3));
+   628  0006F4  968A               	bcf	138,3,c	;volatile
+   629  0006F6                     l1059:
+   630  0006F6  FFFF               	dw	65535	; assembler added errata NOP
+   631                           
+   632                           ;SoftwareUART.c: 319: data >>= 1;
+   633  0006F8  90D8               	bcf	status,0,c
+   634  0006FA  3272               	rrcf	SoftUARTTransmitByte@data^0,f,c
+   635                           
+   636                           ;SoftwareUART.c: 320: _delay((unsigned long)(((1000000/57600) - 3)*((16 * 1000000)/40000
+      +                          00.0)));
+   637  0006FC  0E0E               	movlw	14
+   638  0006FE                     u257:
+   639  0006FE  FFFF               	dw	65535	; errata NOP
+   640  000700  2EE8               	decfsz	wreg,f,c
+   641  000702  D7FD               	bra	u257
+   642  000704  2A74               	incf	SoftUARTTransmitByte@k^0,f,c
+   643  000706  0E07               	movlw	7
+   644  000708  6474               	cpfsgt	SoftUARTTransmitByte@k^0,c
+   645  00070A  D7EE               	goto	l270
+   646                           
+   647                           ;SoftwareUART.c: 322: };SoftwareUART.c: 324: IO.Bytes[0x01 + 9] |= (1 << 0x3);
+   648  00070C  868A               	bsf	138,3,c	;volatile
+   649                           
+   650                           ;SoftwareUART.c: 325: _delay((unsigned long)(((1000000/57600) - 3)*((16 * 1000000)/40000
+      +                          00.0)));
+   651  00070E  0E0E               	movlw	14
+   652  000710                     u267:
+   653  000710  FFFF               	dw	65535	; errata NOP
+   654  000712  2EE8               	decfsz	wreg,f,c
+   655  000714  D7FD               	bra	u267
+   656                           
+   657                           ;SoftwareUART.c: 326: if(tmp)
+   658  000716  5073               	movf	SoftUARTTransmitByte@tmp^0,w,c
+   659  000718  A4D8               	btfss	status,2,c
+   660                           
+   661                           ;SoftwareUART.c: 327: (INTCONbits.GIE = 1);
+   662  00071A  8EF2               	bsf	242,7,c	;volatile
+   663  00071C  0012               	return		;funcret
+   664  00071E  FFFF               	dw	65535	; errata NOP
+   665  000720                     __end_of_SoftUARTTransmitByte:
+   666                           	callstack 0
+   667                           
+   668 ;; *************** function _SoftUARTInit *****************
+   669 ;; Defined at:
+   670 ;;		line 275 in file "Src/SoftwareUART.c"
+   671 ;; Parameters:    Size  Location     Type
+   672 ;;		None
+   673 ;; Auto vars:     Size  Location     Type
+   674 ;;		None
+   675 ;; Return value:  Size  Location     Type
+   676 ;;                  1    wreg      void 
+   677 ;; Registers used:
+   678 ;;		wreg, status,2, status,0
+   679 ;; Tracked objects:
+   680 ;;		On entry : 0/0
+   681 ;;		On exit  : 0/0
+   682 ;;		Unchanged: 0/0
+   683 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   684 ;;      Params:         0       0       0       0       0       0       0
+   685 ;;      Locals:         0       0       0       0       0       0       0
+   686 ;;      Temps:          0       0       0       0       0       0       0
+   687 ;;      Totals:         0       0       0       0       0       0       0
+   688 ;;Total ram usage:        0 bytes
+   689 ;; Hardware stack levels used: 1
+   690 ;; Hardware stack levels required when called: 1
+   691 ;; This function calls:
+   692 ;;		Nothing
+   693 ;; This function is called by:
+   694 ;;		_main
+   695 ;; This function uses a non-reentrant model
+   696 ;;
+   697                           
+   698                           	psect	text3
+   699  0007BC                     __ptext3:
+   700                           	callstack 0
+   701  0007BC                     _SoftUARTInit:
+   702                           	callstack 0
+   703  0007BC  FFFF               	dw	65535	; assembler added errata NOP
+   704                           
+   705                           ;SoftwareUART.c: 277: IO.Bytes[0x01 + 9] |= (1 << 0x3);
+   706                           
+   707                           ;incstack = 0
+   708  0007BE  868A               	bsf	138,3,c	;volatile
+   709                           
+   710                           ;SoftwareUART.c: 278: IO.Bytes[(uint8_t)0x01 + 18] &= ~(1 << 0x3);
+   711  0007C0  9693               	bcf	147,3,c	;volatile
+   712                           
+   713                           ;SoftwareUART.c: 281: INTCON2 &= 0xBF;
+   714  0007C2  9CF1               	bcf	241,6,c	;volatile
+   715                           
+   716                           ;SoftwareUART.c: 282: INTCON,INT0IE = 1;
+   717  0007C4  50F2               	movf	242,w,c	;volatile
+   718  0007C6  88F2               	bsf	4082,4,c	;volatile
+   719                           
+   720                           ;SoftwareUART.c: 283: INTCON,PEIE = 1;
+   721  0007C8  50F2               	movf	242,w,c	;volatile
+   722  0007CA  8CF2               	bsf	4082,6,c	;volatile
+   723                           
+   724                           ;SoftwareUART.c: 284: (INTCONbits.GIE = 1);
+   725  0007CC  8EF2               	bsf	242,7,c	;volatile
+   726                           
+   727                           ;SoftwareUART.c: 285: INT0IF = 0;
+   728  0007CE  92F2               	bcf	4082,1,c	;volatile
+   729  0007D0  0012               	return		;funcret
+   730  0007D2  FFFF               	dw	65535	; errata NOP
+   731  0007D4                     __end_of_SoftUARTInit:
+   732                           	callstack 0
+   733                           
+   734 ;; *************** function _Isr *****************
+   735 ;; Defined at:
+   736 ;;		line 64 in file "Src/ISR.c"
+   737 ;; Parameters:    Size  Location     Type
+   738 ;;		None
+   739 ;; Auto vars:     Size  Location     Type
+   740 ;;		None
+   741 ;; Return value:  Size  Location     Type
+   742 ;;                  1    wreg      void 
+   743 ;; Registers used:
+   744 ;;		None
+   745 ;; Tracked objects:
+   746 ;;		On entry : 0/0
+   747 ;;		On exit  : 0/0
+   748 ;;		Unchanged: 0/0
+   749 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   750 ;;      Params:         0       0       0       0       0       0       0
+   751 ;;      Locals:         0       0       0       0       0       0       0
+   752 ;;      Temps:          0       0       0       0       0       0       0
+   753 ;;      Totals:         0       0       0       0       0       0       0
+   754 ;;Total ram usage:        0 bytes
+   755 ;; Hardware stack levels used: 1
+   756 ;; This function calls:
+   757 ;;		Nothing
+   758 ;; This function is called by:
+   759 ;;		Interrupt level 2
+   760 ;; This function uses a non-reentrant model
+   761 ;;
+   762                           
+   763                           	psect	intcode
+   764  000008                     __pintcode:
+   765                           	callstack 0
+   766  000008                     _Isr:
+   767                           	callstack 0
+   768  000008  FFFF               	dw	65535	; assembler added errata NOP
+   769                           
+   770                           ;incstack = 0
+   771  00000A  8277               	bsf	btemp,1,c	;set compiler interrupt flag (level 2)
+   772  00000C  9277               	bcf	btemp,1,c	;clear compiler interrupt flag (level 2)
+   773  00000E  0011               	retfie		f
+   774  000010  FFFF               	dw	65535	; errata NOP
+   775  000012                     __end_of_Isr:
+   776                           	callstack 0
+   777                           
+   778                           	psect	rparam
+   779  0000                     
+   780                           	psect	temp
+   781  000077                     btemp:
+   782                           	callstack 0
+   783  000077                     	ds	1
+   784  0000                     int$flags	set	btemp
+   785  0000                     wtemp8	set	btemp+1
+   786  0000                     ttemp5	set	btemp+1
+   787  0000                     ttemp6	set	btemp+4
+   788  0000                     ttemp7	set	btemp+8
+   789                           
+   790                           	psect	idloc
+   791                           
+   792                           ;Config register IDLOC0 @ 0x200000
+   793                           ;	unspecified, using default values
+   794  200000                     	org	2097152
+   795  200000  FF                 	db	255
+   796                           
+   797                           ;Config register IDLOC1 @ 0x200001
+   798                           ;	unspecified, using default values
+   799  200001                     	org	2097153
+   800  200001  FF                 	db	255
+   801                           
+   802                           ;Config register IDLOC2 @ 0x200002
+   803                           ;	unspecified, using default values
+   804  200002                     	org	2097154
+   805  200002  FF                 	db	255
+   806                           
+   807                           ;Config register IDLOC3 @ 0x200003
+   808                           ;	unspecified, using default values
+   809  200003                     	org	2097155
+   810  200003  FF                 	db	255
+   811                           
+   812                           ;Config register IDLOC4 @ 0x200004
+   813                           ;	unspecified, using default values
+   814  200004                     	org	2097156
+   815  200004  FF                 	db	255
+   816                           
+   817                           ;Config register IDLOC5 @ 0x200005
+   818                           ;	unspecified, using default values
+   819  200005                     	org	2097157
+   820  200005  FF                 	db	255
+   821                           
+   822                           ;Config register IDLOC6 @ 0x200006
+   823                           ;	unspecified, using default values
+   824  200006                     	org	2097158
+   825  200006  FF                 	db	255
+   826                           
+   827                           ;Config register IDLOC7 @ 0x200007
+   828                           ;	unspecified, using default values
+   829  200007                     	org	2097159
+   830  200007  FF                 	db	255
+   831                           
+   832                           	psect	config
+   833                           
+   834                           ; Padding undefined space
+   835  300000                     	org	3145728
+   836  300000  FF                 	db	255
    837                           
-   838                           ;Config register IDLOC6 @ 0x200006
-   839                           ;	unspecified, using default values
-   840  200006                     	org	2097158
-   841  200006  FF                 	db	255
-   842                           
-   843                           ;Config register IDLOC7 @ 0x200007
-   844                           ;	unspecified, using default values
-   845  200007                     	org	2097159
-   846  200007  FF                 	db	255
-   847                           
-   848                           	psect	config
-   849                           
-   850                           ; Padding undefined space
-   851  300000                     	org	3145728
-   852  300000  FF                 	db	255
-   853                           
-   854                           ;Config register CONFIG1H @ 0x300001
-   855                           ;	Oscillator Selection bits
-   856                           ;	OSC = HS, HS oscillator
-   857                           ;	Oscillator System Clock Switch Enable bit
-   858                           ;	OSCS = OFF, Oscillator system clock switch option is disabled (main oscillator is sour
+   838                           ;Config register CONFIG1H @ 0x300001
+   839                           ;	Oscillator Selection bits
+   840                           ;	OSC = HS, HS oscillator
+   841                           ;	Oscillator System Clock Switch Enable bit
+   842                           ;	OSCS = OFF, Oscillator system clock switch option is disabled (main oscillator is sour
       +                          ce)
-   859  300001                     	org	3145729
-   860  300001  22                 	db	34
-   861                           
-   862                           ;Config register CONFIG2L @ 0x300002
-   863                           ;	Power-up Timer Enable bit
-   864                           ;	PWRT = OFF, PWRT disabled
-   865                           ;	Brown-out Reset Enable bit
-   866                           ;	BOR = ON, Brown-out Reset enabled
-   867                           ;	Brown-out Reset Voltage bits
-   868                           ;	BORV = 20, VBOR set to 2.0V
-   869  300002                     	org	3145730
-   870  300002  0F                 	db	15
-   871                           
-   872                           ;Config register CONFIG2H @ 0x300003
-   873                           ;	Watchdog Timer Enable bit
-   874                           ;	WDT = OFF, WDT disabled (control is placed on the SWDTEN bit)
-   875                           ;	Watchdog Timer Postscale Select bits
-   876                           ;	WDTPS = 128, 1:128
-   877  300003                     	org	3145731
-   878  300003  0E                 	db	14
-   879                           
-   880                           ; Padding undefined space
-   881  300004                     	org	3145732
-   882  300004  FF                 	db	255
+   843  300001                     	org	3145729
+   844  300001  22                 	db	34
+   845                           
+   846                           ;Config register CONFIG2L @ 0x300002
+   847                           ;	Power-up Timer Enable bit
+   848                           ;	PWRT = OFF, PWRT disabled
+   849                           ;	Brown-out Reset Enable bit
+   850                           ;	BOR = ON, Brown-out Reset enabled
+   851                           ;	Brown-out Reset Voltage bits
+   852                           ;	BORV = 20, VBOR set to 2.0V
+   853  300002                     	org	3145730
+   854  300002  0F                 	db	15
+   855                           
+   856                           ;Config register CONFIG2H @ 0x300003
+   857                           ;	Watchdog Timer Enable bit
+   858                           ;	WDT = OFF, WDT disabled (control is placed on the SWDTEN bit)
+   859                           ;	Watchdog Timer Postscale Select bits
+   860                           ;	WDTPS = 128, 1:128
+   861  300003                     	org	3145731
+   862  300003  0E                 	db	14
+   863                           
+   864                           ; Padding undefined space
+   865  300004                     	org	3145732
+   866  300004  FF                 	db	255
+   867                           
+   868                           ;Config register CONFIG3H @ 0x300005
+   869                           ;	CCP2 Mux bit
+   870                           ;	CCP2MUX = ON, CCP2 input/output is multiplexed with RC1
+   871  300005                     	org	3145733
+   872  300005  01                 	db	1
+   873                           
+   874                           ;Config register CONFIG4L @ 0x300006
+   875                           ;	Stack Full/Underflow Reset Enable bit
+   876                           ;	STVR = OFF, Stack Full/Underflow will not cause RESET
+   877                           ;	Low Voltage ICSP Enable bit
+   878                           ;	LVP = OFF, Low Voltage ICSP disabled
+   879                           ;	Background Debugger Enable bit
+   880                           ;	DEBUG = 0x1, unprogrammed default
+   881  300006                     	org	3145734
+   882  300006  80                 	db	128
    883                           
-   884                           ;Config register CONFIG3H @ 0x300005
-   885                           ;	CCP2 Mux bit
-   886                           ;	CCP2MUX = ON, CCP2 input/output is multiplexed with RC1
-   887  300005                     	org	3145733
-   888  300005  01                 	db	1
-   889                           
-   890                           ;Config register CONFIG4L @ 0x300006
-   891                           ;	Stack Full/Underflow Reset Enable bit
-   892                           ;	STVR = OFF, Stack Full/Underflow will not cause RESET
-   893                           ;	Low Voltage ICSP Enable bit
-   894                           ;	LVP = OFF, Low Voltage ICSP disabled
-   895                           ;	Background Debugger Enable bit
-   896                           ;	DEBUG = 0x1, unprogrammed default
-   897  300006                     	org	3145734
-   898  300006  80                 	db	128
+   884                           ; Padding undefined space
+   885  300007                     	org	3145735
+   886  300007  FF                 	db	255
+   887                           
+   888                           ;Config register CONFIG5L @ 0x300008
+   889                           ;	Code Protection bit
+   890                           ;	CP0 = OFF, Block 0 (000200-001FFFh) not code protected
+   891                           ;	Code Protection bit
+   892                           ;	CP1 = OFF, Block 1 (002000-003FFFh) not code protected
+   893                           ;	Code Protection bit
+   894                           ;	CP2 = OFF, Block 2 (004000-005FFFh) not code protected
+   895                           ;	Code Protection bit
+   896                           ;	CP3 = OFF, Block 3 (006000-007FFFh) not code protected
+   897  300008                     	org	3145736
+   898  300008  0F                 	db	15
    899                           
-   900                           ; Padding undefined space
-   901  300007                     	org	3145735
-   902  300007  FF                 	db	255
-   903                           
-   904                           ;Config register CONFIG5L @ 0x300008
-   905                           ;	Code Protection bit
-   906                           ;	CP0 = OFF, Block 0 (000200-001FFFh) not code protected
-   907                           ;	Code Protection bit
-   908                           ;	CP1 = OFF, Block 1 (002000-003FFFh) not code protected
-   909                           ;	Code Protection bit
-   910                           ;	CP2 = OFF, Block 2 (004000-005FFFh) not code protected
-   911                           ;	Code Protection bit
-   912                           ;	CP3 = OFF, Block 3 (006000-007FFFh) not code protected
-   913  300008                     	org	3145736
-   914  300008  0F                 	db	15
-   915                           
-   916                           ;Config register CONFIG5H @ 0x300009
-   917                           ;	Boot Block Code Protection bit
-   918                           ;	CPB = OFF, Boot Block (000000-0001FFh) not code protected
-   919                           ;	Data EEPROM Code Protection bit
-   920                           ;	CPD = OFF, Data EEPROM not code protected
-   921  300009                     	org	3145737
-   922  300009  C0                 	db	192
-   923                           
-   924                           ;Config register CONFIG6L @ 0x30000A
-   925                           ;	Write Protection bit
-   926                           ;	WRT0 = OFF, Block 0 (000200-001FFFh) not write protected
-   927                           ;	Write Protection bit
-   928                           ;	WRT1 = OFF, Block 1 (002000-003FFFh) not write protected
-   929                           ;	Write Protection bit
-   930                           ;	WRT2 = OFF, Block 2 (004000-005FFFh) not write protected
-   931                           ;	Write Protection bit
-   932                           ;	WRT3 = OFF, Block 3 (006000-007FFFh) not write protected
-   933  30000A                     	org	3145738
-   934  30000A  0F                 	db	15
-   935                           
-   936                           ;Config register CONFIG6H @ 0x30000B
-   937                           ;	Configuration Register Write Protection bit
-   938                           ;	WRTC = OFF, Configuration registers (300000-3000FFh) not write protected
-   939                           ;	Boot Block Write Protection bit
-   940                           ;	WRTB = OFF, Boot Block (000000-0001FFh) not write protected
-   941                           ;	Data EEPROM Write Protection bit
-   942                           ;	WRTD = OFF, Data EEPROM not write protected
-   943  30000B                     	org	3145739
-   944  30000B  E0                 	db	224
-   945                           
-   946                           ;Config register CONFIG7L @ 0x30000C
-   947                           ;	Table Read Protection bit
-   948                           ;	EBTR0 = OFF, Block 0 (000200-001FFFh) not protected from Table Reads executed in other
+   900                           ;Config register CONFIG5H @ 0x300009
+   901                           ;	Boot Block Code Protection bit
+   902                           ;	CPB = OFF, Boot Block (000000-0001FFh) not code protected
+   903                           ;	Data EEPROM Code Protection bit
+   904                           ;	CPD = OFF, Data EEPROM not code protected
+   905  300009                     	org	3145737
+   906  300009  C0                 	db	192
+   907                           
+   908                           ;Config register CONFIG6L @ 0x30000A
+   909                           ;	Write Protection bit
+   910                           ;	WRT0 = OFF, Block 0 (000200-001FFFh) not write protected
+   911                           ;	Write Protection bit
+   912                           ;	WRT1 = OFF, Block 1 (002000-003FFFh) not write protected
+   913                           ;	Write Protection bit
+   914                           ;	WRT2 = OFF, Block 2 (004000-005FFFh) not write protected
+   915                           ;	Write Protection bit
+   916                           ;	WRT3 = OFF, Block 3 (006000-007FFFh) not write protected
+   917  30000A                     	org	3145738
+   918  30000A  0F                 	db	15
+   919                           
+   920                           ;Config register CONFIG6H @ 0x30000B
+   921                           ;	Configuration Register Write Protection bit
+   922                           ;	WRTC = OFF, Configuration registers (300000-3000FFh) not write protected
+   923                           ;	Boot Block Write Protection bit
+   924                           ;	WRTB = OFF, Boot Block (000000-0001FFh) not write protected
+   925                           ;	Data EEPROM Write Protection bit
+   926                           ;	WRTD = OFF, Data EEPROM not write protected
+   927  30000B                     	org	3145739
+   928  30000B  E0                 	db	224
+   929                           
+   930                           ;Config register CONFIG7L @ 0x30000C
+   931                           ;	Table Read Protection bit
+   932                           ;	EBTR0 = OFF, Block 0 (000200-001FFFh) not protected from Table Reads executed in other
       +                           blocks
-   949                           ;	Table Read Protection bit
-   950                           ;	EBTR1 = OFF, Block 1 (002000-003FFFh) not protected from Table Reads executed in other
+   933                           ;	Table Read Protection bit
+   934                           ;	EBTR1 = OFF, Block 1 (002000-003FFFh) not protected from Table Reads executed in other
       +                           blocks
-   951                           ;	Table Read Protection bit
-   952                           ;	EBTR2 = OFF, Block 2 (004000-005FFFh) not protected from Table Reads executed in other
+   935                           ;	Table Read Protection bit
+   936                           ;	EBTR2 = OFF, Block 2 (004000-005FFFh) not protected from Table Reads executed in other
       +                           blocks
-   953                           ;	Table Read Protection bit
-   954                           ;	EBTR3 = OFF, Block 3 (006000-007FFFh) not protected from Table Reads executed in other
+   937                           ;	Table Read Protection bit
+   938                           ;	EBTR3 = OFF, Block 3 (006000-007FFFh) not protected from Table Reads executed in other
       +                           blocks
-   955  30000C                     	org	3145740
-   956  30000C  0F                 	db	15
-   957                           
-   958                           ;Config register CONFIG7H @ 0x30000D
-   959                           ;	Boot Block Table Read Protection bit
-   960                           ;	EBTRB = OFF, Boot Block (000000-0001FFh) not protected from Table Reads executed in ot
+   939  30000C                     	org	3145740
+   940  30000C  0F                 	db	15
+   941                           
+   942                           ;Config register CONFIG7H @ 0x30000D
+   943                           ;	Boot Block Table Read Protection bit
+   944                           ;	EBTRB = OFF, Boot Block (000000-0001FFh) not protected from Table Reads executed in ot
       +                          her blocks
-   961  30000D                     	org	3145741
-   962  30000D  40                 	db	64
-   963                           tosu	equ	0xFFF
-   964                           tosh	equ	0xFFE
-   965                           tosl	equ	0xFFD
-   966                           stkptr	equ	0xFFC
-   967                           pclatu	equ	0xFFB
-   968                           pclath	equ	0xFFA
-   969                           pcl	equ	0xFF9
-   970                           tblptru	equ	0xFF8
-   971                           tblptrh	equ	0xFF7
-   972                           tblptrl	equ	0xFF6
-   973                           tablat	equ	0xFF5
-   974                           prodh	equ	0xFF4
-   975                           prodl	equ	0xFF3
-   976                           indf0	equ	0xFEF
-   977                           postinc0	equ	0xFEE
-   978                           postdec0	equ	0xFED
-   979                           preinc0	equ	0xFEC
-   980                           plusw0	equ	0xFEB
-   981                           fsr0h	equ	0xFEA
-   982                           fsr0l	equ	0xFE9
-   983                           wreg	equ	0xFE8
-   984                           indf1	equ	0xFE7
-   985                           postinc1	equ	0xFE6
-   986                           postdec1	equ	0xFE5
-   987                           preinc1	equ	0xFE4
-   988                           plusw1	equ	0xFE3
-   989                           fsr1h	equ	0xFE2
-   990                           fsr1l	equ	0xFE1
-   991                           bsr	equ	0xFE0
-   992                           indf2	equ	0xFDF
-   993                           postinc2	equ	0xFDE
-   994                           postdec2	equ	0xFDD
-   995                           preinc2	equ	0xFDC
-   996                           plusw2	equ	0xFDB
-   997                           fsr2h	equ	0xFDA
-   998                           fsr2l	equ	0xFD9
-   999                           status	equ	0xFD8
+   945  30000D                     	org	3145741
+   946  30000D  40                 	db	64
+   947                           tosu	equ	0xFFF
+   948                           tosh	equ	0xFFE
+   949                           tosl	equ	0xFFD
+   950                           stkptr	equ	0xFFC
+   951                           pclatu	equ	0xFFB
+   952                           pclath	equ	0xFFA
+   953                           pcl	equ	0xFF9
+   954                           tblptru	equ	0xFF8
+   955                           tblptrh	equ	0xFF7
+   956                           tblptrl	equ	0xFF6
+   957                           tablat	equ	0xFF5
+   958                           prodh	equ	0xFF4
+   959                           prodl	equ	0xFF3
+   960                           indf0	equ	0xFEF
+   961                           postinc0	equ	0xFEE
+   962                           postdec0	equ	0xFED
+   963                           preinc0	equ	0xFEC
+   964                           plusw0	equ	0xFEB
+   965                           fsr0h	equ	0xFEA
+   966                           fsr0l	equ	0xFE9
+   967                           wreg	equ	0xFE8
+   968                           indf1	equ	0xFE7
+   969                           postinc1	equ	0xFE6
+   970                           postdec1	equ	0xFE5
+   971                           preinc1	equ	0xFE4
+   972                           plusw1	equ	0xFE3
+   973                           fsr1h	equ	0xFE2
+   974                           fsr1l	equ	0xFE1
+   975                           bsr	equ	0xFE0
+   976                           indf2	equ	0xFDF
+   977                           postinc2	equ	0xFDE
+   978                           postdec2	equ	0xFDD
+   979                           preinc2	equ	0xFDC
+   980                           plusw2	equ	0xFDB
+   981                           fsr2h	equ	0xFDA
+   982                           fsr2l	equ	0xFD9
+   983                           status	equ	0xFD8
 
 Data Sizes:
     Strings     199
     Constant    1
     Data        0
-    BSS         268
+    BSS         113
     Persistent  0
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMRAM          126      5      18
+    COMRAM          126      5     118
     BANK0           128      0       0
-    BANK1           256      0     255
+    BANK1           256      0       0
     BANK2           256      0       0
     BANK3           256      0       0
     BANK4           256      0       0
@@ -1153,11 +1137,11 @@ BANK3              100      0       0      11        0.0%
 BITBANK2           100      0       0       8        0.0%
 BANK2              100      0       0       9        0.0%
 BITBANK1           100      0       0       6        0.0%
-BANK1              100      0      FF       7       99.6%
+BANK1              100      0       0       7        0.0%
 BITBANK0            80      0       0       4        0.0%
 BANK0               80      0       0       5        0.0%
 BITCOMRAM           7E      0       0       0        0.0%
-COMRAM              7E      5      12       1       14.3%
+COMRAM              7E      5      76       1       93.7%
 BITBIGSFRllhhhl     25      0       0      18        0.0%
 BITBIGSFRllhhhh     18      0       0      17        0.0%
 BITBIGSFRh           D      0       0      16        0.0%
@@ -1168,13 +1152,13 @@ BITSFR               0      0       0     200        0.0%
 SFR                  0      0       0     200        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0     111      21        0.0%
-DATA                 0      0     111       3        0.0%
+ABS                  0      0      76      21        0.0%
+DATA                 0      0      76       3        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.36 build 20220127204148 
-Symbol Table                                                                                   Wed Feb 15 19:26:01 2023
+Symbol Table                                                                                   Wed Feb 15 21:56:15 2023
 
                                                         l13 0766  
                                                         _IO 000F80  
@@ -1183,9 +1167,9 @@ Symbol Table                                                                    
                                                        u257 06FE  
                                                        u267 0710  
                                                        _Isr 0008  
-                                                       _val 0009  
+                                                       _val 006D  
                                                        wreg 000FE8  
-                                                      ?_Isr 000E  
+                                                      ?_Isr 0072  
                                                       l1043 06D6  
                                                       l1057 06F2  
                                                       l1059 06F6  
@@ -1211,14 +1195,12 @@ Symbol Table                                                                    
                                                       _TRMT 007D61  
                                                       _SYNC 007D64  
                                                       _main 0720  
-                                     SoftUARTTransmitByte@k 0010  
-                                                      fsr1h 000FE2  
-                                                      fsr1l 000FE1  
-                                                      btemp 0013  
+                                     SoftUARTTransmitByte@k 0074  
+                                                      btemp 0077  
                                                       start 0012  
                                               ___param_bank 000000  
-                                                     ??_Isr 000E  
-                                                     ?_main 000E  
+                                                     ??_Isr 0072  
+                                                     ?_main 0072  
                                                      _T0CON 000FD5  
                                                      _RCREG 000FAE  
                                                      _RCSTA 000FAB  
@@ -1227,75 +1209,72 @@ Symbol Table                                                                    
                                                      _TXSTA 000FAC  
                                           __end_of_OSC_FREQ 0602  
                                                      tablat 000FF5  
-                                                     ttemp5 0014  
-                                                     ttemp6 0017  
-                                                     ttemp7 001B  
+                                                     ttemp5 0078  
+                                                     ttemp6 007B  
+                                                     ttemp7 007F  
                                                      status 000FD8  
-                                                     wtemp8 0014  
+                                                     wtemp8 0078  
                                            __initialization 07A2  
                                               __end_of_main 076A  
-                                                    ??_main 0013  
+                                                    ??_main 0077  
                                              __activetblptr 000002  
                                      __end_of_SoftUARTPrint 07A2  
                                                     _INT0IE 007F94  
                                                     _INT0IF 007F91  
                                                     _INTCON 000FF2  
-                                                    _DecVar 0005  
-                                                    _IncVar 0001  
-                                                    _RxFIFO 0100  
-                                                    clear_0 07AA  
-                                                    clear_1 07BC  
+                                                    _DecVar 0069  
+                                                    _IncVar 0065  
+                                                    _RxFIFO 0001  
+                                                    clear_0 07A8  
                                                     isa$std 000001  
-                                   SoftUARTTransmitByte@tmp 000F  
+                                   SoftUARTTransmitByte@tmp 0073  
                                               __mediumconst 0000  
                                                     tblptrh 000FF7  
                                                     tblptrl 000FF6  
                                                     tblptru 000FF8  
-                                          SoftUARTPrint@str 0011  
+                                          SoftUARTPrint@str 0075  
                                                 __accesstop 0080  
-                                   __end_of__initialization 07C2  
+                                   __end_of__initialization 07AE  
                                              ___rparam_used 000001  
-                                            __pcstackCOMRAM 000E  
-                                                __pbssBANK1 0100  
-                                             ?_SoftUARTInit 000E  
+                                            __pcstackCOMRAM 0072  
+                                             ?_SoftUARTInit 0072  
                                                    _INTCON2 000FF1  
                                                    _INTCON3 000FF0  
                                                    __Hparam 0000  
                                                    __Lparam 0000  
-                                            ??_SoftUARTInit 000E  
+                                            ??_SoftUARTInit 0072  
                                               __psmallconst 0600  
                                                    __pcinit 07A2  
                                                    __ramtop 0600  
                                                    __ptext0 0720  
                                                    __ptext1 076A  
                                                    __ptext2 06CA  
-                                                   __ptext3 07D0  
-                                  SoftUARTTransmitByte@data 000E  
-                                      end_of_initialization 07C2  
+                                                   __ptext3 07BC  
+                                  SoftUARTTransmitByte@data 0072  
+                                      end_of_initialization 07AE  
                                              __Lmediumconst 0000  
-                                                   postdec1 000FE5  
                                                    postinc0 000FEE  
                               __end_of_SoftUARTTransmitByte 0720  
                                        start_initialization 07A2  
                                                __end_of_Isr 0012  
-                                      __end_of_SoftUARTInit 07E8  
-                                                 _Rxfifoptr 000D  
+                                      __end_of_SoftUARTInit 07D4  
+                                                 _Rxfifoptr 0071  
                                                __pbssCOMRAM 0001  
                                              _SoftUARTPrint 076A  
                                                  __pintcode 0008  
                                                __smallconst 0600  
-                                            ?_SoftUARTPrint 0011  
+                                            ?_SoftUARTPrint 0075  
                                       _SoftUARTTransmitByte 06CA  
                                                   _OSC_FREQ 0601  
-                                     ?_SoftUARTTransmitByte 000E  
+                                     ?_SoftUARTTransmitByte 0072  
                                                   __Hrparam 0000  
                                                   __Lrparam 0000  
-                                              _SoftUARTInit 07D0  
-                                           ??_SoftUARTPrint 0013  
-                                                  _Rxstatus 000B  
+                                              _SoftUARTInit 07BC  
+                                           ??_SoftUARTPrint 0077  
+                                                  _Rxstatus 006F  
                                                   isa$xinst 000000  
-                                                  int$flags 0013  
+                                                  int$flags 0077  
                                                 _INTCONbits 000FF2  
-                                                  intlevel2 07E8  
-                                    ??_SoftUARTTransmitByte 000E  
-                                             _Rxfifocurrent 000C  
+                                                  intlevel2 07D4  
+                                    ??_SoftUARTTransmitByte 0072  
+                                             _Rxfifocurrent 0070  

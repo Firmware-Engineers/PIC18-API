@@ -17,13 +17,13 @@
  Intel Hex-file ranges:
   0h - 5h		(dist/default/production\PIC18.X.production.hex)
   8h - 15h		(dist/default/production\PIC18.X.production.hex)
-  600h - 7E9h		(dist/default/production\PIC18.X.production.hex)
+  600h - 7D5h		(dist/default/production\PIC18.X.production.hex)
   200000h - 200007h		(dist/default/production\PIC18.X.production.hex)
   300000h - 30000Dh		(dist/default/production\PIC18.X.production.hex)
  Unused ranges:
   6h - 7h
   16h - 5FFh
-  7EAh - 1FFFFFh
+  7D6h - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
@@ -65,8 +65,7 @@
 000007A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000007B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000007C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000007D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000007E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
+000007D0 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
