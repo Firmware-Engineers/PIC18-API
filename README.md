@@ -4,9 +4,9 @@ This API will be used to control the IoT devices based on a PIC18 microcontrolle
 ![8 bits PIC MCUs APIs](https://user-images.githubusercontent.com/56833496/216124836-c35804fc-3d32-4546-a4b1-8ea82ccd52b8.png)
 # Prerequisites
 To use this software you need to:
-- Install MPLAB X IDE
-- C compiler for PIC 18 microcontrollers (ex. XC8)
-- Doxygen generator, to generate documentation from source code (optional)
+- Install MPLAB X IDE: https://www.microchip.com/en-us/tools-resources/archives/mplab-ecosystem
+- C compiler for PIC 18 microcontrollers (ex. XC8): https://www.microchip.com/en-us/tools-resources/archives/mplab-ecosystem
+- Doxygen generator, to generate documentation from source code (optional): https://www.doxygen.nl/download.html
 
 Note: 
 ```
@@ -27,16 +27,28 @@ In main.c file :
 // Include dependencies
 #include "../Inc/GPIO.h"
 #include "../Inc/Interrupts.h"
+#include "../Inc/PIC18Types.h"
 
 main()
-{
-    EnableInterrupt(MCU_INT_ENABLE | INT0_INT_ENABLE);      // Enable Global and INT0 interrupts
-    SetINTxEdgeRising(INT0_INT_EDGE);                       // Generate interrupts on every rising edge on INT0 
+{	
+	// User code
+	
+	ConfigType cfg;
+	cfg.grp1 = MCU_INT_ENABLE | INT0_INT_ENABLE;                    // Enables interrupts using setting from INTERRUPT_EN_DIS_CONSTANTS_GROUP1
+	cfg.grp2 = 0;                   								// Enables interrupts using setting from INTERRUPT_EN_DIS_CONSTANTS_GROUP2
+	cfg.grp3 = 0;                                                   // No changes
+	cfg.grp4 = 0;          											// No changes
+	InterruptEnable(cfg);
+	
+    SetINTxEdgeRising(INT0_INT_EDGE);                             	// Generate interrupts on every rising edge on INT0 
     
+	// User code
+	
     while(1)
     {
         
-        
+		// User code
+			
     }
  }
 ```
@@ -50,7 +62,7 @@ void interrupt Isr(void)
 {
     if(GetInterruptFlag(INT0_INT_FLAG) == INT0_INT_FLAG)
     {
-        // Interrupt occured, do something about it
+        // Interrupt occurred, do something about it
     }
 }
 ```
