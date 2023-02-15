@@ -11,24 +11,23 @@
 #include "../Inc/Interrupts.h"
 #include "../Inc/SystemTime.h"
 #include "../Inc/USART.h"
+#include "../Inc/SoftwareUART.h"
 
 void main(void) {
-    SystimeInit();
+    
+    //SystimeInit();
+    GPIOClearPin(GPIOA, _PORTA_RA0_POSN);
     GPIOSetOutput(GPIOA, _PORTA_RA0_POSN);
-    GPIOClearPin (GPIOA, _PORTA_RA0_POSN);
-    ConfigType cfg;
-    cfg.grp1 = USART_TX_ENABLE | USART_MODE_ASYNC | USART_BR_SPEED_HIGH;
-    cfg.grp2 = USART_ENABLE | USART_RX_ENABLE;
-    //USARTAsyncInit(25);
-    USARTInit(cfg);
-    //USARTSetBGR(25);
-    USARTSetBaudRate(9600);
-    USARTPrint("Initialization...");
+    
+    SoftUARTInit();
+    SoftUARTPrint("Hello World!\r");
+    SoftUARTPrint("This is a software UART library test!\r");
+    SoftUARTPrint("Designed by Firmware Engineer Team. Copyright 2023.\r");
+    SoftUARTPrint("\r\r");
+    SoftUARTPrint("Freely available source code on GitHub (https://github.com/Firmware-Engineers/PIC18-API)\r");
     
     while(1)
     {
-        GPIOTogglePin(GPIOA, _PORTA_RA0_POSN);
-        Wait_ms(500);
         
     }
 }

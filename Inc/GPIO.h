@@ -49,9 +49,12 @@ extern "C" {
 /**
  * @brief   Configures a given I/O pin to output 
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
- * @param   PIN: The pin to configure on the given I/O port (see pic18fxxx.h file)
+ * @param   PIN: The pin number to configure on the given I/O port. Values range from 0 to 7.
+ * @note    Some I/O ports may have less than 8 individual pins (ex. GPIOE), refer to device datasheet for more details.
  * @retval  None
- * @note    Example: GPIOSetOutput(GPIOA, _PORTA_RA0_POSN);     // Will set PORTA, bit 0 as output.
+ * @note    Examples: 
+ *              - GPIOSetOutput(GPIOA, _PORTA_RA0_POSN);        // Will set PORTA, bit 0 as output.
+ *              - GPIOSetOutput(GPIOA, 0);                      // Will set PORTA, bit 0 as output.
  *          
  */     
 #define GPIOSetOutput(PORT, PIN)                GPIO.Bytes[(uint8_t)PORT + IO_TRIS_OFFSET] &= ~(1 << PIN)
@@ -61,9 +64,12 @@ extern "C" {
 /**
  * @brief   Configures a given I/O pin to input 
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
- * @param   PIN: The pin to configure on the given I/O port (see pic18fxxx.h file)
+ * @param   PIN: The pin number to configure on the given I/O port. Values range from 0 to 7.
+ * @note    Some I/O ports may have less than 8 individual pins (ex. GPIOE), refer to device datasheet for more details.
  * @retval  None
- * @note    Example: GPIOSetInput(GPIOA, _PORTA_RA0_POSN);      // Will set PORTA, bit 0 as input.
+ * @note    Examples: 
+ *              - GPIOSetInput(GPIOA, _PORTA_RA0_POSN);         // Will set PORTA, bit 0 as input.
+ *              - GPIOSetInput(GPIOA, 0);                       // Will set PORTA, bit 0 as input.
  */     
 #define GPIOSetInput(PORT, PIN)                 (GPIO.Bytes[PORT + IO_TRIS_OFFSET] |= (1 << PIN))
 //-----------------------------------
@@ -85,9 +91,12 @@ extern "C" {
 /**
  * @brief   Sets the given I/O pin to logic '1'
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
- * @param   PIN: The pin to set on the given I/O port (see pic18fxxx.h file)
+ * @param   PIN: The pin number on the given I/O port. Values range from 0 to 7.
+ * @note    Some I/O ports may have less than 8 individual pins (ex. GPIOE), refer to device datasheet for more details.
  * @retval  None
- * @note    Example: GPIOSetPin(GPIOA, _PORTA_RA0_POSN);        // Will set PORTA, bit 0 to '1'.
+ * @note    Examples: 
+ *              - GPIOSetPin(GPIOA, _PORTA_RA0_POSN);           // Will set PORTA, bit 0 to '1'.
+ *              - GPIOSetPin(GPIOA, 0);                         // Will set PORTA, bit 0 to '1'.
  */     
 #define GPIOSetPin(PORT, PIN)                   GPIO.Bytes[PORT + IO_LATCH_OFFSET] |= (1 << PIN)
 //-----------------------------------   
@@ -96,9 +105,12 @@ extern "C" {
 /**
  * @brief   Sets the given I/O pin to logic '0' 
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
- * @param   PIN: The pin to clear on the given I/O port (see pic18fxxx.h file)
+ * @param   PIN: The pin number on the given I/O port. Values range from 0 to 7.
+ * @note    Some I/O ports may have less than 8 individual pins (ex. GPIOE), refer to device datasheet for more details.
  * @retval  None
- * @note    Example: GPIOClearPin(GPIOA, _PORTA_RA0_POSN);      // Will set PORTA, bit 0 to '0'.
+ * @note    Examples: 
+ *              - GPIOClearPin(GPIOA, _PORTA_RA0_POSN);         // Will set PORTA, bit 0 to '0'.
+ *              - GPIOClearPin(GPIOA, 0);                       // Will set PORTA, bit 0 to '0'.
  */    
 #define GPIOClearPin(PORT, PIN)                 GPIO.Bytes[PORT + IO_LATCH_OFFSET] &= (~(1 << PIN))
 //-----------------------------------
@@ -107,9 +119,12 @@ extern "C" {
 /**
  * @brief   Toggles the I/O pin state, from '0' to '1' and vise versa 
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
- * @param   PIN: The pin to toggle on the given I/O port (see pic18fxxx.h file)
+ * @param   PIN: The pin number on the given I/O port. Values range from 0 to 7.
+ * @note    Some I/O ports may have less than 8 individual pins (ex. GPIOE), refer to device datasheet for more details.
  * @retval  None
- * @note    Example: GPIOTogglePin(GPIOA, _PORTA_RA0_POSN);     // Will toggle PORTA, bit 0 state.
+ * @note    Examples: 
+ *              - GPIOTogglePin(GPIOA, _PORTA_RA0_POSN);        // Will toggle PORTA, bit 0 state.
+ *              - GPIOTogglePin(GPIOA, 0);                      // Will toggle PORTA, bit 0 state.
  */     
 #define GPIOTogglePin(PORT,PIN)                 GPIO.Bytes[PORT + IO_LATCH_OFFSET] ^= (1 << PIN)   
 //-----------------------------------
@@ -118,9 +133,12 @@ extern "C" {
 /**
  * @brief   Gets the given I/O pin logic state
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
- * @param   PIN: The pin to read the state from (see pic18fxxx.h file)
+ * @param   PIN: The pin number to get value from on the given I/O port. Values range from 0 to 7.
+ * @note    Some I/O ports may have less than 8 individual pins (ex. GPIOE), refer to device datasheet for more details.
  * @retval  0 or 1 
- * @note    Example: uint8_t state = GetPin(GPIOA, _PORTA_RA0_POSN);
+ * @note    Examples: 
+ *              - uint8_t state = GetPin(GPIOA, _PORTA_RA0_POSN);
+ *              - uint8_t state = GetPin(GPIOA, 0);
  */    
 #define GPIOGetPin(PORT,PIN)                    (uint8_t)((GPIO.Bytes[PORT + IO_PORT_OFFSET] >> PIN) & 0x01)
 //-----------------------------------
@@ -131,7 +149,7 @@ extern "C" {
  * @param   PORT: The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
  * @param   VALUE: The byte-sized value to write
  * @retval  None
- * @note    Example: WritePort(GPIOA, 0);                   // Will write the value 0 to PORTA 
+ * @note    Example: WritePort(GPIOA, 0);                       // Will write the value 0 to PORTA 
  */    
 #define GPIOWritePort(PORT, VALUE)              GPIO.Bytes[PORT + IO_LATCH_OFFSET] = VALUE
 //-----------------------------------
@@ -141,7 +159,7 @@ extern "C" {
  * @brief   Gets the I/O port state
  * @param   PORT   : The I/O port name constant (See IO_PORT_CONSTANTS in PIC18Type.h)
  * @retval  VALUE  : Value read from the port
- * @note    Example: uint8_t value = GPIOReadPort(GPIOA, 0);    // Will read the PORTA pins states
+ * @note    Example: uint8_t value = GPIOReadPort(GPIOA);       // Will read the PORTA pins states
  */    
 #define GPIOReadPort(PORT)                      (uint8_t)(GPIO.Bytes[PORT + IO_PORT_OFFSET])
 //-----------------------------------        

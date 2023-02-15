@@ -5,6 +5,8 @@
 [d frameptr 4065 ]
 "7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftadd.c
@@ -27,24 +29,20 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"63 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/ISR.c
+"64 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/ISR.c
 [v _Isr Isr `II(v  1 e 1 0 ]
-"15 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/main.c
+"16 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/main.c
 [v _main main `(v  1 e 1 0 ]
-"55 Src/SystemTime.c
-[v _SystimeInit SystimeInit `(v  1 e 1 0 ]
-"76
+"275 Src/SoftwareUART.c
+[v _SoftUARTInit SoftUARTInit `(v  1 e 1 0 ]
+"302
+[v _SoftUARTTransmitByte SoftUARTTransmitByte `(v  1 e 1 0 ]
+"338
+[v _SoftUARTPrint SoftUARTPrint `(v  1 e 1 0 ]
+"76 Src/SystemTime.c
 [v _Tick_ms Tick_ms `(ul  1 e 4 0 ]
-"103
-[v _Wait_ms Wait_ms `(v  1 e 1 0 ]
-"137
-[v _SysTimeCallBack SysTimeCallBack `(v  1 e 1 0 ]
-"62 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/USART.c
-[v _USARTAsyncInit USARTAsyncInit `(v  1 e 1 0 ]
-"72
+"72 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/USART.c
 [v _USARTTransmitByte9 USARTTransmitByte9 `(v  1 e 1 0 ]
-"113
-[v _USARTPrint USARTPrint `(v  1 e 1 0 ]
 "123
 [v _USARTReceiveByte USARTReceiveByte `(uc  1 e 1 0 ]
 "135
@@ -81,76 +79,104 @@
 [v _INTCON2 INTCON2 `VEuc  1 e 1 @4081 ]
 "5308
 [v _INTCON INTCON `VEuc  1 e 1 @4082 ]
+[s S323 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"5345
+[s S332 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S341 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S345 . 1 `S323 1 . 1 0 `S332 1 . 1 0 `S341 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES345  1 e 1 @4082 ]
 "5857
 [v _BRGH BRGH `VEb  1 e 0 @32098 ]
 "5959
 [v _CREN CREN `VEb  1 e 0 @32092 ]
+"6094
+[v _INT0IE INT0IE `VEb  1 e 0 @32660 ]
+"6097
+[v _INT0IF INT0IF `VEb  1 e 0 @32657 ]
 "6442
 [v _OERR OERR `VEb  1 e 0 @32089 ]
+"6484
+[v _PEIE PEIE `VEb  1 e 0 @32662 ]
 "6649
 [v _RCIF RCIF `VEb  1 e 0 @31989 ]
 "6853
 [v _SYNC SYNC `VEb  1 e 0 @32100 ]
-"6943
-[v _TMR0IE TMR0IE `VEb  1 e 0 @32661 ]
-"6946
-[v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
 "7114
 [v _TRMT TRMT `VEb  1 e 0 @32097 ]
 [s S24 . 23 `uc 1 PA 1 0 `uc 1 PB 1 1 `uc 1 PC 1 2 `uc 1 PD 1 3 `uc 1 PE 1 4 `ul 1 . 4 5 `uc 1 LA 1 9 `uc 1 LB 1 10 `uc 1 LC 1 11 `uc 1 LD 1 12 `uc 1 LE 1 13 `ul 1 . 4 14 `uc 1 TA 1 18 `uc 1 TB 1 19 `uc 1 TC 1 20 `uc 1 TD 1 21 `uc 1 TE 1 22 ]
-"106 C:\EmbeddedDevOps\M8M_APIs\PIC18.X/Inc/PIC18Types.h
+"106 C:\EmbeddedDevOps/M8M_APIs/PIC18.X/Inc/PIC18Types.h
 [u S42 . 23 `S24 1 . 23 0 `[23]uc 1 Bytes 23 0 ]
 [v _IO IO `VES42  1 e 23 @3968 ]
+"184 Src/SoftwareUART.c
+[v _RxFIFO RxFIFO `VE[255]uc  1 s 255 RxFIFO ]
+"185
+[v _Rxfifoptr Rxfifoptr `VEuc  1 s 1 Rxfifoptr ]
+"186
+[v _Rxfifocurrent Rxfifocurrent `VEuc  1 s 1 Rxfifocurrent ]
+[s S305 . 1 `uc 1 Buf 1 0 :1:0 
+`uc 1 Ferr 1 0 :1:1 
+`uc 1 . 1 0 :6:2 
+]
+"187
+[u S309 . 1 `uc 1 Byte 1 0 `S305 1 . 1 0 ]
+[v _Rxstatus Rxstatus `VES309  1 s 1 Rxstatus ]
 "50 Src/SystemTime.c
 [v _DecVar DecVar `VEul  1 s 4 DecVar ]
 "51
 [v _IncVar IncVar `VEul  1 s 4 IncVar ]
 "52
 [v _val val `VEui  1 s 2 val ]
-"15 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/main.c
+"16 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-[s S49 . 4 `uc 1 grp1 1 0 `uc 1 grp2 1 1 `uc 1 grp3 1 2 `uc 1 grp4 1 3 ]
-"19
-[v main@cfg cfg `S49  1 a 4 12 ]
-"34
+"33
 } 0
-"103 Src/SystemTime.c
-[v _Wait_ms Wait_ms `(v  1 e 1 0 ]
+"338 Src/SoftwareUART.c
+[v _SoftUARTPrint SoftUARTPrint `(v  1 e 1 0 ]
 {
-"106
-[v Wait_ms@x x `ul  1 a 4 8 ]
-"103
-[v Wait_ms@value value `ul  1 p 4 0 ]
-"116
+[v SoftUARTPrint@str str `*.25Cuc  1 p 2 3 ]
+"343
 } 0
-"113 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/USART.c
-[v _USARTPrint USARTPrint `(v  1 e 1 0 ]
+"302
+[v _SoftUARTTransmitByte SoftUARTTransmitByte `(v  1 e 1 0 ]
 {
-[v USARTPrint@str str `*.25Cuc  1 p 2 0 ]
-"120
+[v SoftUARTTransmitByte@data data `uc  1 a 1 wreg ]
+"313
+[v SoftUARTTransmitByte@k k `uc  1 a 1 2 ]
+"305
+[v SoftUARTTransmitByte@tmp tmp `uc  1 a 1 1 ]
+"302
+[v SoftUARTTransmitByte@data data `uc  1 a 1 wreg ]
+"306
+[v SoftUARTTransmitByte@data data `uc  1 a 1 0 ]
+"329
 } 0
-"62
-[v _USARTAsyncInit USARTAsyncInit `(v  1 e 1 0 ]
+"275
+[v _SoftUARTInit SoftUARTInit `(v  1 e 1 0 ]
 {
-[v USARTAsyncInit@bgr bgr `uc  1 a 1 wreg ]
-[v USARTAsyncInit@bgr bgr `uc  1 a 1 wreg ]
-"65
-[v USARTAsyncInit@bgr bgr `uc  1 a 1 0 ]
-"69
+"299
 } 0
-"55 Src/SystemTime.c
-[v _SystimeInit SystimeInit `(v  1 e 1 0 ]
-{
-"73
-} 0
-"63 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/ISR.c
+"64 C:\EmbeddedDevOps\M8M_APIs\PIC18.X\Src/ISR.c
 [v _Isr Isr `II(v  1 e 1 0 ]
 {
-"66
-} 0
-"137 Src/SystemTime.c
-[v _SysTimeCallBack SysTimeCallBack `(v  1 e 1 0 ]
-{
-"151
+"69
 } 0

@@ -16,6 +16,8 @@
                 <sourceRootElem>Inc</sourceRootElem>
                 <sourceRootElem>Src</sourceRootElem>
                 <sourceRootElem>C:/EmbeddedDevOps/Libraries/SystemTime.X/Inc</sourceRootElem>
+                <sourceRootElem>C:/EmbeddedDevOps/Libraries/SoftwareUART.X/Inc</sourceRootElem>
+                <sourceRootElem>C:/EmbeddedDevOps/Libraries/SoftwareUART.X/Src</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

@@ -17,6 +17,7 @@
       </logicalFolder>
       <logicalFolder name="f4" displayName="Libs" projectFiles="true">
         <itemPath>Inc/SystemTime.h</itemPath>
+        <itemPath>Inc/SoftwareUART.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -44,6 +45,8 @@
     <Elem>Inc</Elem>
     <Elem>Src</Elem>
     <Elem>C:/EmbeddedDevOps/Libraries/SystemTime.X/Inc</Elem>
+    <Elem>C:/EmbeddedDevOps/Libraries/SoftwareUART.X/Inc</Elem>
+    <Elem>C:/EmbeddedDevOps/Libraries/SoftwareUART.X/Src</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -53,7 +56,7 @@
         <targetDevice>PIC18F452</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>Simulator</platformTool>
+        <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>2.36</languageToolchainVersion>
         <platform>3</platform>
@@ -65,6 +68,7 @@
         <linkerTool>
           <linkerLibItems>
             <linkerLibFileItem>Lib/SystemTime.X.a</linkerLibFileItem>
+            <linkerLibFileItem>Lib/SUART-16-9600-B0-B3.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -91,7 +95,7 @@
         <property key="asmlist" value="true"/>
         <property key="default-bitfield-type" value="true"/>
         <property key="default-char-type" value="true"/>
-        <property key="define-macros" value="FOSC_MHZ=4"/>
+        <property key="define-macros" value="FOSC_MHZ=16"/>
         <property key="disable-optimizations" value="false"/>
         <property key="extra-include-directories" value=""/>
         <property key="favor-optimization-for" value="-speed,+space"/>
@@ -170,9 +174,10 @@
         <property key="Freeze Peripherals" value="true"/>
         <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
+                  value="C:\Program Files (x86)/Microchip/MPLABX/v5.30/mplab_platform/mplablibs/modules/ext/PICKIT3.jar/PK3FW_015602.jam"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

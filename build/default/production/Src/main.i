@@ -3882,60 +3882,102 @@ extern void SysTimeSuspend(void);
 # 140
 extern void SysTimeResume(void);
 
-# 200 "Src/../Inc/USART.h"
+# 201 "Src/../Inc/USART.h"
 extern void USARTSetBGR(uint8_t bgr);
 
-# 224
+# 225
 extern void USARTSetBaudRate(uint32_t baud);
 
-# 252
+# 253
 extern void USARTInit(ConfigType cfg);
 
-# 282
+# 283
 extern void USARTAsyncInit(uint8_t bgr);
 
-# 292
+# 293
 extern void USARTTransmitByte9(uint16_t data);
 
-# 303
+# 304
 extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
 
-# 314
+# 315
 extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
 
-# 324
+# 325
 extern void USARTPrint(const char *str);
 
-# 334
+# 335
 extern uint8_t USARTReceiveByte(void);
 
-# 344
+# 345
 extern uint16_t USARTReceiveByte9(void);
 
-# 356
+# 357
 extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 
-# 368
+# 369
 extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
 
-# 15 "Src/main.c"
+# 102 "Src/../Inc/SoftwareUART.h"
+typedef union{
+uint8_t Byte;
+struct{
+unsigned Buf:1;
+unsigned Ferr:1;
+unsigned:6;
+};
+}SoftUARTStatusType;
+
+# 118
+extern void SoftUARTInit(void);
+
+# 129
+extern uint8_t SoftUARTRxAvailable(void);
+
+# 139
+extern void SoftUARTTransmitByte(uint8_t data);
+
+# 150
+extern int SoftUARTReceiveByte(void);
+
+# 161
+extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
+
+# 173
+extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+
+# 183
+extern void SoftUARTPrint(const char *str);
+
+# 193
+extern void SoftUARTSuspend(void);
+
+# 203
+extern void SoftUARTResume(void);
+
+# 213
+extern void SoftUARTFlushRx(void);
+
+
+#pragma intrinsic(_suart_isr)
+extern void suart_isr(void);
+
+# 16 "Src/main.c"
 void main(void) {
-SystimeInit();
-IO.Bytes[(uint8_t)0x00 + 18] &= ~(1 << 0x0);
+
+
 IO.Bytes[0x00 + 9] &= (~(1 << 0x0));
-ConfigType cfg;
-cfg.grp1 = 0x20 | 0x00 | 0x04;
-cfg.grp2 = 0x80 | 0x10;
-USARTAsyncInit(25);
+IO.Bytes[(uint8_t)0x00 + 18] &= ~(1 << 0x0);
 
-
-
-USARTPrint("Initialization...");
+SoftUARTInit();
+SoftUARTPrint("Hello World!\r");
+SoftUARTPrint("This is a software UART library test!\r");
+SoftUARTPrint("Designed by Firmware Engineer Team. Copyright 2023.\r");
+SoftUARTPrint("\r\r");
+SoftUARTPrint("Freely available source code on GitHub (https://github.com/Firmware-Engineers/PIC18-API)\r");
 
 while(1)
 {
-IO.Bytes[0x00 + 9] ^= (1 << 0x0);
-Wait_ms(500);
 
 }
 }

@@ -2432,18 +2432,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;PIC18Types.h: 129: uint8_t grp3;
 [; ;PIC18Types.h: 130: uint8_t grp4;
 [; ;PIC18Types.h: 131: }ConfigType;
-[; ;USART.h: 200: extern void USARTSetBGR(uint8_t bgr);
-[; ;USART.h: 224: extern void USARTSetBaudRate(uint32_t baud);
-[; ;USART.h: 252: extern void USARTInit(ConfigType cfg);
-[; ;USART.h: 282: extern void USARTAsyncInit(uint8_t bgr);
-[; ;USART.h: 292: extern void USARTTransmitByte9(uint16_t data);
-[; ;USART.h: 303: extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
-[; ;USART.h: 314: extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
-[; ;USART.h: 324: extern void USARTPrint(const char *str);
-[; ;USART.h: 334: extern uint8_t USARTReceiveByte(void);
-[; ;USART.h: 344: extern uint16_t USARTReceiveByte9(void);
-[; ;USART.h: 356: extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-[; ;USART.h: 368: extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
+[; ;USART.h: 201: extern void USARTSetBGR(uint8_t bgr);
+[; ;USART.h: 225: extern void USARTSetBaudRate(uint32_t baud);
+[; ;USART.h: 253: extern void USARTInit(ConfigType cfg);
+[; ;USART.h: 283: extern void USARTAsyncInit(uint8_t bgr);
+[; ;USART.h: 293: extern void USARTTransmitByte9(uint16_t data);
+[; ;USART.h: 304: extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
+[; ;USART.h: 315: extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
+[; ;USART.h: 325: extern void USARTPrint(const char *str);
+[; ;USART.h: 335: extern uint8_t USARTReceiveByte(void);
+[; ;USART.h: 345: extern uint16_t USARTReceiveByte9(void);
+[; ;USART.h: 357: extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+[; ;USART.h: 369: extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
 "60 Src/../Inc/SystemTime.h
 [v _OSC_FREQ `Cuc ~T0 @X0 1 e ]
 [i _OSC_FREQ
@@ -2529,9 +2529,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 239 ]
 [; ;USART.c: 44: }
-[; ;USART.c: 46: val = ((4 * 1000000/(q * baud)) - 1);
+[; ;USART.c: 46: val = ((16 * 1000000/(q * baud)) - 1);
 "46
-[e = _val - / -> * -> -> 4 `i `l -> 1000000 `l `ul * -> _q `ul _baud -> -> -> 1 `i `l `ul ]
+[e = _val - / -> * -> -> 16 `i `l -> 1000000 `l `ul * -> _q `ul _baud -> -> -> 1 `i `l `ul ]
 [; ;USART.c: 48: SPBRG = (uint8_t)val;
 "48
 [e = _SPBRG -> _val `uc ]

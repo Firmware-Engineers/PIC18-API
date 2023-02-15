@@ -22,7 +22,7 @@
  *                  - IDEs: 
  *                      * MPLAB X IDE v5.30
  *                  - Compilers: 
- *                      * XC8 V1.45
+ *                      * XC8 V2.36, V1.45
  *                  - Devices: 
  *                      * PIC 18F452
  ******************************************************************************
@@ -153,14 +153,15 @@ extern "C" {
 /**
  * @brief   Checks whether there is data available in the USART receive buffer
  * @param   none   
- * @retval  none
+ * @retval  - 0: No data received
+ *          - 1: Data received
  */    
 #define USARTRxAvailable()                          (PIR1,RCIF)
 //-----------------------------------    
 
 //-----------------------------------    
 /**
- * @brief   Transmit a byte in 8 bits mode over the USART module
+ * @brief   Transmit a byte over the USART module
  * @param   data: byte to be transmitted   
  * @retval  none
  * 
@@ -284,7 +285,7 @@ extern void USARTAsyncInit(uint8_t bgr);
 
 //-----------------------------------    
 /**
- * @brief   Transmit a byte in 9 bits mode over the USART module
+ * @brief   Transmit data in 9 bits mode over the USART module
  * @param   data: 9-bit value to be transmitted    
  * @retval  none
  * 
@@ -294,7 +295,7 @@ extern void USARTTransmitByte9(uint16_t data);
 
 //-----------------------------------    
 /**
- * @brief   Transmit an array of bytes in 8 bits mode over the USART module
+ * @brief   Transmit an array of bytes in over the USART module
  * @param   data: byte array to be transmitted 
  * @param   cnt:    number of byte to transmit  
  * @retval  none
@@ -305,7 +306,7 @@ extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
 
 //-----------------------------------    
 /**
- * @brief   Transmit an array of bytes in 9 bits mode over the USART module
+ * @brief   Transmit an array of 9-bits data over the USART module
  * @param   data: byte array to be transmitted 
  * @param   cnt:    number of 9-bits values to transmit  
  * @retval  none
@@ -348,7 +349,7 @@ extern uint16_t USARTReceiveByte9(void);
 /**
  * @brief   Get an array of bytes in 8 bits mode from the USART module
  * @param   data: byte array to load the value into 
- * @param   cnt:    number of byte to get 
+ * @param   cnt: number of byte to get 
  * @param   tout: time-out value 
  * @retval  number of byte received
  * 

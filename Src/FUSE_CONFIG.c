@@ -49,7 +49,7 @@
 
 // CONFIG7H
 #pragma config EBTRB    = OFF           //!< Boot Block Table Read Protection bit (Boot Block (000000-0001FFh) not protected from Table Reads executed in other blocks)
-#endif 
+#endif
 
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.

@@ -21,6 +21,7 @@
 #include "../Inc/Interrupts.h"
 #include "../Inc/GPIO.h"
 #include "../Inc/SystemTime.h"
+#include "../../../Libraries/SoftwareUART.X/Inc/SoftwareUART.h"
 //-----------------------------------
 
 #if defined(USE_HIGH_LOW_ISR)
@@ -62,7 +63,9 @@ void low_priority interrupt LowIsr(void)
  */
 void interrupt Isr(void)
 {
-    SysTimeCallBack();
+    //SysTimeCallBack();
+    //---------
+    //suart_isr();
 }
 //-----------------------------------
 

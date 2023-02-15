@@ -1,15 +1,5 @@
 
-# 1 "Src/USART.c"
-
-# 18 "C:\Program Files\Microchip\xc8\v2.36\pic\include\xc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-# 13 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
+# 1 "C:/EmbeddedDevOps/Libraries/SoftwareUART.X/Src/SoftwareUART.c"
 
 # 13 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\stdint.h"
 typedef signed char int8_t;
@@ -96,6 +86,103 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
+
+# 75 "C:/EmbeddedDevOps/Libraries/SoftwareUART.X/Src/../Inc/../../../M8M_APIs/PIC18.X/Inc/../Inc/PIC18Types.h"
+typedef union
+{
+struct
+{
+
+uint8_t PA;
+uint8_t PB;
+uint8_t PC;
+uint8_t PD;
+uint8_t PE;
+
+uint32_t;
+
+uint8_t LA;
+uint8_t LB;
+uint8_t LC;
+uint8_t LD;
+uint8_t LE;
+
+uint32_t;
+
+uint8_t TA;
+uint8_t TB;
+uint8_t TC;
+uint8_t TD;
+uint8_t TE;
+};
+uint8_t Bytes[23];
+}IORegistersMapType;
+
+
+volatile IORegistersMapType IO @0xF80;
+
+# 125
+typedef struct
+{
+uint8_t grp1;
+uint8_t grp2;
+uint8_t grp3;
+uint8_t grp4;
+}ConfigType;
+
+# 118 "C:/EmbeddedDevOps/Libraries/SoftwareUART.X/Src/../Inc/SoftwareUART.h"
+typedef union{
+uint8_t Byte;
+struct{
+unsigned Buf:1;
+unsigned Ferr:1;
+unsigned:6;
+};
+}SoftUARTStatusType;
+
+# 134
+extern void SoftUARTInit(void);
+
+# 145
+extern uint8_t SoftUARTRxAvailable(void);
+
+# 155
+extern void SoftUARTTransmitByte(uint8_t data);
+
+# 166
+extern int SoftUARTReceiveByte(void);
+
+# 177
+extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
+
+# 189
+extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+
+# 199
+extern void SoftUARTPrint(const char *str);
+
+# 209
+extern void SoftUARTSuspend(void);
+
+# 219
+extern void SoftUARTResume(void);
+
+# 229
+extern void SoftUARTFlushRx(void);
+
+
+#pragma intrinsic(_suart_isr)
+extern void suart_isr(void);
+
+# 18 "C:\Program Files\Microchip\xc8\v2.36\pic\include\xc.h"
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+# 13 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
 
 
 # 7 "C:\Program Files\Microchip\xc8\v2.36\pic\include\builtins.h"
@@ -3800,277 +3887,164 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 
-# 75 "Src/../Inc/PIC18Types.h"
-typedef union
-{
-struct
-{
-
-uint8_t PA;
-uint8_t PB;
-uint8_t PC;
-uint8_t PD;
-uint8_t PE;
-
-uint32_t;
-
-uint8_t LA;
-uint8_t LB;
-uint8_t LC;
-uint8_t LD;
-uint8_t LE;
-
-uint32_t;
-
-uint8_t TA;
-uint8_t TB;
-uint8_t TC;
-uint8_t TD;
-uint8_t TE;
-};
-uint8_t Bytes[23];
-}IORegistersMapType;
+# 169 "C:/EmbeddedDevOps/Libraries/SoftwareUART.X/Src/SoftwareUART.c"
+static volatile uint8_t RxFIFO[255];
+static volatile uint8_t Rxfifoptr;
+static volatile uint8_t Rxfifocurrent;
+static volatile SoftUARTStatusType Rxstatus;
 
 
-volatile IORegistersMapType IO @0xF80;
-
-# 125
-typedef struct
-{
-uint8_t grp1;
-uint8_t grp2;
-uint8_t grp3;
-uint8_t grp4;
-}ConfigType;
-
-# 201 "Src/../Inc/USART.h"
-extern void USARTSetBGR(uint8_t bgr);
-
-# 225
-extern void USARTSetBaudRate(uint32_t baud);
-
-# 253
-extern void USARTInit(ConfigType cfg);
-
-# 283
-extern void USARTAsyncInit(uint8_t bgr);
-
-# 293
-extern void USARTTransmitByte9(uint16_t data);
-
-# 304
-extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
-
-# 315
-extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
-
-# 325
-extern void USARTPrint(const char *str);
-
-# 335
-extern uint8_t USARTReceiveByte(void);
-
-# 345
-extern uint16_t USARTReceiveByte9(void);
-
-# 357
-extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-
-# 369
-extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
-
-# 60 "Src/../Inc/SystemTime.h"
-const uint8_t OSC_FREQ = 4;
-
-# 76
-extern void SystimeInit(void);
-
-# 86
-extern uint32_t Tick_ms(void);
-
-# 96
-extern uint32_t Tick_us(void);
-
-# 106
-extern void Wait_ms(uint32_t value);
-
-# 117
-extern void SysTimeCallBack(void);
-
-# 128
-extern void SysTimeSuspend(void);
-
-# 140
-extern void SysTimeResume(void);
-
-# 21 "Src/USART.c"
-void USARTSetBGR(uint8_t bgr)
+void SoftUARTSuspend(void)
 {
 
-SPBRG = bgr;
+INTCON,INT0IE = 0;
+
+# 184
+}
+
+
+void SoftUARTResume(void)
+{
+
+INTCON,INT0IE = 1;
+
+# 196
+}
+
+
+void suart_isr(void)
+{
+
+
+if(INT0IF)
+
+# 209
+{
+uint8_t rxtmp = 0;
+
+if((uint8_t)((IO.Bytes[0x01 + 0] >> 0x0) & 0x01) == 0)
+{
+
+_delay((unsigned long)((((1000000/9600)/2))*((16 * 1000000)/4000000.0)));
+
+for(uint8_t k = 0;k < 8;++k)
+{
+
+_delay((unsigned long)((((1000000/9600) - 3))*((16 * 1000000)/4000000.0)));
+if((uint8_t)((IO.Bytes[0x01 + 0] >> 0x0) & 0x01))
+{
+rxtmp |= (uint8_t)(1 << k);
 
 }
 
 
-void USARTSetBaudRate(uint32_t baud)
-{
+}
 
-uint8_t q = 1;uint32_t val = 1;
-
-if(TXSTA,SYNC)
+uint8_t next = (uint8_t)((Rxfifocurrent + 1) % 255);
+if (next != Rxfifoptr)
 {
-q = 4;
+RxFIFO[Rxfifocurrent] = rxtmp;
+Rxfifocurrent = next;
+
 }
 else
 {
-if(TXSTA,BRGH)
-q = 16;
+Rxstatus.Buf = 1;
+}
+
+_delay((unsigned long)((((1000000/9600)))*((16 * 1000000)/4000000.0)));
+
+}
 else
-q = 64;
-}
-
-val = ((16 * 1000000/(q * baud)) - 1);
-
-SPBRG = (uint8_t)val;
-
-}
-
-
-void USARTInit(ConfigType cfg)
 {
 
-TXSTA = cfg.grp1;
-RCSTA = cfg.grp2;
+}
+}
 
+INT0IF = 0;
+
+# 257
 }
 
 
-void USARTAsyncInit(uint8_t bgr)
+void SoftUARTInit(void)
 {
+IO.Bytes[0x01 + 9] |= (1 << 0x3);
+IO.Bytes[(uint8_t)0x01 + 18] &= ~(1 << 0x3);
 
-TXSTA = 0x24;
-RCSTA = 0x90;
-SPBRG = bgr;
 
+INTCON2 &= 0xBF;
+INTCON,INT0IE = 1;
+INTCON,PEIE = 1;
+(INTCONbits.GIE = 1);
+INT0IF = 0;
+
+# 284
 }
 
 
-void USARTTransmitByte9(uint16_t data)
+void SoftUARTTransmitByte(uint8_t data)
 {
 
-while(TXSTA,TRMT == 0);
+uint8_t tmp;
+if(INTCONbits.GIE)
+tmp = 1;
+(INTCONbits.GIE = 0);
 
-if(data & 0x100)
-TXSTA |= 0x01;
+IO.Bytes[0x01 + 9] &= (~(1 << 0x3));
+_delay((unsigned long)(((1000000/9600))*((16 * 1000000)/4000000.0)));
+
+for(uint8_t k = 0;k < 8;k++){
+
+if(data & 0x01)
+IO.Bytes[0x01 + 9] |= (1 << 0x3);
 else
-TXSTA &= 0xFE;
+IO.Bytes[0x01 + 9] &= (~(1 << 0x3));
+data >>= 1;
+_delay((unsigned long)(((1000000/9600))*((16 * 1000000)/4000000.0)));
 
-TXREG = (uint8_t)(data & 0xFF);
+}
+
+IO.Bytes[0x01 + 9] |= (1 << 0x3);
+_delay((unsigned long)(((1000000/9600))*((16 * 1000000)/4000000.0)));
+if(tmp)
+(INTCONbits.GIE = 1);
 
 }
 
 
-void USARTTransmitBytes(uint8_t *data, uint16_t cnt)
+void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt)
 {
 
-while(cnt != 0)
-{
-while(TXSTA,TRMT == 0); TXREG = *data;;
-++data;
---cnt;
-}
-
 }
 
 
-void USARTTransmitBytes9(uint16_t *data, uint16_t cnt)
-{
-
-while(cnt != 0)
-{
-USARTTransmitByte9(*data);
-++data;
---cnt;
-}
-
-}
-
-
-void USARTPrint(const char *str)
+void SoftUARTPrint(const char *str)
 {
 while(*str!='\0'){
-while(TXSTA,TRMT == 0);
-TXREG = *str;
-++str;
+SoftUARTTransmitByte(*(str++));
 }
 }
 
 
-uint8_t USARTReceiveByte(void)
+uint8_t SoftUARTRxAvailable(void)
 {
 
-uint8_t data = RCREG;
+return (uint8_t)((Rxfifocurrent - Rxfifoptr) % 255);
 
-if(RCSTA,OERR)
-RCSTA,CREN = 0;
+}
+
+
+int SoftUARTReceiveByte(void)
+{
+
+if(Rxfifocurrent == Rxfifoptr)
+return -1;
+
+uint8_t data = RxFIFO[Rxfifoptr];
+Rxfifoptr = (uint8_t)((Rxfifoptr + 1) % 255);
 
 return data;
-}
-
-
-uint16_t USARTReceiveByte9(void)
-{
-
-uint16_t data = RCREG;
-data |= (uint16_t)((RCSTA & 0x01) << 8);
-
-if(RCSTA,OERR)
-RCSTA,CREN = 0;
-
-return data;
-}
-
-
-uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout)
-{
-
-unsigned char j = 0;
-uint32_t time = Tick_ms();
-while(cnt != 0)
-{
-
-if((PIR1,RCIF)){
-*data = USARTReceiveByte();
-++data;
-++j;
-}
-
-if((Tick_ms() - time) >= tout)
-break;
-}
-return j;
-
-}
-
-
-uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout)
-{
-
-unsigned char j = 0;
-uint32_t time = Tick_ms();
-while(cnt != 0)
-{
-
-if((PIR1,RCIF)){
-*data = USARTReceiveByte9();
-++data;
-++j;
-}
-
-if((Tick_ms() - time) >= tout)
-break;
-}
-return j;
 
 }
 

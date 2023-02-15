@@ -3882,9 +3882,55 @@ extern void SysTimeSuspend(void);
 # 140
 extern void SysTimeResume(void);
 
-# 63 "Src/ISR.c"
+# 116 "Src/../../../Libraries/SoftwareUART.X/Inc/SoftwareUART.h"
+typedef union{
+uint8_t Byte;
+struct{
+unsigned Buf:1;
+unsigned Ferr:1;
+unsigned:6;
+};
+}SoftUARTStatusType;
+
+# 132
+extern void SoftUARTInit(void);
+
+# 143
+extern uint8_t SoftUARTRxAvailable(void);
+
+# 153
+extern void SoftUARTTransmitByte(uint8_t data);
+
+# 164
+extern int SoftUARTReceiveByte(void);
+
+# 175
+extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
+
+# 187
+extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+
+# 197
+extern void SoftUARTPrint(const char *str);
+
+# 207
+extern void SoftUARTSuspend(void);
+
+# 217
+extern void SoftUARTResume(void);
+
+# 227
+extern void SoftUARTFlushRx(void);
+
+
+#pragma intrinsic(_suart_isr)
+extern void suart_isr(void);
+
+# 64 "Src/ISR.c"
 void interrupt Isr(void)
 {
-SysTimeCallBack();
+
+
+
 }
 
