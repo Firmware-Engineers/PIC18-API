@@ -1,7 +1,7 @@
 /**
  ******************************************************************************
  * @file            Interrupts.h
- * @author          Maxime (FI)  
+ * @author          Maxime 
  * @brief           header file for 8 bits PIC18 MCUs interrupt management API
  * @brief           This file provides constants, macros
  *                  and function definitions for PIC18 interrupt APIs.

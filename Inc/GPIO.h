@@ -1,15 +1,7 @@
-/* 
- * File:   GPIO.h
- * Author: Admin
- *
- * Created on January 24, 2023, 1:48 PM
- */
-
-
 /**
  ******************************************************************************
  * @file            GPIO.h
- * @author  
+ * @author  		Maxime
  * @brief           header file for PIC18 I/O API
  * @brief           This file provides macros and function definitions 
  *                  for PIC18 I/O API. Supported devices are listed below.

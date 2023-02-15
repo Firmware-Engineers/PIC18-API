@@ -1,7 +1,7 @@
 /**
  ******************************************************************************
  * @file            USART.c
- * @author          Maxime (FI)  
+ * @author          Maxime 
  * @brief           Source file for 8 bits PIC18 MCUs USART API
  * @brief           See USART.h 
  ******************************************************************************

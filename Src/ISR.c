@@ -1,7 +1,7 @@
 /**
  ******************************************************************************
  * @file            ISR.c
- * @author          Maxime (FI)  
+ * @author          Maxime 
  * @brief           Source file for 8 bits PIC18 MCUs interrupt Service Routines
  * @brief           See MPLAB XC8 C Compiler User Guide for more details
  * @note            This file is optional, the ISR functions can be declared

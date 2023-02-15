@@ -1,7 +1,7 @@
 /**
  ******************************************************************************
  * @file            Interrupts.c
- * @author          Maxime (FI)  
+ * @author          Maxime   
  * @brief           Source file for 8 bits PIC18 MCUs interrupt management API
  * @brief           See Interrupt.h 
  ******************************************************************************

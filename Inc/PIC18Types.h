@@ -1,7 +1,7 @@
 /**
  ******************************************************************************
  * @file            PIC18Types.h
- * @author          Maxime (FI)  
+ * @author          Maxime  
  * @brief           header file for 8 bits PIC18 MCUs types and constants
  * @brief           This file provides constants, macros
  *                  and custom type definitions common to all PIC18 APIs.

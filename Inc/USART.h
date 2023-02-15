@@ -1,13 +1,8 @@
-/* 
- * File:   USART.h
- * Author: Admin
- *
- */
 
 /**
  ******************************************************************************
  * @file            USART.h
- * @author  
+ * @author			Maxime  
  * @brief           header file for PIC18 USART API
  * @brief           This file provides macros and function definitions 
  *                  for PIC18 USART API. 

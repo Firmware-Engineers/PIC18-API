@@ -1,14 +1,7 @@
-/* 
- * File:   BitWise.h
- * Author: Admin
- *
- * Created on February 3, 2023, 8:10 PM
- */
-
 /**
  ******************************************************************************
  * @file            BitWise.h
- * @author          Maxime (FI)  
+ * @author          Maxime
  * @brief           header file for The bit wise library
  * @brief           This library provides bit manipulation operations such as:
  *                      - Reading a bit from a register

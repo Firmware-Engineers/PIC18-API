@@ -1,13 +1,7 @@
-/* 
- * File:   SystemTime.h
- * Author: Admin
- *
- */
-
 /**
  ******************************************************************************
  * @file            SystemTime.h
- * @author  
+ * @author  		Maxime
  * @brief           header file for PIC18 System Time library
  * @brief           This library provides common time management function for
  *                  microcontroller applications. It makes use of one of the

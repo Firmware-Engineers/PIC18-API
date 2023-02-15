@@ -1,13 +1,7 @@
-/* 
- * File:   SoftwareUART.h
- * Author: Admin
- * 
- */
-
 /**
  ******************************************************************************
  * @file            SoftwareUART.h
- * @author  
+ * @author  		Maxime	
  * @brief           header file for PIC18 UART bit banging library
  * @brief           This file provides macros, functions and types definitions 
  *                  for the PIC18 UART bit banging library. 
