@@ -3858,28 +3858,28 @@ extern void InterruptSetPriorityHigh(ConfigType cfg);
 # 461
 extern void InterruptSetPriorityLow(ConfigType cfg);
 
-# 60 "Src/../Inc/SystemTime.h"
-const uint8_t OSC_FREQ = 4;
+# 54 "Src/../../../Libraries/SystemTime.X/Inc/SystemTime.h"
+const uint8_t OSC_FREQ = 16;
 
-# 76
+# 70
 extern void SystimeInit(void);
 
-# 86
+# 80
 extern uint32_t Tick_ms(void);
 
-# 96
+# 90
 extern uint32_t Tick_us(void);
 
-# 106
+# 100
 extern void Wait_ms(uint32_t value);
 
-# 117
+# 111
 extern void SysTimeCallBack(void);
 
-# 128
+# 123
 extern void SysTimeSuspend(void);
 
-# 140
+# 135
 extern void SysTimeResume(void);
 
 # 120 "Src/../../../Libraries/SoftwareUART.X/Inc/SoftwareUART.h"
@@ -3898,39 +3898,37 @@ extern void SoftUARTInit(void);
 # 147
 extern uint8_t SoftUARTRxAvailable(void);
 
-# 157
+# 158
 extern void SoftUARTTransmitByte(uint8_t data);
 
-# 168
+# 169
 extern int SoftUARTReceiveByte(void);
 
-# 179
+# 180
 extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
 
-# 191
-extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-
-# 201
+# 190
 extern void SoftUARTPrint(const char *str);
 
-# 211
+# 200
 extern void SoftUARTSuspend(void);
 
-# 221
+# 210
 extern void SoftUARTResume(void);
 
-# 231
+# 220
 extern void SoftUARTFlushRx(void);
 
 
-#pragma intrinsic(_suart_isr)
-extern void suart_isr(void);
+#pragma intrinsic(_SoftUARTCallBack)
+extern void SoftUARTCallBack(void);
 
-# 64 "Src/ISR.c"
+# 66 "Src/ISR.c"
 void interrupt Isr(void)
 {
+SysTimeCallBack();
 
-
+SoftUARTCallBack();
 
 }
 

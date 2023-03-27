@@ -7,7 +7,7 @@
  * @brief           This file provides macros and function definitions 
  *                  for PIC18 USART API. 
  * @brief           Supported devices are listed below.
- * @brief           See dependencies in the include section below.
+ * @brief           See dependencies in the include section.
  * 
  * 
  * @note            History:
@@ -36,8 +36,7 @@
 extern "C" {
 #endif
 
-//-----------------------------------  
-#include <xc.h> 
+//-----------------------------------   
 #include "PIC18Types.h"
 //-----------------------------------
     
@@ -161,7 +160,7 @@ extern "C" {
  * @retval  none
  * 
  */    
-#define USARTTransmitByte(data)                     while(TXSTA,TRMT == 0);\
+#define USARTTransmitByte(data)                     while(TXSTAbits.TRMT == 0);\
                                                         TXREG = data;
 //-----------------------------------
     

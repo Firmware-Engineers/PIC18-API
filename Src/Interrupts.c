@@ -25,7 +25,7 @@ void InterruptEnable(ConfigType cfg)
     PIE2 |= cfg.grp4;
     //---------
 }
-//-----------------------------------------
+//-----------------------------------
 
 void InterruptDisable(ConfigType cfg)
 {
@@ -36,7 +36,7 @@ void InterruptDisable(ConfigType cfg)
     PIE2 &= (uint8_t)(~cfg.grp4);
     //---------   
 }
-//-----------------------------------------
+//-----------------------------------
 
 uint16_t InterruptGetFlag(uint16_t cnst)
 {
@@ -61,7 +61,7 @@ uint16_t InterruptGetFlag(uint16_t cnst)
     //---------
 return state;    
 }
-//-----------------------------------------
+//-----------------------------------
 
 void InterruptSetPriorityHigh(ConfigType cfg)
 {
@@ -72,7 +72,7 @@ void InterruptSetPriorityHigh(ConfigType cfg)
     IPR2 |= cfg.grp4;
     //---------   
 }
-//-----------------------------------------
+//-----------------------------------
 
 void InterruptSetPriorityLow(ConfigType cfg)
 {
@@ -83,4 +83,4 @@ void InterruptSetPriorityLow(ConfigType cfg)
     IPR2 &= (uint8_t)(~cfg.grp4);
     //---------     
 }
-//-----------------------------------------
+//-----------------------------------

@@ -48,7 +48,7 @@
  *                  than 100 bytes before reading data out to prevent loss.
  * 
  * @brief           Supported devices are listed below.
- * @brief           See dependencies in the include section below.
+ * @brief           See dependencies in the include section.
  * 
 @verbatim
  Library file description:
@@ -109,9 +109,9 @@ typedef union{
 
 //-----------------------------------    
 /**
- * @brief        Initialize the software UART driver
- * @parameter    None
- * @returnValue  None 
+ * @brief	Initialize the software UART driver
+ * @param  	None
+ * @retval  None 
  * 
  */
 extern void SoftUARTInit(void);                                                                                 
@@ -119,10 +119,10 @@ extern void SoftUARTInit(void);
 
 //-----------------------------------    
 /**
- * @brief        Checks whether there is data available in the receive buffer 
- * @parameter    None
- * @returnValue     - 0: No data in the buffer
- *                  - 1: Data present in the buffer
+ * @brief  	Checks whether there is data available in the receive buffer 
+ * @param    None
+ * @retval     	- 0: No data in the buffer
+ *           	- 1: Data present in the buffer
  * 
  */
 extern uint8_t SoftUARTRxAvailable(void);                                                                                 
@@ -130,9 +130,9 @@ extern uint8_t SoftUARTRxAvailable(void);
 
 //-----------------------------------    
 /**
- * @brief        Transmit a byte
- * @parameter    data: Data to be transmitted
- * @returnValue  None 
+ * @brief  	Transmit a byte
+ * @param 	data: Data to be transmitted
+ * @retval  None 
  * 
  */
 extern void SoftUARTTransmitByte(uint8_t data);                                                                                 
@@ -142,8 +142,8 @@ extern void SoftUARTTransmitByte(uint8_t data);
 /**
  * @brief   Receive a byte
  * @param   none  
- * @retval      - byte received
- *              - -1: Buffer empty, no data available
+ * @retval		- byte received
+ *         		- -1: Buffer empty, no data available
  * 
  */    
 extern int SoftUARTReceiveByte(void);
@@ -151,10 +151,10 @@ extern int SoftUARTReceiveByte(void);
 
 //-----------------------------------    
 /**
- * @brief        Transmit an array of bytes
+ * @brief 	Transmit an array of bytes
  * @param   data: data to be transmitted
  * @param   cnt: number of byte to transmit
- * @returnValue  None 
+ * @retval  None 
  * 
  */
 extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);                                                                                 
@@ -212,8 +212,8 @@ extern void SoftUARTResume(void);
 extern void SoftUARTFlushRx(void);
 //-----------------------------------
 
-#pragma intrinsic(_suart_isr)                   //!< Inline directive
-extern void suart_isr(void);
+#pragma intrinsic(_SoftUARTCallBack)                                            //!< Inline directive
+extern void SoftUARTCallBack(void);
 
 
 #ifdef	__cplusplus

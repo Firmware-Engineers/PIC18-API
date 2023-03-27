@@ -62,8 +62,8 @@ void USARTInit(ConfigType cfg)
 void USARTAsyncInit(uint8_t bgr)
 {
     //---------
-    TXSTA = 0x24;                   //!< Asynchronous mode, 8 bits transmit/receive, high speed, transmitter disabled.
-    RCSTA = 0x90;                   //!< USART enable, 8 bits reception, Receiver disabled 
+    TXSTA = 0x24;                   //!< Asynchronous mode, 8 bits transmit/receive, high speed, transmitter enabled.
+    RCSTA = 0x90;                   //!< USART enable, 8 bits reception, Receiver enabled 
     SPBRG = bgr;
     //---------    
 }

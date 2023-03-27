@@ -16,7 +16,7 @@
  *                  application, by modifying the @ref OSC_FREQ constant value.
  *                
  * @brief           Supported devices are listed below.
- * @brief           See dependencies in the include section below.
+ * @brief           See dependencies in the include section.
  * 
  * 
  * @note            History:
@@ -51,7 +51,7 @@ extern "C" {
 //-----------------------------------  
     
 //-----------------------------------
-const uint8_t OSC_FREQ = 4;                                                    //!< Change this value to the device oscillator frequency in megahertz. Maximum value is 40
+const uint8_t OSC_FREQ = 16;                                            //!< Change this value to the device oscillator frequency in megahertz. Maximum value is 40
 //-----------------------------------   
     
 //-----------------------------------
@@ -62,9 +62,9 @@ const uint8_t OSC_FREQ = 4;                                                    /
  * 
  * 
  * @note         The timer 0 is configured as follow:
- *               - The timer increment on every internal clock cycle
- *               - Timer prescaler is assigned to timer 0
- *               - "Timer mode" of operation is selected
+ *                  - The timer increment on every internal clock cycle
+ *                  - Timer prescaler is assigned to timer 0
+ *                  - "Timer mode" of operation is selected
  * 
  */    
 extern void SystimeInit(void);

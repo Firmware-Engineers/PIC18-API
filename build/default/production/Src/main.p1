@@ -6,10 +6,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S233 `S234 1 `uc -> 23 `i ]
 [n S233 . . Bytes ]
 [p mainexit ]
-"123 Src/../Inc/SoftwareUART.h
+"70 Src/../../../Libraries/SystemTime.X/Inc/SystemTime.h
+[v _SystimeInit `(v ~T0 @X0 0 ef ]
+"117 Src/../Inc/SoftwareUART.h
 [v _SoftUARTInit `(v ~T0 @X0 0 ef ]
-"188
+"182
 [v _SoftUARTPrint `(v ~T0 @X0 0 ef1`*Cuc ]
+"100 Src/../../../Libraries/SystemTime.X/Inc/SystemTime.h
+[v _Wait_ms `(v ~T0 @X0 0 ef1`ul ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2413,96 +2417,111 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Interrupts.h: 405: extern uint16_t InterruptGetFlag(uint16_t cnst);
 [; ;Interrupts.h: 434: extern void InterruptSetPriorityHigh(ConfigType cfg);
 [; ;Interrupts.h: 461: extern void InterruptSetPriorityLow(ConfigType cfg);
-"60 Src/../Inc/SystemTime.h
+"54 Src/../../../Libraries/SystemTime.X/Inc/SystemTime.h
 [v _OSC_FREQ `Cuc ~T0 @X0 1 e ]
 [i _OSC_FREQ
--> -> 4 `i `uc
+-> -> 16 `i `uc
 ]
-[; ;SystemTime.h: 60: const uint8_t OSC_FREQ = 4;
-[; ;SystemTime.h: 76: extern void SystimeInit(void);
-[; ;SystemTime.h: 86: extern uint32_t Tick_ms(void);
-[; ;SystemTime.h: 96: extern uint32_t Tick_us(void);
-[; ;SystemTime.h: 106: extern void Wait_ms(uint32_t value);
-[; ;SystemTime.h: 117: extern void SysTimeCallBack(void);
-[; ;SystemTime.h: 128: extern void SysTimeSuspend(void);
-[; ;SystemTime.h: 140: extern void SysTimeResume(void);
-[; ;USART.h: 201: extern void USARTSetBGR(uint8_t bgr);
-[; ;USART.h: 225: extern void USARTSetBaudRate(uint32_t baud);
-[; ;USART.h: 253: extern void USARTInit(ConfigType cfg);
-[; ;USART.h: 283: extern void USARTAsyncInit(uint8_t bgr);
-[; ;USART.h: 293: extern void USARTTransmitByte9(uint16_t data);
-[; ;USART.h: 304: extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
-[; ;USART.h: 315: extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
-[; ;USART.h: 325: extern void USARTPrint(const char *str);
-[; ;USART.h: 335: extern uint8_t USARTReceiveByte(void);
-[; ;USART.h: 345: extern uint16_t USARTReceiveByte9(void);
-[; ;USART.h: 357: extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-[; ;USART.h: 369: extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
-[; ;SoftwareUART.h: 107: typedef union{
-[; ;SoftwareUART.h: 108: uint8_t Byte;
-[; ;SoftwareUART.h: 109: struct{
-[; ;SoftwareUART.h: 110: unsigned Buf:1;
-[; ;SoftwareUART.h: 111: unsigned Ferr:1;
-[; ;SoftwareUART.h: 112: unsigned:6;
-[; ;SoftwareUART.h: 113: };
-[; ;SoftwareUART.h: 114: }SoftUARTStatusType;
-[; ;SoftwareUART.h: 123: extern void SoftUARTInit(void);
-[; ;SoftwareUART.h: 134: extern uint8_t SoftUARTRxAvailable(void);
-[; ;SoftwareUART.h: 144: extern void SoftUARTTransmitByte(uint8_t data);
-[; ;SoftwareUART.h: 155: extern int SoftUARTReceiveByte(void);
-[; ;SoftwareUART.h: 166: extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
-[; ;SoftwareUART.h: 178: extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-[; ;SoftwareUART.h: 188: extern void SoftUARTPrint(const char *str);
-[; ;SoftwareUART.h: 198: extern void SoftUARTSuspend(void);
-[; ;SoftwareUART.h: 208: extern void SoftUARTResume(void);
-[; ;SoftwareUART.h: 218: extern void SoftUARTFlushRx(void);
-[; ;SoftwareUART.h: 222: extern void suart_isr(void);
+[; ;SystemTime.h: 54: const uint8_t OSC_FREQ = 16;
+[; ;SystemTime.h: 70: extern void SystimeInit(void);
+[; ;SystemTime.h: 80: extern uint32_t Tick_ms(void);
+[; ;SystemTime.h: 90: extern uint32_t Tick_us(void);
+[; ;SystemTime.h: 100: extern void Wait_ms(uint32_t value);
+[; ;SystemTime.h: 111: extern void SysTimeCallBack(void);
+[; ;SystemTime.h: 123: extern void SysTimeSuspend(void);
+[; ;SystemTime.h: 135: extern void SysTimeResume(void);
+[; ;USART.h: 196: extern void USARTSetBGR(uint8_t bgr);
+[; ;USART.h: 220: extern void USARTSetBaudRate(uint32_t baud);
+[; ;USART.h: 248: extern void USARTInit(ConfigType cfg);
+[; ;USART.h: 278: extern void USARTAsyncInit(uint8_t bgr);
+[; ;USART.h: 288: extern void USARTTransmitByte9(uint16_t data);
+[; ;USART.h: 299: extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
+[; ;USART.h: 310: extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
+[; ;USART.h: 320: extern void USARTPrint(const char *str);
+[; ;USART.h: 330: extern uint8_t USARTReceiveByte(void);
+[; ;USART.h: 340: extern uint16_t USARTReceiveByte9(void);
+[; ;USART.h: 352: extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+[; ;USART.h: 364: extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
+[; ;SoftwareUART.h: 101: typedef union{
+[; ;SoftwareUART.h: 102: uint8_t Byte;
+[; ;SoftwareUART.h: 103: struct{
+[; ;SoftwareUART.h: 104: unsigned Buf:1;
+[; ;SoftwareUART.h: 105: unsigned Ferr:1;
+[; ;SoftwareUART.h: 106: unsigned:6;
+[; ;SoftwareUART.h: 107: };
+[; ;SoftwareUART.h: 108: }SoftUARTStatusType;
+[; ;SoftwareUART.h: 117: extern void SoftUARTInit(void);
+[; ;SoftwareUART.h: 128: extern uint8_t SoftUARTRxAvailable(void);
+[; ;SoftwareUART.h: 138: extern void SoftUARTTransmitByte(uint8_t data);
+[; ;SoftwareUART.h: 149: extern int SoftUARTReceiveByte(void);
+[; ;SoftwareUART.h: 160: extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
+[; ;SoftwareUART.h: 172: extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+[; ;SoftwareUART.h: 182: extern void SoftUARTPrint(const char *str);
+[; ;SoftwareUART.h: 192: extern void SoftUARTSuspend(void);
+[; ;SoftwareUART.h: 202: extern void SoftUARTResume(void);
+[; ;SoftwareUART.h: 212: extern void SoftUARTFlushRx(void);
+[; ;SoftwareUART.h: 216: extern void SoftUARTCallBack(void);
 [v $root$_main `(v ~T0 @X0 0 e ]
-"16 Src/main.c
+"17 Src/main.c
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 16: void main(void) {
+[; ;main.c: 17: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 19: IO.Bytes[0x00 + 9] &= (~(1 << 0x0));
+[; ;main.c: 19: SystimeInit();
 "19
-[e =& *U + &U . _IO 1 * -> -> + -> 0 `i -> 9 `i `ui `ux -> -> # *U &U . _IO 1 `ui `ux -> ~ << -> 1 `i -> 0 `i `uc ]
-[; ;main.c: 20: IO.Bytes[(uint8_t)0x00 + 18] &= ~(1 << 0x0);
+[e ( _SystimeInit ..  ]
+[; ;main.c: 20: IO.Bytes[0x00 + 9] &= (~(1 << 0));
 "20
+[e =& *U + &U . _IO 1 * -> -> + -> 0 `i -> 9 `i `ui `ux -> -> # *U &U . _IO 1 `ui `ux -> ~ << -> 1 `i -> 0 `i `uc ]
+[; ;main.c: 21: IO.Bytes[(uint8_t)0x00 + 18] &= ~(1 << 0);
+"21
 [e =& *U + &U . _IO 1 * -> -> + -> -> -> 0 `i `uc `i -> 18 `i `ui `ux -> -> # *U &U . _IO 1 `ui `ux -> ~ << -> 1 `i -> 0 `i `uc ]
-[; ;main.c: 22: SoftUARTInit();
+[; ;main.c: 22: IO.Bytes[0x01 + 9] &= (~(1 << 4));
 "22
-[e ( _SoftUARTInit ..  ]
-[; ;main.c: 23: SoftUARTPrint("Hello World!\r");
+[e =& *U + &U . _IO 1 * -> -> + -> 1 `i -> 9 `i `ui `ux -> -> # *U &U . _IO 1 `ui `ux -> ~ << -> 1 `i -> 4 `i `uc ]
+[; ;main.c: 23: IO.Bytes[(uint8_t)0x01 + 18] &= ~(1 << 4);
 "23
-[e ( _SoftUARTPrint (1 :s 1C ]
-[; ;main.c: 24: SoftUARTPrint("This is a software UART library test!\r");
-"24
-[e ( _SoftUARTPrint (1 :s 2C ]
-[; ;main.c: 25: SoftUARTPrint("Designed by Firmware Engineer Team. Copyright 2023.\r");
+[e =& *U + &U . _IO 1 * -> -> + -> -> -> 1 `i `uc `i -> 18 `i `ui `ux -> -> # *U &U . _IO 1 `ui `ux -> ~ << -> 1 `i -> 4 `i `uc ]
+[; ;main.c: 25: SoftUARTInit();
 "25
-[e ( _SoftUARTPrint (1 :s 3C ]
-[; ;main.c: 26: SoftUARTPrint("\r\r");
+[e ( _SoftUARTInit ..  ]
+[; ;main.c: 26: SoftUARTPrint("Hello World!\r");
 "26
-[e ( _SoftUARTPrint (1 :s 4C ]
-[; ;main.c: 27: SoftUARTPrint("Freely available source code on GitHub (https://github.com/Firmware-Engineers/PIC18-API)\r");
+[e ( _SoftUARTPrint (1 :s 1C ]
+[; ;main.c: 27: SoftUARTPrint("This is a software UART library test!\r");
 "27
-[e ( _SoftUARTPrint (1 :s 5C ]
-[; ;main.c: 29: while(1)
+[e ( _SoftUARTPrint (1 :s 2C ]
+[; ;main.c: 28: SoftUARTPrint("Designed by Firmware Engineer Team. Copyright 2023.\r");
+"28
+[e ( _SoftUARTPrint (1 :s 3C ]
+[; ;main.c: 29: SoftUARTPrint("\r\r");
 "29
-[e :U 240 ]
-[; ;main.c: 30: {
+[e ( _SoftUARTPrint (1 :s 4C ]
+[; ;main.c: 30: SoftUARTPrint("Freely available source code on GitHub (https://github.com/Firmware-Engineers/PIC18-API)\r");
 "30
-{
+[e ( _SoftUARTPrint (1 :s 5C ]
+[; ;main.c: 32: while(1)
 "32
+[e :U 240 ]
+[; ;main.c: 33: {
+"33
+{
+[; ;main.c: 34: IO.Bytes[0x00 + 9] ^= (1 << 0);
+"34
+[e =^ *U + &U . _IO 1 * -> -> + -> 0 `i -> 9 `i `ui `ux -> -> # *U &U . _IO 1 `ui `ux -> << -> 1 `i -> 0 `i `uc ]
+[; ;main.c: 35: Wait_ms(500);
+"35
+[e ( _Wait_ms (1 -> -> -> 500 `i `l `ul ]
+"36
 }
 [e :U 239 ]
-"29
+"32
 [e $U 240  ]
 [e :U 241 ]
-[; ;main.c: 32: }
-[; ;main.c: 33: }
-"33
+[; ;main.c: 36: }
+[; ;main.c: 37: }
+"37
 [e :UE 238 ]
 }
 [a 3C 68 101 115 105 103 110 101 100 32 98 121 32 70 105 114 109 119 97 114 101 32 69 110 103 105 110 101 101 114 32 84 101 97 109 46 32 67 111 112 121 114 105 103 104 116 32 50 48 50 51 46 13 0 ]
