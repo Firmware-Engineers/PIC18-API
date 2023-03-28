@@ -22,7 +22,7 @@
 #include "../Inc/GPIO.h"
 #include "../Inc/SystemTime.h"
 #include "../Inc/SoftwareUART.h"
-#include "../../../Application/SIM800xDemo.X/Inc/SIM800x_SDM.h"
+//#include "../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_SDM.h"
 //-----------------------------------
 
 #if defined(USE_HIGH_LOW_ISR)
@@ -67,7 +67,7 @@ void interrupt Isr(void)
     SysTimeCallBack();
     //---------
     SoftUARTCallBack();
-    SIM800xSDMCallBack();
+    //SIM800xSDMCallBack();
 }
 //-----------------------------------
 

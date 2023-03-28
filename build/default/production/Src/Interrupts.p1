@@ -1,11 +1,11 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"78 Src/../Inc/PIC18Types.h
+"79 Src/../Inc/PIC18Types.h
 [s S234 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S234 . PA PB PC PD PE . LA LB LC LD LE . TA TB TC TD TE ]
-"76
+"77
 [u S233 `S234 1 `uc -> 23 `i ]
 [n S233 . . Bytes ]
-"126
+"127
 [s S235 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S235 . grp1 grp2 grp3 grp4 ]
 "5308 C:\Program Files\Microchip\xc8\v2.36\pic\include\proc\pic18f452.h
@@ -2390,40 +2390,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 158: __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Write_b_eep(unsigned int badd, unsigned char bdat);
 [; ;pic18.h: 192: unsigned char __t1rd16on(void);
 [; ;pic18.h: 193: unsigned char __t3rd16on(void);
-[; ;PIC18Types.h: 75: typedef union
-[; ;PIC18Types.h: 76: {
-[; ;PIC18Types.h: 77: struct
-[; ;PIC18Types.h: 78: {
-[; ;PIC18Types.h: 80: uint8_t PA;
-[; ;PIC18Types.h: 81: uint8_t PB;
-[; ;PIC18Types.h: 82: uint8_t PC;
-[; ;PIC18Types.h: 83: uint8_t PD;
-[; ;PIC18Types.h: 84: uint8_t PE;
-[; ;PIC18Types.h: 86: uint32_t;
-[; ;PIC18Types.h: 88: uint8_t LA;
-[; ;PIC18Types.h: 89: uint8_t LB;
-[; ;PIC18Types.h: 90: uint8_t LC;
-[; ;PIC18Types.h: 91: uint8_t LD;
-[; ;PIC18Types.h: 92: uint8_t LE;
-[; ;PIC18Types.h: 94: uint32_t;
-[; ;PIC18Types.h: 96: uint8_t TA;
-[; ;PIC18Types.h: 97: uint8_t TB;
-[; ;PIC18Types.h: 98: uint8_t TC;
-[; ;PIC18Types.h: 99: uint8_t TD;
-[; ;PIC18Types.h: 100: uint8_t TE;
-[; ;PIC18Types.h: 101: };
-[; ;PIC18Types.h: 102: uint8_t Bytes[23];
-[; ;PIC18Types.h: 103: }IORegistersMapType;
-"106 Src/../Inc/PIC18Types.h
+[; ;PIC18Types.h: 76: typedef union
+[; ;PIC18Types.h: 77: {
+[; ;PIC18Types.h: 78: struct
+[; ;PIC18Types.h: 79: {
+[; ;PIC18Types.h: 81: uint8_t PA;
+[; ;PIC18Types.h: 82: uint8_t PB;
+[; ;PIC18Types.h: 83: uint8_t PC;
+[; ;PIC18Types.h: 84: uint8_t PD;
+[; ;PIC18Types.h: 85: uint8_t PE;
+[; ;PIC18Types.h: 87: uint32_t;
+[; ;PIC18Types.h: 89: uint8_t LA;
+[; ;PIC18Types.h: 90: uint8_t LB;
+[; ;PIC18Types.h: 91: uint8_t LC;
+[; ;PIC18Types.h: 92: uint8_t LD;
+[; ;PIC18Types.h: 93: uint8_t LE;
+[; ;PIC18Types.h: 95: uint32_t;
+[; ;PIC18Types.h: 97: uint8_t TA;
+[; ;PIC18Types.h: 98: uint8_t TB;
+[; ;PIC18Types.h: 99: uint8_t TC;
+[; ;PIC18Types.h: 100: uint8_t TD;
+[; ;PIC18Types.h: 101: uint8_t TE;
+[; ;PIC18Types.h: 102: };
+[; ;PIC18Types.h: 103: uint8_t Bytes[23];
+[; ;PIC18Types.h: 104: }IORegistersMapType;
+"107 Src/../Inc/PIC18Types.h
 [v _IO `VS233 ~T0 @X0 1 e@3968 ]
-[; ;PIC18Types.h: 106: volatile IORegistersMapType IO @0xF80;
-[; ;PIC18Types.h: 125: typedef struct
-[; ;PIC18Types.h: 126: {
-[; ;PIC18Types.h: 127: uint8_t grp1;
-[; ;PIC18Types.h: 128: uint8_t grp2;
-[; ;PIC18Types.h: 129: uint8_t grp3;
-[; ;PIC18Types.h: 130: uint8_t grp4;
-[; ;PIC18Types.h: 131: }ConfigType;
+[; ;PIC18Types.h: 107: volatile IORegistersMapType IO @0xF80;
+[; ;PIC18Types.h: 126: typedef struct
+[; ;PIC18Types.h: 127: {
+[; ;PIC18Types.h: 128: uint8_t grp1;
+[; ;PIC18Types.h: 129: uint8_t grp2;
+[; ;PIC18Types.h: 130: uint8_t grp3;
+[; ;PIC18Types.h: 131: uint8_t grp4;
+[; ;PIC18Types.h: 132: }ConfigType;
 [; ;Interrupts.h: 348: extern void InterruptEnable(ConfigType cfg);
 [; ;Interrupts.h: 375: extern void InterruptDisable(ConfigType cfg);
 [; ;Interrupts.h: 405: extern uint16_t InterruptGetFlag(uint16_t cnst);

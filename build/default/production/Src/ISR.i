@@ -3800,7 +3800,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 
-# 75 "Src/../Inc/PIC18Types.h"
+# 76 "Src/../Inc/PIC18Types.h"
 typedef union
 {
 struct
@@ -3834,7 +3834,7 @@ uint8_t Bytes[23];
 
 volatile IORegistersMapType IO @0xF80;
 
-# 125
+# 126
 typedef struct
 {
 uint8_t grp1;
@@ -3858,7 +3858,7 @@ extern void InterruptSetPriorityHigh(ConfigType cfg);
 # 461
 extern void InterruptSetPriorityLow(ConfigType cfg);
 
-# 54 "Src/../../../Libraries/SystemTime.X/Inc/SystemTime.h"
+# 54 "Src/../Inc/SystemTime.h"
 const uint8_t OSC_FREQ = 16;
 
 # 70
@@ -3876,13 +3876,13 @@ extern void Wait_ms(uint32_t value);
 # 111
 extern void SysTimeCallBack(void);
 
-# 123
+# 122
 extern void SysTimeSuspend(void);
 
-# 135
+# 134
 extern void SysTimeResume(void);
 
-# 120 "Src/../../../Libraries/SoftwareUART.X/Inc/SoftwareUART.h"
+# 101 "Src/../Inc/SoftwareUART.h"
 typedef union{
 uint8_t Byte;
 struct{
@@ -3892,38 +3892,128 @@ unsigned:6;
 };
 }SoftUARTStatusType;
 
-# 136
+# 117
 extern void SoftUARTInit(void);
 
-# 147
+# 128
 extern uint8_t SoftUARTRxAvailable(void);
 
-# 158
+# 138
 extern void SoftUARTTransmitByte(uint8_t data);
 
-# 169
+# 149
 extern int SoftUARTReceiveByte(void);
 
-# 180
+# 160
 extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
 
-# 190
+# 172
+extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+
+# 182
 extern void SoftUARTPrint(const char *str);
 
-# 200
+# 192
 extern void SoftUARTSuspend(void);
 
-# 210
+# 202
 extern void SoftUARTResume(void);
 
-# 220
+# 212
 extern void SoftUARTFlushRx(void);
 
 
 #pragma intrinsic(_SoftUARTCallBack)
 extern void SoftUARTCallBack(void);
 
-# 66 "Src/ISR.c"
+# 195 "Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/../../../../M8M_APIs/PIC18.X/Inc/USART.h"
+extern void USARTSetBGR(uint8_t bgr);
+
+# 219
+extern void USARTSetBaudRate(uint32_t baud);
+
+# 247
+extern void USARTInit(ConfigType cfg);
+
+# 277
+extern void USARTAsyncInit(uint8_t bgr);
+
+# 287
+extern void USARTTransmitByte9(uint16_t data);
+
+# 298
+extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
+
+# 309
+extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
+
+# 319
+extern void USARTPrint(const char *str);
+
+# 329
+extern uint8_t USARTReceiveByte(void);
+
+# 339
+extern uint16_t USARTReceiveByte9(void);
+
+# 351
+extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+
+# 363
+extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
+
+# 108 "Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_SDM.h"
+extern void SIM800xSDMInit(uint32_t br);
+
+# 118
+extern void SIM800xSDMResume(void);
+
+# 129
+extern void SIM800xSDMSuspend(void);
+
+# 141
+extern uint8_t SIM800xSDMIsSuspended(void);
+
+# 151
+extern uint16_t SIM800xSDMRxAvailable(void);
+
+# 161
+extern void SIM800xSDMSendByte(uint8_t data);
+
+# 172
+extern void SIM800xSDMSendBytes(uint8_t *data, uint16_t cnt);
+
+# 182
+extern void SIM800xSDMPrint(const char *str);
+
+# 195
+extern uint8_t SIM800xSDMReadByte(void);
+
+# 208
+extern uint16_t SIM800xSDMReadBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+
+# 223
+extern uint8_t SIM800xSDMPeek(uint8_t idx);
+
+# 239
+extern int SIM800xSDMReadF1Pkt(uint8_t *data);
+
+# 255
+extern int SIM800xSDMReadF2Pkt(uint8_t *data);
+
+# 264
+extern void SIM800xSDMFlush(void);
+
+# 276
+extern void SIM800xSDMSetTimeOut(uint32_t tout);
+
+# 285
+extern uint32_t SIM800xSDMGetTimeOut(void);
+
+# 297
+extern void SIM800xSDMCallBack(void);
+
+# 65 "Src/ISR.c"
 void interrupt Isr(void)
 {
 SysTimeCallBack();

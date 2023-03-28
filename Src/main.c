@@ -9,8 +9,7 @@
 #include "../Inc/PIC18Types.h"
 #include "../Inc/GPIO.h"
 #include "../Inc/Interrupts.h"
-//#include "../Inc/SystemTime.h"
-#include "../../../Libraries/SystemTime.X/Inc/SystemTime.h"
+#include "../Inc/SystemTime.h"
 #include "../Inc/USART.h"
 #include "../Inc/SoftwareUART.h"
 

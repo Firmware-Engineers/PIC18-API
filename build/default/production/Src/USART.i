@@ -1,6 +1,116 @@
 
 # 1 "Src/USART.c"
 
+# 18 "C:\Program Files\Microchip\xc8\v2.36\pic\include\xc.h"
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+# 13 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+
+# 13 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef __int24 int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 52
+typedef unsigned char uint8_t;
+
+# 58
+typedef unsigned int uint16_t;
+
+# 65
+typedef __uint24 uint24_t;
+
+# 72
+typedef unsigned long int uint32_t;
+
+# 88
+typedef signed char int_least8_t;
+
+# 96
+typedef signed int int_least16_t;
+
+# 109
+typedef __int24 int_least24_t;
+
+# 118
+typedef signed long int int_least32_t;
+
+# 136
+typedef unsigned char uint_least8_t;
+
+# 143
+typedef unsigned int uint_least16_t;
+
+# 154
+typedef __uint24 uint_least24_t;
+
+# 162
+typedef unsigned long int uint_least32_t;
+
+# 181
+typedef signed char int_fast8_t;
+
+# 188
+typedef signed int int_fast16_t;
+
+# 200
+typedef __int24 int_fast24_t;
+
+# 208
+typedef signed long int int_fast32_t;
+
+# 224
+typedef unsigned char uint_fast8_t;
+
+# 230
+typedef unsigned int uint_fast16_t;
+
+# 240
+typedef __uint24 uint_fast24_t;
+
+# 247
+typedef unsigned long int uint_fast32_t;
+
+# 268
+typedef int32_t intmax_t;
+
+# 282
+typedef uint32_t uintmax_t;
+
+# 289
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+
+# 7 "C:\Program Files\Microchip\xc8\v2.36\pic\include\builtins.h"
+#pragma intrinsic(__nop)
+extern void __nop(void);
+
+
+#pragma intrinsic(_delay)
+extern __nonreentrant void _delay(uint32_t);
+#pragma intrinsic(_delaywdt)
+extern __nonreentrant void _delaywdt(uint32_t);
+
+#pragma intrinsic(_delay3)
+extern __nonreentrant void _delay3(uint8_t);
+
 # 53 "C:\Program Files\Microchip\xc8\v2.36\pic\include\proc\pic18f452.h"
 extern volatile unsigned char PORTA __at(0xF80);
 
@@ -3677,116 +3787,6 @@ extern volatile __bit nW __at(0x7E3A);
 
 extern volatile __bit nWRITE __at(0x7E3A);
 
-# 18 "C:\Program Files\Microchip\xc8\v2.36\pic\include\xc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-# 13 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-
-# 13 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef __int24 int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 52
-typedef unsigned char uint8_t;
-
-# 58
-typedef unsigned int uint16_t;
-
-# 65
-typedef __uint24 uint24_t;
-
-# 72
-typedef unsigned long int uint32_t;
-
-# 88
-typedef signed char int_least8_t;
-
-# 96
-typedef signed int int_least16_t;
-
-# 109
-typedef __int24 int_least24_t;
-
-# 118
-typedef signed long int int_least32_t;
-
-# 136
-typedef unsigned char uint_least8_t;
-
-# 143
-typedef unsigned int uint_least16_t;
-
-# 154
-typedef __uint24 uint_least24_t;
-
-# 162
-typedef unsigned long int uint_least32_t;
-
-# 181
-typedef signed char int_fast8_t;
-
-# 188
-typedef signed int int_fast16_t;
-
-# 200
-typedef __int24 int_fast24_t;
-
-# 208
-typedef signed long int int_fast32_t;
-
-# 224
-typedef unsigned char uint_fast8_t;
-
-# 230
-typedef unsigned int uint_fast16_t;
-
-# 240
-typedef __uint24 uint_fast24_t;
-
-# 247
-typedef unsigned long int uint_fast32_t;
-
-# 268
-typedef int32_t intmax_t;
-
-# 282
-typedef uint32_t uintmax_t;
-
-# 289
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-
-# 7 "C:\Program Files\Microchip\xc8\v2.36\pic\include\builtins.h"
-#pragma intrinsic(__nop)
-extern void __nop(void);
-
-
-#pragma intrinsic(_delay)
-extern __nonreentrant void _delay(uint32_t);
-#pragma intrinsic(_delaywdt)
-extern __nonreentrant void _delaywdt(uint32_t);
-
-#pragma intrinsic(_delay3)
-extern __nonreentrant void _delay3(uint8_t);
-
 # 19 "C:\Program Files\Microchip\xc8\v2.36\pic\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
@@ -3800,7 +3800,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 
-# 75 "Src/../Inc/PIC18Types.h"
+# 76 "Src/../Inc/PIC18Types.h"
 typedef union
 {
 struct
@@ -3834,7 +3834,7 @@ uint8_t Bytes[23];
 
 volatile IORegistersMapType IO @0xF80;
 
-# 125
+# 126
 typedef struct
 {
 uint8_t grp1;
@@ -3843,43 +3843,46 @@ uint8_t grp3;
 uint8_t grp4;
 }ConfigType;
 
-# 196 "Src/../Inc/USART.h"
+# 195 "Src/../Inc/USART.h"
 extern void USARTSetBGR(uint8_t bgr);
 
-# 220
+# 219
 extern void USARTSetBaudRate(uint32_t baud);
 
-# 248
+# 247
 extern void USARTInit(ConfigType cfg);
 
-# 278
+# 277
 extern void USARTAsyncInit(uint8_t bgr);
 
-# 288
+# 287
 extern void USARTTransmitByte9(uint16_t data);
 
-# 299
+# 298
 extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
 
-# 310
+# 309
 extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
 
-# 320
+# 319
 extern void USARTPrint(const char *str);
 
-# 330
+# 329
 extern uint8_t USARTReceiveByte(void);
 
-# 340
+# 339
 extern uint16_t USARTReceiveByte9(void);
 
-# 352
+# 351
 extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 
-# 364
+# 363
 extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
 
-# 70 "Src/../Inc/SystemTime.h"
+# 54 "Src/../Inc/SystemTime.h"
+const uint8_t OSC_FREQ = 16;
+
+# 70
 extern void SystimeInit(void);
 
 # 80
@@ -3900,7 +3903,7 @@ extern void SysTimeSuspend(void);
 # 134
 extern void SysTimeResume(void);
 
-# 23 "Src/USART.c"
+# 21 "Src/USART.c"
 void USARTSetBGR(uint8_t bgr)
 {
 
